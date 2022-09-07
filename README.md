@@ -1,129 +1,120 @@
-<!--
-theme: gaia
-class:
- - invert
-headingDivider: 2 
-paginate: true
--->
+---
+marp        : true
+auto-scaling:
+    - true
+    - fittingHeader
+    - math
+    - code
+paginate        : true
+theme           : hegel
+title           : Robótica
+author          : Raúl Lara Cabrera
+description     : Presentación de la asignatura Robótica
+---
+<style>
 
-<!--
-_class:
- - lead
- - invert
--->
+   .cite-author {
+      text-align        : right;
+   }
+   .cite-author:after {
+      color             : orangered;
+      font-size         : 125%;
+      /* font-style        : italic; */
+      font-weight       : bold;
+      font-family       : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      padding-right     : 130px;
+   }
+   .cite-author[data-text]:after {
+      content           : " - "attr(data-text) " - ";
+   }
 
-# Deploy Marp to GitHub Pages
+   .cite-author p {
+      padding-bottom : 40px
+   }
 
-Presentations to Webpages: Instantly!
+</style>
 
-## What?
+<!-- _class: titlepage -->
+![bg left:33%](https://images.unsplash.com/photo-1562758778-e5638b5b6607?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80)
 
-[Marp](https://marp.app/) lets you create HTML slides from markdown (like this!).
+<div class="title">Robótica</div>
+<div class="subtitle">Grado en Ingeniería de Computadores</div>
+<div class="author">Alberto Díaz, Raúl Lara</div>
+<div class="date">Curso 2022/2023</div>
+<div class="organization">Departamento de Sistemas Informáticos</div>
 
-This presentation is both a [website](https://alexsci.com/marp-to-pages) and a [README.md](https://github.com/ralexander-phi/marp-to-pages/blob/main/README.md).
+[![height:30](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-informational.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-## Why?
+---
 
-Treat your presentation the same way you treat code.
+# La asignatura
 
-- Use git to track changes
-- Pull requests to collaborate
-- Deploy automatically
-- See a problem? Open an issue!
+**Robótica** es una asignatura con enfoque muy práctico donde se introducen los fundamentos del campo de la robótica, centrándose en la construcción y programación de robots móviles autónomos.
 
-## Setup
+Todo el material del curso estará relacionado directamente con los experimentos realizados en las prácticas; los estudiantes trabajarán en grupos construyendo y probando técnicas de sistemas robóticos cada vez más complejas para, con un poco de suerte, finalizar la asignatura con una competición de robots.
 
-Want to create your own?
+---
 
-First, create a new repo [from the template repo](https://github.com/ralexander-phi/marp-to-pages).
+# La asignatura
 
-![](img/use-template.png)
+El término **robot** fue utilizado por primera vez por un dramaturgo checo alrededor de 1920, pero la fascinación de la humanidad por los constructos capaces de percibir el entorno y actuar sobre él ha existido desde siempre.
 
-## Configure GitHub Pages
+A día de hoy, disponemos de hardware potente muy asequible, lo que nos permite a prácticamente todos construir (casi) cualquier tipo de robot para múltiples aplicaciones: robots industriales, aspiradoras, drones de reparto, coches autónomos y un largo etcétera. Aunque se trata de un campo de investigación activo, los bloques fundamentales como el modelado, el control o la percepción, están muy bien asentados.
 
-Open your new repo and [setup publishing](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source).
+---
 
-You'll typically use `gh-pages` as the deploy branch.
+# Profesorado
 
-## Review Build
+**Alberto Díaz**
+Despacho 4122
+alberto.diaz@upm.es
 
-Click on Actions tab and see if the build succeeded (it may take some time).
+**Raúl Lara**
+Despacho 1230
+raul.lara@upm.es
 
-![](img/click-actions.png)
+Horarios y reserva de tutorías en el Moodle de la asignatura.
 
-You should now see the generated files in the `gh-pages` branch.
+---
 
-## View webpage
+# Contenido
 
-Open your deployed webpage to see the content.
+1. Introducción
+2. Percepción del entorno
+  2.1. Sensores para la navegación
+  2.2. Visión artificial
+  2.3. Detección de obstáculos
+3. Actuación sobre el entorno
+4. Control y optimización
+  4.1. Control borroso
+  4.2. Computación evolutiva para optimización de controladores
+5. Toma de decisiones
+  5.1. Robot Operating System (ROS)
+  5.2. Planificación de trayectorias y navegación
+6. Aplicaciones
 
-Out of the box you should see `README.md` as `/index.html` and `/README.pdf`. Slides under `docs/` are also converted.
+---
 
-## Running locally
+# Evaluación de la asignatura
 
-Locally you'll run commands like:
+Cuestionarios telemáticos:
 
-```
-$ marp README.md -o build/README.pdf
-```
+* Uno por cada tema (6 en total)
+* Peso del 5% cada uno (30% del total)
 
-or
+Prácticas **presenciales** en grupo:
 
-```
-$ npx @marp-team/marp-cli@latest README.md -o build/README.pdf
-```
+* Práctica 1. Percepción del entorno (10%)
+* Práctica 2. Actuación sobre el entorno (10%)
+* Práctica 3. Control y optimización (10%)
+* Práctica 4. Toma de decisiones (40%)
 
-## As a workflow step
+---
 
-The workflow runs an equivalent step:
+# Evaluación extraordinaria
 
-```
-- name: Marp Build (README.pdf)
-  uses: docker://marpteam/marp-cli:v1.7.0
-  with:
-    args: README.md -o build/README.pdf
-  env:
-    MARP_USER: root:root
-```
+Un **examen teórico** (30% de peso sobre la nota final) de tipo test consistente en cuestiones relacionadas con los temas de la asignatura.
 
-Note the `args` match the previous slide.
+La entrega de la **práctica** realizada durante el curso (70% de peso sobre la nota final), donde existe la posibilidad de que el estudiante sea convocado para la exposición de la misma.
 
-## Customizing the build
-
-Anything in the `build/` folder will be deployed to GitHub Pages.
-
-You can copy extra files or run further processing steps using other tools.
-
-## Learn more about Marp
-
-This is a good time to learn more about Marp. Here's some resources:
-
-- [CommonMark](https://commonmark.org/)
-- [Cheat Sheet](https://commonmark.org/help/)
-- [Themes](https://github.com/marp-team/marp-core/tree/master/themes)
-- [CSS Themes](https://marpit.marp.app/theme-css)
-- [Directives](https://marpit.marp.app/directives)
-- [VS Code plugin](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
-
-## Example Sites
-
-Known sites using this action are:
-
-- [University of Illinois at Urbana-Champaign's CS 199 Even More Practice](https://cs199emp.netlify.app/) [(code)](https://github.com/harsh183/emp-125)
-- [Exploring agent based models](https://roiarthurb.github.io/Talk-UMMISCO_06-07-2020/) [(code)](https://github.com/RoiArthurB/Talk-UMMISCO_06-07-2020)
-
-Send a [pull request](https://github.com/ralexander-phi/marp-to-pages) to get your site added.
-
-## Publish your slides
-
-When you are ready to share your presentation, commit or merge to `main` and your content on GitHub Pages will automatically update.
-
-# 🎉
-<!--
-_class:
- - lead
- - invert
--->
-### Hooray!
-
-
+El aprobado de ambas partes es **obligatorio** para obtener el aprobado en la asignatura.

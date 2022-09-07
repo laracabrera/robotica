@@ -1,0 +1,8 @@
+{
+    "markdown.marp.themes": [
+        "./style/hegel.css",
+        "./style/schema.css",
+        "./style/structure.css"
+    ],
+    "markdown.marp.enableHtml": true
+}
