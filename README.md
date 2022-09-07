@@ -11,29 +11,6 @@ title           : Robótica
 author          : Raúl Lara Cabrera
 description     : Presentación de la asignatura Robótica
 ---
-<style>
-
-   .cite-author {
-      text-align        : right;
-   }
-   .cite-author:after {
-      color             : orangered;
-      font-size         : 125%;
-      /* font-style        : italic; */
-      font-weight       : bold;
-      font-family       : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      padding-right     : 130px;
-   }
-   .cite-author[data-text]:after {
-      content           : " - "attr(data-text) " - ";
-   }
-
-   .cite-author p {
-      padding-bottom : 40px
-   }
-
-</style>
-
 <!-- _class: titlepage -->
 ![bg left:33%](https://images.unsplash.com/photo-1562758778-e5638b5b6607?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80)
 
