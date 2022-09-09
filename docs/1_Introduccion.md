@@ -7,9 +7,9 @@ auto-scaling:
     - code
 paginate        : true
 theme           : hegel
-title           : Robótica
+title           : Introducción a la robótica
 author          : Raúl Lara Cabrera
-description     : Presentación de la asignatura Robótica
+description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T.S.I. Sistemas Informáticos (UPM)
 ---
 <style>
 
@@ -39,7 +39,7 @@ description     : Presentación de la asignatura Robótica
 
 <div class="title">Introducción</div>
 <div class="subtitle">Robótica</div>
-<div class="author">Alberto Díaz, Raúl Lara</div>
+<div class="author">Alberto Díaz y Raúl Lara</div>
 <div class="date">Curso 2022/2023</div>
 <div class="organization">Departamento de Sistemas Informáticos</div>
 
