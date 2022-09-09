@@ -158,3 +158,205 @@ Las acciones sobre el entorno se pueden dar de muy diferentes formas para muchos
 Según el diccionario Collins: "A robot is a machine which is programmed to move and perform certain tasks automatically."
 
 ---
+<!--
+   _class: transition
+-->
+
+# Evolución de los robots
+
+---
+
+![bg left:33%](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mechanical_Pinochio.gif/361px-Mechanical_Pinochio.gif)
+
+# Autómatas
+
+Son máquinas relativamente autónomas, o mecanismos de control diseñados para seguir automáticamente una secuencia de operaciones, o responder a instrucciones predeterminadas.
+
+Se tienen registros desde el antiguo Egipto hasta nuestros días (animatrónics).
+
+---
+
+<video controls width=100% src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Cima_automaton.ogv" poster="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Cima_automaton.ogv/1280px--Cima_automaton.ogv.jpg"></video>
+
+---
+
+![bg right:50%](https://upload.wikimedia.org/wikipedia/commons/8/83/Ajedrecista_segundo2.JPG)
+# Principios del siglo XX
+
+En 1912, **Leonardo Torres y Quevedo** construye la primera máquina autónoma capaz de jugar al ajedrez: *El Ajedrecista*.
+
+Intenta hacer mate en un escenario reducido de final de partida.
+
+Capaz de detectar movimientos incorrectos del oponente señalándolos con una bombilla.
+
+---
+
+<video controls width=100% src="https://drive.upm.es/s/V5temgyKuoHbvq9/download"></video>
+
+---
+
+![bg left:40%](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/FANUC_6-axis_welding_robots.jpg/1280px-FANUC_6-axis_welding_robots.jpg)
+
+# Robots industriales
+
+Empiezan a desarrollarse en los 1930.
+
+Articulados a imagen y semejanza de brazos humanos.
+
+Inicialmente replicando el movimiento del operador.
+
+Entran en juego la automatización y el **control numérico**.
+
+---
+
+<video controls width=100% src="https://drive.upm.es/s/QdVyi48T8sYgj81/download"></video>
+
+---
+
+![bg right:33%](https://www.ntticc.or.jp/uploads/assets/000/c7d5b.179.large.jpg)
+# Década de los 70: autonomía y control
+
+La industria armamentística se convierte en la punta de lanza de la robótica, creando munición autónoma 'fire-and-forget'.
+
+Se crea el primer robot capaz de caminar como un humano: **WABOT-1**. Incluía síntesis de voz, manipulación de objetos y entendía órdenes habladas en japonés.
+
+---
+
+<video controls width=100% src="https://drive.upm.es/s/pJvoVnJPhYhRS6l/download"></video>
+
+---
+
+![bg left:30%](https://robots.ieee.org/robots/aibo/aibo-thumb@2x.jpg)
+# 80s/90s: humanoides, sistemas inteligentes y robótica de consumo
+
+La tendencia de humanizar a los robots se dispara en esta época.
+
+Honda desarrolla dos versiones de su robot humanoide inteligente: P2 y P3.
+
+Sony presenta su mascota robot, **AIBO**, capaz de seguir una pelota gracias a su módulo de visión por computador. Este robot está dotado de inteligencia artificial para reconocer órdenes, establecer una relación empática con el propietario, recordar caras, etc.
+
+---
+
+<video controls width=100% src="https://drive.upm.es/s/Q3ehKj81lDdz0vh/download"></video>
+
+---
+
+![bg right:33%](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Roomba3g.jpg/1200px-Roomba3g.jpg)
+# Siglo XXI: de la humanidad a la utilidad
+
+Ya no importa tanto el aspecto humano del robot, sino su utilidad.
+
+La robótica entra de lleno en los hogares: aspiradoras, drones, impresoras 3D, robots de acompañamiento, etc.
+
+El **vehículo autónomo** entra en escena, dando lugar a los primeros modelos comerciales.
+
+Los robots están plenamente establecidos en el tejido productivo de la sociedad.
+
+---
+
+<video controls width=100% src="https://drive.upm.es/s/TNv3HvtF6X2PoV2/download"></video>
+
+---
+
+<!--
+   _class: transition
+-->
+
+# Clasificaciones y definiciones
+
+---
+
+![bg height:700](../img/t1/taxonomia2.png)
+
+---
+
+![bg height:700](../img/t1/taxonomia.png)
+
+---
+
+# Sensor
+
+Objeto capaz de variar una propiedad ante magnitudes físicas o químicas, llamadas variables de instrumentación, y transformarlas con un transductor en variables eléctricas.
+
+Características deseables:
+
+- es sensible a la propiedad medida
+- es insensible a cualquier otra propiedad que se pueda encontrar en el entorno
+- no influye en la propiedad medida
+
+**Sensibilidad**: ratio entre la señal de salida y la propiedad medida.
+
+**Resolución**: cambio más pequeño que puede ser detectado en la cantidad que está siento medida.
+
+---
+
+# Actuador
+
+Componente de una máquina que se encarga de mover o controlar un mecanismo o sistema.
+
+Un actuador requiere de una señal de control, normalmente de baja energía, y una fuente de energía:
+
+- Hidráulico
+- Neumático
+- Eléctrico
+- Magnético
+- Mecánico
+
+---
+
+# Control
+
+Es el sistema que gestiona el funcionamiento del robot.
+
+Interpreta las señales percibidas por los sensores y hace funcionar los actuadores en consecuencia.
+
+<center>
+
+![Bucle de control cerrado](https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Feedback_loop_with_descriptions.svg/1024px-Feedback_loop_with_descriptions.svg.png)
+
+</center>
+
+El bucle de control es **esencial** para la automatización industrial
+
+---
+
+# Grados de libertad
+
+Los grados de libertad son el número mínimo de velocidades generalizadas independientes necesarias para definir el estado cinemático de un mecanismo o sistema mecánico.
+
+El número de grados de libertad coincide con el número de ecuaciones necesarias para describir el movimiento.
+
+¿Cuántos grados de libertad tiene...
+
+- ...una locomotora sobre una vía recta?
+- ...un brazo humano?
+- ...un avión en vuelo?
+- ...un barco navegando?
+
+---
+
+# Valle inquietante
+
+<div class="columns">
+
+<div>
+
+Conocido por su voz inglesa **uncanny valley**, es una hipótesis en el campo de la robótica y animación 3D​ que afirma que cuando las réplicas antropomórficas se acercan en exceso a la apariencia y comportamiento de un ser humano real, causan una respuesta de rechazo entre los observadores humanos.
+
+</div>
+
+<div>
+
+![width:600px](https://upload.wikimedia.org/wikipedia/commons/1/14/Valle_inexplicable2.gif)
+
+</div>
+
+</div>
+
+---
+
+<video controls width=100% src="https://drive.upm.es/s/82CBp6Iu0rNQeMM/download"></video>
+
+---
+
+---
