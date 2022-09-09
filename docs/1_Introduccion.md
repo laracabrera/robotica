@@ -359,4 +359,99 @@ Conocido por su voz inglesa **uncanny valley**, es una hipótesis en el campo de
 
 ---
 
+<!--
+   _class: transition
+-->
+
+# Investigación
+
 ---
+
+# Tendencias en investigación
+
+Según el último informe<sup>1</sup> del departamento de Human-centered AI de Stanford:
+
+## Robots más adaptables
+
+Las nuevas técnicas de aprendizaje de los robots (aprendizaje a partir de la demostración humana, el aprendizaje adaptativo, la optimización y otras) están dando lugar a una robótica más útil. Las capacidades de los robots han crecido para adaptarse mejor a entornos que cambian dinámicamente mientras resuelven problemas muy complejos, lo que hace que la robótica sea más adecuada para una gama más amplia de aplicaciones industriales, incluidas las tareas de inserción y manipulación en la fabricación.
+
+> <sup>1</sup> June 2022 Indistry Brief: Robotics and AI
+
+---
+
+# Tendencias en investigación
+
+## Ayudantes robóticos
+
+Otro tema de investigación es la interacción entre humanos y robots, incluida la robótica asistencial, la robótica médica y el aumento de la capacidad humana.
+
+Los investigadores de estas áreas se centran en la capacidad de interpretar, adaptar y mejorar el comportamiento humano. Al crear robots que responden a la información humana, amplían las habilidades humanas, como en el caso de la cirugía teleoperada, y mejoran la calidad de vida, como al ayudar a los pacientes a vestirse y bañarse.
+
+---
+
+# Tendencias en investigación
+
+## Mejores tecnologías autónomas
+
+La movilidad representa otro amplio y fundamental espacio de problemas dentro de la robótica: reúne la necesidad de capacidades de interacción humana, adaptación en entornos dinámicos, percepción y toma de decisiones complejas. 
+
+Los vehículos autónomos tienen un enorme potencial dentro del transporte y el futuro de la logística de la cadena de suministro.
+
+Las nuevas investigaciones de Stanford abordan problemas esenciales en estas aplicaciones, como la detección de múltiples objetos, la planificación de rutas seguras en caso de fallo de los sensores, la navegación alrededor de personas, etc., todo lo cual requiere un uso innovador de la inteligencia artificial.
+
+---
+
+<!--
+   _class: transition
+-->
+# Tecnologías
+
+---
+
+# ROS - Robot Operating System
+
+![bg right:40%](https://www.ros.org/imgs/noetic-background.png)
+
+**Robot Operating System (ROS)** es un conjunto de bibliotecas y herramientas de software que le ayudan a crear aplicaciones para robots. Desde controladores hasta algoritmos de última generación, y con potentes herramientas para desarrolladores, ROS tiene lo que necesitas para tu próximo proyecto de robótica. Y todo es de código abierto.
+
+<center>
+
+www.ros.org
+</center>
+
+---
+
+# Gazebo
+
+<center>
+
+![](https://gazebosim.org/assets/images/gazebo_horz_pos_topbar.svg)
+</center>
+
+**Gazebo** aporta un nuevo enfoque a la simulación con una completa caja de herramientas de bibliotecas de desarrollo y servicios en la nube para facilitar la simulación. Itere rápidamente sus nuevos diseños físicos en entornos realistas con flujos de sensores de alta fidelidad. Pruebe las estrategias de control en seguridad y aproveche la simulación en las pruebas de integración continua.
+
+<center>
+
+gazebosim.org
+</center>
+
+---
+
+# PyBullet
+
+Es un wrapper Python para **Bullet Physics SDK**, una simulación multifísica y de detección de colisiones en tiempo real para VR, juegos, efectos visuales, robótica, aprendizaje automático, etc.
+
+**PyBullet** es un módulo de Python rápido y fácil de usar para la simulación robótica y el aprendizaje automático, con un enfoque en la transferencia de la simulación a la realidad. Con PyBullet puedes cargar cuerpos articulados desde URDF, SDF, MJCF y otros formatos de archivo.
+
+<center>
+
+bulletphysics.org
+</center>
+
+---
+
+<!--
+   _class: transition
+-->
+
+# ¡GRACIAS!
