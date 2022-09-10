@@ -535,8 +535,11 @@ El conocimiento se almacena en memoria de forma simbólica o subsimbólica
 - No poseen emociones (ni empatía)
 - No "piensan" de manera independiente ni creativa
 
+---
+
 <!--
    _class: transition
 -->
+
 
 # ¡GRACIAS!
