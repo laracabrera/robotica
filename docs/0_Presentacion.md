@@ -53,8 +53,11 @@ description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T
   - Alberto Díaz Álvarez <<a href="mailto:alberto.diaz@upm.es">alberto.diaz@upm.es</a>>
   - Raúl Lara Cabrera <<a href="mailto:raul.lara@upm.es">raul.lara@upm.es</a>>
   - Departamento de Sistemas Informáticos
+
 - Información básica
   - Moodle de la UPM: <a href="https://moodle.upm.es/">https://moodle.upm.es/</a>
+  - Repositorio de GitHub: <a href="https://github.com/laracabrera/robotica/">https://github.com/laracabrera/robotica</a>
+
 - Recomendaciones
   - Álgebra lineal
   - Análisis matemático
@@ -72,7 +75,7 @@ description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T
 
 ---
 
-# Objetivo
+# Objetivos
 
 Que pasados unos cuantos años desde hoy, los estudiantes:
 
@@ -104,8 +107,11 @@ Que pasados unos cuantos años desde hoy, los estudiantes:
 - 4 horas a la semana, que se dividen en (aproximadamente)
   - 2 horas de teoría
   - 2 horas de prácticas en laboratorio
+
 - Todas las actividades se realizarán en grupos de 2 alumnos
   - Excepto los cuestionarios, claro
+
+
 - Las asignatura tienen un mínimo, **no un máximo**; se valorará **mucho**:
   - Que el alumno profundice
   - Que proponga prácticas adicionales
@@ -134,10 +140,11 @@ Que pasados unos cuantos años desde hoy, los estudiantes:
 
 # Desglose en créditos
 
-- 6 créditos = 26*6 = 156 horas de trabajo
+- 6 créditos a 26 horas de trabajo por crédito $\equiv$ 156 horas de trabajo
   - Asistencia a clase: 60 horas
   - Prácticas y proyectos: 90 horas
   - Cuestionarios (preparación y realización): 6 horas
+
 - Por supuesto, esto es orientativo; depende de la capacidad del alumno
 
 ---

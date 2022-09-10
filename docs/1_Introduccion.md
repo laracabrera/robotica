@@ -47,11 +47,19 @@ description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T
 
 ---
 
-<!--
-   _class: transition
--->
+# Robot
 
-# ¿Qué es un robot?
+1. Máquina o ingenio electrónico programable que es capaz de manipular objetos y realizar diversas operaciones
+2. Robot que imita la figura y los movimientos de un ser animado
+3. Persona que actúa de manera mecánica o sin emociones
+4. Programa que explora automáticamente la red para encontrar información
+
+Según el diccionario Collins: <i>"A robot is a machine which is programmed to move and perform certain tasks automatically"</i>
+
+Por cierto, robot viene del checo <i>robota</i> que quiere decir <i>trabajo</i>
+   - Aunque también tiene cierto significado de <i>servidumbre</i>
+
+Vamos a debatir sobre estas definiciones...
 
 ---
 
@@ -61,7 +69,7 @@ description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T
 
 ![bg right:50%](https://upload.wikimedia.org/wikipedia/commons/0/0d/Laproscopic_Surgery_Robot.jpg)
 
-## ¿Un robot tiene que ser una máquina autónoma?
+## ¿Es necesario que sea una máquina autónoma?
 
 ---
 
@@ -71,7 +79,7 @@ description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T
 
 ![bg left:50%](https://images.unsplash.com/photo-1568910748155-01ca989dbdd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80)
 
-## Vale, un robot puede ser total, parcial o no autónomo, pero de alguna manera realiza tareas físicas sobre el mundo real, ¿verdad?
+## ¿Es necesario que actúe sobre el mundo físico?
 
 ---
 
@@ -85,84 +93,95 @@ description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T
 
 ---
 
-# ¿Cuál es el elemento más diferenciador de un robot?
-
-- Algunos dicen que el bloque de inteligencia artificial donde se toman las decisiones.
-- Otros indican que el requisito de una IA no es esencial, ya que un proceso de toma de decisiones basado en if-else nos vale también para generar inteligencia.
-- Que claro, si está tomando decisiones inteligentes, ¿cómo podemos no estar hablando de inteligencia artificial?
-- Bueno, el proceso de decisión se puede considerar esencial, el tema de una inteligencia artificial no tanto.
+<!--
 
 ---
 
+# ¿Cuál es el componente diferenciador de un robot?
+
+- Hay autores que señalan al componente de IA para la toma de decisiones
+- Otros dicen que no es necesario que este componente está basado en IA
+  - Una secuencia de `ifs` sirve para tomar decisiones inteligentes
+  - Aunque claro, si se están tomando decisiones inteligentes, ¿cómo podemos no estar hablando de inteligencia artificial?
+
+- Bueno; entonces el proceso de decisión se puede considerar esencial, el tema de una inteligencia artificial no tanto.
+
+---
+
+-->
+
 # Componentes esenciales de un robot
 
-Para el propósito de este curso podemos ponernos de acuerdo en que hay tres componentes esenciales:
+Para el propósito de este curso podemos decir que hay tres componentes en un robot esenciales:
 
-- **Sensores**: para percibir tanto el entorno que rodea al robot como su propio estado.
-- **Controladores**: para analizar el estado actual y tomar decisiones.
-- **Actuadores**: para manipular y realizar acciones sobre el entorno.
+- **Sensores**: para percibir tanto el entorno que le rodea como su propio estado
+- **Controladores**: para analizar el estado actual y tomar decisiones
+- **Actuadores**: para manipular y realizar acciones sobre el entorno
 
 ---
 
 # Sensores
 
-**Percepción**: Los robots perciben el mundo que les rodea a través de sensores.
-
-Podemos pensar en los sensores de un robot como el análogo de los sentidos humanos:
+**Percepción**: Un robot **percibe el mundo** que le rodea a través de sensores, normalmente análogos a los sentidos del ser humano:
 
 - Vista: Cámaras, radares LiDAR, ...
-- Oído: microfonos
-- Tacto: sensor de temperatura, presión, ...
-- Gusto y olfato: sensores químicos
+- Oído: Microfonos
+- Tacto: Sensor de temperatura, presión, ...
+- Gusto y olfato: Sensores químicos
 
-Hay sensores que no tienen análogo humano, como GPS (para identificar la posición exacta en el globo, barómetro para identificar la altitud a la que nos encontramos, o detector de campos magnéticos (un compás) para detectar la dirección.
+Sin embargo, hay otros sensores que no tienen homólogo humano:
+- GPS para identificar la posición exacta en el globo
+- Barómetro para determinar la altitud
+- Compás para reconocer la orientación
+
 
 ---
 
 # Controladores
 
-**Toma de decisiones**: Basándonos en los datos de los sensores y, opcionalmente, del estado interno del robot, un robot tiene que tomar decisiones para realizar cualquier tarea.
+**Toma de decisiones**: En función de los datos de los sensores (y a veces su estado interno) un robot decide **cómo acometer una tarea**
 
-Pueden ser decisiones tan simples como responder un sí o un no. Aunque también pueden ser extremadamente complejas como navegar por un entorno desconocido.
+- Pueden ser tan simples como responder sí o no a una cuestión
+- O tan complejas como determinar la ruta a seguir por un entorno desconocido
 
-En la práctica, el proceso de toma de decisiones en robótica es complejo, y requiere responder muchas cuestiones para encontrar una respuesta en el árbol de decisión de todas las posibilidades.
+En la práctica, el proceso de toma de decisiones en robótica es complejo
 
-Por el camino se pueden usar técnicas sofisticadas, como análisis de imágen o algoritmos de path planning.
+Además, por el camino se pueden usar técnicas sofisticadas, como análisis de imágen o algoritmos de path planning.
 
 ---
 
 # Actuadores
 
-Los robots **actúan** sobre el entorno.
+**Actuación**: Un robot **actúa** sobre el entorno una vez ha decidido cómo
 
-Las acciones sobre el entorno se pueden dar de muy diferentes formas para muchos propósitos diferentes:
-
-- Ir de un punto a otro.
-- Acelerar o frenar.
-- Realizar nuevas medidas del entorno con sensores.
-- Comunicarse con humanos u otros robots.
-- Los motores y actuadores pueden hacer girar las ruedas, activar .articulaciones o rotar las hélices de un robot.
-- Encender un escáner para tomar una medida.
-- Emitir luces o sonidos.
-- Enviar mensajitos para comunicarse.
+Pueden tomar diversas formas para muchos propósitos diferentes:
+- Ir de un punto a otro
+- Acelerar o frenar
+- Realizar nuevas medidas del entorno con sensores
+- Comunicarse con humanos u otros robots
+- Los motores y actuadores pueden hacer girar las ruedas, activar articulaciones o rotar las hélices de un robot
+- Encender un escáner para tomar una medida
+- Emitir luces o sonidos
 
 ---
 
-# Robot
-
-1. Máquina o ingenio electrónico programable que es capaz de manipular objetos y realizar diversas operaciones.
-2. Robot que imita la figura y los movimientos de un ser animado.
-3. Persona que actúa de manera mecánica o sin emociones.
-4. Programa que explora automáticamente la red para encontrar información.
-
-Según el diccionario Collins: "A robot is a machine which is programmed to move and perform certain tasks automatically."
-
----
 <!--
    _class: transition
 -->
 
 # Evolución de los robots
+
+<!--
+
+- Las palomas artificiales de Archytas
+- Los pájaros artificiales de Mozi y Lu Ban
+- El caballero mecánico de Da Vinci
+- Karakuri Zui
+Cosas que comentar aquí en la evolución de robots
+- El primer robot como tal que se considera robot es el unimate
+- El primer robot que se ha considerado humanoide es Sophia
+
+-->
 
 ---
 
@@ -170,9 +189,9 @@ Según el diccionario Collins: "A robot is a machine which is programmed to move
 
 # Autómatas
 
-Son máquinas relativamente autónomas, o mecanismos de control diseñados para seguir automáticamente una secuencia de operaciones, o responder a instrucciones predeterminadas.
+Máquinas relativamente autónomas, o mecanismos de control diseñados para seguir automáticamente una secuencia de operaciones, o responder a instrucciones predeterminadas
 
-Se tienen registros desde el antiguo Egipto hasta nuestros días (animatrónics).
+Se tienen registros desde el antiguo Egipto hasta nuestros días (animatrónics)
 
 ---
 
@@ -449,6 +468,72 @@ bulletphysics.org
 </center>
 
 ---
+
+# Las Tres Leyes y la Ley Cero
+
+El escritor de ciencia ficción Isaac Asimov creó las Tres Leyes de la Robótica
+
+1. Un robot no hará daño a un ser humano ni, por inacción, permitirá que un ser humano sufra daño
+1. Un robot debe cumplir las órdenes dadas por los seres humanos, a excepción de aquellas que entren en conflicto con la primera ley
+1. Un robot debe proteger su propia existencia en la medida en que esta protección no entre en conflicto con la primera o con la segunda ley
+
+Tras múltiples relatos, añadió una Ley Cero para preceder a las demás
+
+1. Un robot no puede dañar a la humanidad o, por inacción, permitir que la humanidad sufra daños.
+
+<!-- ¿Por qué son interesantes?
+
+- Plantean un código moral para robots autónomos con capacidad consciente
+- Ofrecen un punto de vista en el análisis de la ética -->
+
+---
+
+# Inteligencia artificial y robótica
+
+Entre otros objetivos, la IA trata de crear máquinas que piensan
+- Pensar requiere, entre otras cosas, percibir y adquirir conocimiento
+
+Cómo se adquiere el conocimiento
+- Reconocimiento de voz
+- Inferencias
+- Visión artificial
+
+El conocimiento se almacena en memoria de forma simbólica o subsimbólica
+
+
+---
+
+<!--
+   _class: transition
+-->
+# Ventajas e inconvenientes
+
+---
+
+# Ventajas
+
+- Mayor productividad y calidad junto con una menor tasa de error
+- No necesitan adquirir experiencia para realizar bien su trabajo
+- Precisión muy superior a la humana, lo que permiten mejorar ciertas técnicas, pcomo por ejemplo la medicina
+- Pueden trabajar en entornos peligrosos o incompatibles con la vida
+  - Superficies de planetas y satélites
+  - Prospecciones mineras o simas submarinas
+  
+- Pueden realizar tareas repetitivas sin aburrirse
+  - Y sin comer, cobrar o pedir un aumento de sueldo
+
+---
+
+# Inconvenientes
+
+- Suelen encargarse de tareas muy críticas por lo que, si algo va mal, suele ir **muy** mal
+- El coste inicial suele se mayor en un robot que en un empleado
+  - Y el mantenimiento también
+
+- Requiere un suministro constante y, generalmente alto, de energía
+- Reemplaza trabajadores, lo que puede implicar desempleo para algunos
+- No poseen emociones (ni empatía)
+- No "piensan" de manera independiente ni creativa
 
 <!--
    _class: transition
