@@ -1111,23 +1111,15 @@ class AddTwoIntsClientNode(Node):
 # <i>Launcher</i>
 
 Define la ejecución de uno o varios nodos de un componente o aplicación
-
-¿Y para qué podemos necesitar eso?
-Una aplicación de ROS se compone de decenas o cientos de nodos
+ - Una **aplicación de ROS** puede llegar a tener **cientos de nodos**
 - ¿Os imagináis arrancar uno por uno desde la terminal?
-- Ese es el objetivo de un **<i>launcher</i>**
+- ¿Y entrar en remoto al robot para decidir qué nodos arrancar y cómo?
 
-Arrancar cada uno por separado ¿Por qué podemos necesitar?
-<!--
-Es fácil saber por qué necesitamos un launcher. Pongamos que estamos desarrollando el software de control de un vehículo autónomo. Hemos desarrollado un nodo para la gestión de la cámara (de las cuales tenemos dos porque estamos usando visión estéreo). Tenemos también un nodo para gestionar el lidar (de los cuales tenemos cuatro). Claro, cada uno de ellos lleva su propia configuración. Luego tenemos los nodos encargados de gestionar este flujo de datos. Están también los nodos de los sensores infrarojos, GPS, Bus CAN, comunicaciones (que a su vez tiene un montón de nodos, pero es de un tercero). Por último tenemos el nodo para la fusión de sensores, el nodo de navegación y el nodo de control. Pensad en la cantidad de parámetros que requiere esta aplicación, que además queremos tener para varios vehículos (diferentes, por supuesto, por lo que ahbrá que modificar las configfuarciones de muchos de estos nodos).
+¿Por qué no hacerlo con un script de bash?
+- ¿`sh`? ¿`bash`? ¿`csh`? ¿`zsh`? ... Más cómodo un <i>launcher</i>, que es estándar
 
-Luego está el tema de las comunicaciones y el remapeo de los topics y servicios, porque el mismo nodo en diferentes instancias tienen que tener diferentes nombres.
+Permite la configuración de nodos, sus parámetros, renombrado de <i>topics</i>, ...
 
-No tiene mucho sentido crear lanzar desde la terminal todos estos nodos. Ni siquiera tiene mucho sentido configurarlo con un script bash, porque lo mismo el intérprete de uno de los ordenadores a bordo es bash, el otro sh, el otro vete tú a saber qué…
-
-Para ello existen los launcher. Un fichero launcher permite el arranque de todo desde un fichero de configuración. 
-
--->
 ---
 
 # Creación de un <i>launcher</i>
@@ -1252,11 +1244,6 @@ parameters=[
 -->
 
 # Parámetros
-
----
-<!--
-   _class: transition
--->
 
 ---
 
