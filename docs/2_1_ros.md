@@ -12,6 +12,7 @@ author          :
     - Alberto Díaz Álvarez <alberto.diaz@upm.es>
     - Raul Lara Cabrera <raul.lara@upm.es>
 description     : Robot Operating System (ROS)
+math: katex
 ---
 <style>
 
@@ -21,7 +22,6 @@ description     : Robot Operating System (ROS)
    .cite-author:after {
       color             : orangered;
       font-size         : 125%;
-      /* font-style        : italic; */
       font-weight       : bold;
       font-family       : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       padding-right     : 130px;

@@ -10,6 +10,7 @@ theme           : hegel
 title           : Introducción a la robótica
 author          : Raúl Lara Cabrera
 description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T.S.I. Sistemas Informáticos (UPM)
+math: katex
 ---
 <style>
 
@@ -19,7 +20,6 @@ description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T
    .cite-author:after {
       color             : orangered;
       font-size         : 125%;
-      /* font-style        : italic; */
       font-weight       : bold;
       font-family       : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       padding-right     : 130px;
@@ -50,13 +50,13 @@ description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T
 # Presentación
 
 - Profesores
-  - Alberto Díaz Álvarez <<a href="mailto:alberto.diaz@upm.es">alberto.diaz@upm.es</a>>
-  - Raúl Lara Cabrera <<a href="mailto:raul.lara@upm.es">raul.lara@upm.es</a>>
+  - Alberto Díaz Álvarez <a href="mailto:alberto.diaz@upm.es">alberto.diaz@upm.es</a>
+  - Raúl Lara Cabrera <a href="mailto:raul.lara@upm.es">raul.lara@upm.es</a>
   - Departamento de Sistemas Informáticos
 
 - Información básica
-  - Moodle de la UPM: <a href="https://moodle.upm.es/">https://moodle.upm.es/</a>
-  - Repositorio de GitHub: <a href="https://github.com/laracabrera/robotica/">https://github.com/laracabrera/robotica</a>
+  - Moodle de la UPM: <https://moodle.upm.es/>
+  - Repositorio de GitHub: <https://github.com/laracabrera/robotica>
 
 - Recomendaciones
   - Álgebra lineal
@@ -68,15 +68,18 @@ description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T
 # ¿De qué va la asignatura?
 
 El mundo está cada vez más <i>robotizado</i>
+
 - Veremos que la automatización y la robótica domina nuestras vidas
 - En esta asignatura estudiaremos los fundamentos y tecnologías de la robótica
 
 La robótica abarca tres disciplinas principales:
+
 - Mecánica
 - Electrónica
 - **Informática**
 
 Nosotros pondremos especial énfasis en esta última parte
+
 - Que es la más interesante, todo sea dicho
 
 ---
@@ -138,14 +141,17 @@ Que pasados unos cuantos años desde hoy, los estudiantes:
 # Evaluación
 
 La asistencia a clase **es obligatoria**; pero no se controla la asistencia
+
 - Estamos cursos superiores, ya somos mayorcitos
 
 Nota de la asignatura:
+
 - Convocatoria ordinaria: 30% cuestionarios + 70% práctica (**obligatoria**)
 - Convocatoria extraordinaria: 30% teoría + 70% práctica (**obligatoria**)
 - La nota mínima para aprobar será un 5.0
 
 ¿Cómo subir nota si estoy aprobado?:
+
 - Con prácticas opcionales: Se propondrán a lo largo de la asignatura
 - Participación en clase, corrección y generación de material
 
@@ -183,20 +189,21 @@ Nota de la asignatura:
 
 # Recursos
 
-Moodle de la UPM ([https://moodle.upm.es]())
+Moodle de la UPM (<https://moodle.upm.es>)
 
 - Materiales de teoría, de evaluación y demás información
 - *Corregir y ampliar contenido tendrá un impacto positivo*
 
-Repositorio de la asignatura ([https://github.com/laracabrera/robotica]())
+Repositorio de la asignatura (<https://github.com/laracabrera/robotica>)
+
 - Fuentes de las transparencias y de programas usados durante la asignatura
 - *Corregir y ampliar contenido tendrá un impacto positivo*
 
 Libros
+
 - Fundamentos de robótica. Antonio Barrientos y otros
 - Robotics, Vision and Control, Springer, Peter Corke
 - Introduction to Autonomous Mobile Robots, Roland Siegwart y otros
-
 
 ---
 <!--
