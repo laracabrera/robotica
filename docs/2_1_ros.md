@@ -754,73 +754,28 @@ Algunos comandos muy útiles relacionados con topis de la CLI son:
            --ros-args -r <old_topic>:=<new_topic>
   ```
 
-<!--
-Hasta ahora hemos visto las herramientas de línea de comandos de ros ros2 pkg (para crear paquetes) y ros2 run (para ejecutarlos). También hemos visto colcon, que no es directamente de ros pero es la herramienta de facto para crear y gestionar los workspaces. Por último, hemos visto ros2 topic hace poco para ver los topics que existían y leer los mensajes que se publican en estos. Vamos a ver un poquitín más de detalle.
+---
 
-ros2 topic tabtab
+# Sobre los mensajes en ROS
 
-Vamos a arrancar nuestro nodo.
+En la página sobre interfaces se describen todos los tipos de datos básicos
+- [https://docs.ros.org/en/humble/Concepts/About-ROS-Interfaces.html]()
 
-Ros2 list
+Los tipos de datos complejos suelen tener sus propios repositorios
+- E.g. [http://github.com/ros2/example_interfaces]()
+- Se encuentran bajo `msg/` (y `srv/`, pero eso lo veremos más adelante)
+- Los ficheros `.msg` dan la misma información que ejecutar `ros2 interfaces`
 
-Nos enseña los topics que se están usando. Si nos cargamos el nodo, desaparece. Lo arrancamos de nuevo
+Un repositorio muy útil para aplicaciones reales es `common_interfaces`
+- [http://github.com/ros2/common_interfaces]()
+- Se instalan por defecto al realizar la instalación de `ros desktop`
 
-Ros2 ropic info /robot_news
-
-Éste es súperútil. Con él podemos ver el tipo de mensaje que se está usando en el topic, cuántos publishers están enviaándo información y cuántos subscribers están suscritos a éstos.
-
-Ros2 topic echo /robot_news
-
-Vemos que estamos recibiendo mensajes. Si lanzamos de nuevo ros2 topic info /robot_news, vemos que tenemos un nuevo suscriptor, Lo paramos, y otra vez 0.
-
-Ros2 interface show example_interfaces/msg/String
-
-Como ya hemos visto antes, nos da información de la estructura del mensaje en cuestión.
-
-ros2 topic  hz /robot_news
-
-hz nos da la frecuencia de publicación de un topic (estimada)
-
-Ros2 topic bw /robot_news
-
-Bw (bandwidth) nos dice cuánto ancho de banda está ocupando el stream de datos de un topic
-
-Finalmente, podemos publicar mensajes en un topic  a través de la terminal:
-
-Ros2 topic pub -r 10 /robot_news example_interfaces/msg/String {data: ‘Hello, world! I’m the terminal!’}
-
-Volvemos a lanzar el info y vemos que tenemos dos publishers y un echo.
-
-Como recordatorio del tema anterior, si ejecutamos:
-
-Ros2 node list
-
-Vemos el nodo que hemos creado funcionando. Si ejecutamos
-
-ros2 node info /robot_news_station
-
-Veremos toda la información, incluido todo lo que publica. Concretamente estamos publicando un topic nuevo diferente al de defecto que es el que hemos creado.
-
-RENOMBRANDO UN TOPIC
-
-Igual que vimos en la sección anterior que podíamos renombrar un nodo:
-
-Ros2 run my_py_pkg robot_news_station --ros-args -r __node:=my_station
-
-Ahora el nodo está corriendo como my_station. Hacemos el list vemos que está funcionando, y si vemos la lista de topics vemos que está publiacndo nuestro topic, con el nombre que le dimos previamente. Para renombrar el topic:
-
-Ros2 run my_py_pkg robot_news_station --ros-args -r __node:=my_station -r robot_news:=my_news
-
-Hacemos un list y vemos que ha sido renombrado. Si arrancamos el nodo con el subscriber, tiene sentido que ahora no recibamos nada, porque está publicando en otro lado. Si hacemos otro list vemos que sí aparece robot-news, pero porque el subscriber está escuchando ahí. Pero son topics diferentes. Para escuchar del topic renombrado (remapping) es similar al parámetro de antes:
-
-Ros2 run my_py_pkg smartphone --ros-args -r robot_news:=my_news
--->
 
 ---
 
 # Mensajes personalizados
 
-Un topic se caracteriza por un **nombre** (e.g. `/name`) y una **interfaz** (e.g. `iface/msg/String`)
+Un topic se caracteriza por un **nombre** y una **interfaz** o tipo
 - El tipo de mensaje se describe con una sintáxis propia de ROS
 - Durante la compilación del <i>workspace</i> (`colcon`) cada mensaje se <i>transpila</i>
 - Con este proceso se generarán los fuentes específicos para cada lenguaje
@@ -828,7 +783,12 @@ Un topic se caracteriza por un **nombre** (e.g. `/name`) y una **interfaz** (e.g
 <center>
 
 ![](../img/t2/transpiling.png)
-<center>
+</center>
+
+
+Un convenio que se sigue a rajatabla es:
+- Si el tipo es básico, empieza en minúscula (e.g. `int`, `string`)
+- Si el tipo es compuesto, en mayúscula (e.g. `Header`)
 
 ---
 
@@ -857,98 +817,22 @@ uint8[] data         # Actual point data, size is (row_step*height)
 
 bool is_dense        # True if there are no invalid points
 ```
-<!--
-En la página de ROS2 interfaces podemos encontrar todos los tipos de datos que podemos usar en las definiciones de mensajes.
-
-Vemos que podemos usar tanto tipos simples (enteros, de coma flotante, lógicos, cadenas) así arrays de dichos tipos simples. Vemos también la correspondencia en otros lenguages.
-
-Si vamos al paquete de interfaces de ejemplo (http://github.com/ros2/example_interfaces), dentro del directorio msg  (
-Más adelante veremos el directorio srv, que son los mensajes para servicios) podemos ver un montón de ficheros que se corresponden con los tipos de mensaje que tenemos disponibles a través de este paquete.
-
-Si entramos, por ejemplo, en Int64.msg podemos ver la misma información que tenemos disponible cuando ejecutamos ros2 interfaces sobre un mensaje en concreto. La información que vemos es una interfaz donde sólo existe un dato, llamado “data” de tipo int64.
-
-Existe un repo con paquetes que se usan mucho en aplicaciones reales: common_interfaces. Si vamos al repo (http://github.com/ros2/common_interfaces) veremos que aquí hay paquetes más específicos (tanto para mensajes como para servicios). Éstos se instalan por defecto al realizar la instalación de ros desktop, pero en caso de que falte alguno, por ejemplo geometry, basta con instalarlo con un apt install.
-
-Vamos por ejemplo a sensor_msgs. Si entramos a msg, vemos un montón de definiciones de mensajes (vamos a un mensaje (que tenga header), decimos que es muy útil para algo de construcción y lo describimos). El header que vemos aquí no es un tipo básico, sino que viene de otro package (std_msgs). La forma es nombredepaquete/nombredelmensaje, y sirve para agrupar partes comunes de mensajes (por ejemplo, en este caso, la cabecera de un mensaje).
-
-Un convenio que se sigue a rajatabla es que el tipo, si es básico, empieza en minúscula (int, string, …). Si es un tipo complejo, empieza con mayúscula (e.g. Header).
-
-Enseñar también el mensaje de PointCloud2.
-
-Por tanto, para crear mensajes podemos usar:
-Tipos primitivos
-Otros mensajes del mismo u otros paquetes
--->
 
 ---
 
-# Creación de un mensaje personalizado
+# Tipos de mensajes (interfaces) personalizados
 
-<!--
-Vamos a crear un mensaje personalizado. Primero, ¿dónde debemos crearlo? Técnicamente, podemos hacerlo en cualquier paquete, pero lo más común suele ser crear paquetes específicos para la definición de mensajes. De esta manera se evita que los paquetes que usan esos mensajes como publishers o como suscribers no dependan de los paquetes que los usan como subscribers o publishers respectivamente. Vamos, que nos evitamos un dependency mess en el fuuturo
+Las interfaces se suelen crear en paquetes dedicados a exclusivamente a ello
+- Por reducir dependencias; se pueden crear en cualquier paquete
+   ```
+   $ ros2 pkg create sensor_interfaces
+   ```
+- Lo del sufijo `_interfaces` es otro convenio que se suele usar en ROS
+- El directorio `src/` no se suele usar, así que lo más común es borrarlo
 
-Creamos un paquete
-
-Ros2 pkg create my_robot_interfaces
-
-Usar interfaces al final es un convenio que se suele usar. Otro es “msg”. Como no hemos especificado un tipo de paquete, nos lo crea por defecto de C++, pero ya que no va a tener fuentes, sólo mensajes, la verdad es que nos da un poco ifgual.
-
-Vamos dentro 
-
-Cd my_robot_interfaces
-
-Borramos el directorio de fuentes
-
-Rm -rf include src
-
-Y nos creamos un directorio msg
-
-Mkdir msg
-
-Ahora, antes de crear nuestro mensaje, tenemos que hacer un poco de configuración, es decir, tocar los ficheros CMakeLists.txt y package.xml. Si vamos a package.xml, añadimos (entre buildtool y test_depend):
-
-<build_depend>rosidl_default_generators</build_depend>
-<exec_depend>rosidl_default_runtime<exec_depend>
-<member_of_group>rosidl_interface_packages</member_of_group>
-
-Esta es la funcionalidad necesaria para transpilar las interfaces del paquete y que se puedan exportar al resto. Una vez hemos hecho esto, no necesitamos cambiar nada más en el package.xml.
-
-En el CMake… nos zumbamos el default c99 y el if build_testing y añadimos (reemplazando donde ponde uncomment blablabla
-
-find_package(rosidl_default_generators REQUIRED)
-
-Y ya podemos creatr nuestro mensaje personalizado. Vamos a msg y creamos el fichero
-
-Cd msg
-Touch HardwareStatus.msg
-
-Para los nombres de los mensajes es importante comenzarlos en mayúscula, con CamelCase y sin Msg.
-
-Rellenamos el fichero con:
-
-Int64 temperature
-Bool ready
-String debug
-
-Vamos a CMakeList.txt y ponemos debajo del findpackage
-
-rosidl_generate_interfaces(${PROJECT_NAME}
-  “msg/HardwareStatus.msg”
-)
-
-Construimos el workspace
-
-Colcon build --packages-select my_robot_interfaces
-
-Vamos a ver exactamente d´onde se ha instalado.
-
-Vamos a install/my_robot_interfaces
-Cd lib/python3.8/site-packages/my_robot_interfaces/msg
-
-Entramos en el _hardware_status.py y enseñamos donde están los tres campos y poco más.
-
-Si vamos a ros2 interface show my_robot_interfaces/msg/HardwareStatus vemos la estructura del mensaje que está instalado
--->
+Cada tipo de mensaje va en un fichero `.msg` dentro del directorio `msg/`
+- Si el directorio no existe, es necesario crearlo
+- El convenio para nombrar ficheros de mensaje es `CamelCase`
 
 ---
 
@@ -956,7 +840,7 @@ Si vamos a ros2 interface show my_robot_interfaces/msg/HardwareStatus vemos la e
 
 Dentro del paquete donde queramos definir la interfaz:
 
-1. Si no existe, creamos directorio `msg/` y creamos la interfaz (debe ser `.msg`)
+1. Creamos la interfaz (fichero `.msg`) dentro del directorio `msg/`
 1. Añadimos (si no existen) las dependencias del transpilador a `package.xml:`
    ```
    <build_depend>rosidl_default_generators</build_depend>
@@ -974,131 +858,118 @@ Dentro del paquete donde queramos definir la interfaz:
 
 ---
 
-# Usando un mensaje personalizado
+# Usando una interfaz
 
-<!--
-En el package.xml tenemos que añadir la dependencia
+Al igual que hemos hecho con las interfaces preinstaladas, basta con:
 
-<depend>my_robot_interfaces</depend>
-
-Vamos a nuestro nodo anterior
-
-From my_robot_interfaces.msg import HardwareStatus
-
-Y en el publisher:
-
-Msg = HardwareStatus()
-Msg.temperature = 45
-Msg.ready = True
-Msg.debug = “Nai”
-self.publisher.publish(msg)
-
-Construimos y ejecutamos y vemos que funciona
-
-Ros2 topic list
-Ros2 topic info /hardware_status
-Ros2 topic echo /hardware_status
--->
+1. Añadir la dependencia del paquete que contiene la interfaz a `package.xml`
+   ```xml
+   <depend>paquete_con_interfaces</depend>
+   ```
+1. Importar la interfaz del paquete en nuestros fuentes
+   ```xml
+   <depend>from paquete_con_interfaces.msg import Interfaz</depend>
+   ```
 
 ---
+
 <!--
    _class: transition
 -->
 
 # Servicios
-<!--
-Existen dos mecanismos de comunicación en ros. Uno son los topics, que acabamos de ver. Ahora veremos el otro: los servicios.
-
-Mientras que los topics están pensados desde un punto de vista asíncrono unidireccional (arquitectura publish/subscribe), los servicios están pensados para comunicación bidireccional (arquitectura cliente/servidor)
-
-En esta sección:
-Entenderemos qué son los servicios de ros
-Escribiremos nuestro propio servicio
-Usaremos herramientas de la terminal para debugear un poco
--->
 
 ---
 
 # Servicio
 
-Es un sistema de comunicación de arquitectura cliente/servidor
-- Permiten la comunicación síncrona o asíncrona entre nodos
+Es un sistema de comunicación de arquitectura **cliente/servidor**
+- Permiten la comunicación **síncrona o asíncrona** entre nodos
 - Están pensados para la comunicación bidireccional entre nodos
   - Dos tipos de mensaje, uno para la <i>request</i> y otro para la <i>response</i>
+  - Eso sí, ambos tipos se encuentran dentro del mismo fichero `.msg`
 - Un único servidor sólo puede existir una vez en una aplicación
   - Eso sí, puede ser accedido por múltiples clientes
 ---
 
 # Creación de un servidor
 
-<!--
-Vamos a crear un servicio muy tonto que va a sumar dos enteros. En la request le vamos a enviar dos números a sumar y en la response vamos a recibir el número de la suma.
+Un servicio se caracteriza por un **nombre único** y una **interfaz**
+- Vamos, como un <i>topic</i>
+- Eso sí, las interfaces incluyen dos tipos de mensaje: **request** y **response**
+- Se separan por tres guiones (encima <i>request</i>, debajo <i>response</i>)
 
-Un servicio está definido por dos cosas, el nombre y su tipo (la interfaz). Ya hemos visto interfaces para los topics, las de los servicios son un poquitín diferentes. Vamos a usar alguna ya existente. Para ello:
+Por ejemplo, un servicio para localizar el número de vehículos en un área:
+```
+float32 lat
+float32 lon
+float32 radius
+---
+int64 n
+```
 
-ros 2 interface show example_interfaces/srv/AddTwoInts
+---
 
-Primero, convenio: definiciones de servicios en directorio srv en lugar de msg.
-Segundo, 2 bloques separados por tres guiones. Parte superior, interfaz del mensaje de request, parte inferior interfaz del mensaje de response.
+Para crear el servidor usaremos el método `create_service` de `Node`:
+```python
+server = <nodo>.create_service(<mensaje>, <name>, <callback>)
+```
+- Convenio para nombrar los servicios: Comenzar su nombre por un verbo
+- Por ejemplo, `'get_number_of_vehicles'`
 
-Vamos a usar esa interfaz de servicio. Vamos a my_py_pkg/my_py_pkg y creamos el nodo.
+El <i>callback</i> será una función que recibirá dos parámetros
+- Objeto <i>request</i> con el contenido de la petición hecha al servidor
+- Objeto <i>response</i> a rellenar para devolver al cliente de la petición
+   ```python
+   def callback_get_number_of_vehicles(self, request, response):
+      response.sum = request.a + request.b
+      self.get_logger().info(f'{request.a} + {request.b} = {response.sum}')
+      return response
+   ```
 
-Touch add_two_ints_server.py
-Chmod u+x add_two_ints_server.py
+Podemos ver que el funcionamiento es similar al de los <i>topics</i>
 
-Usamos la template y le cambiamos los nombres a AddTwoIntsServerNode y add_two_ints_server
+---
 
-Ahora vamos a añadir el servidor del servicio en el inicializador.
+Por último, nos quedaría la configuración:
 
-From example_interfaces.srv import AddTwoInts
+1. Añadir el nodo al setup.py
+   ```python
+   get_number_of_vehicles_server = paquete.get_number_of_vehicles_server:main
+   ```
+2. Construir y desplegar el paquete
+   ```bash
+   $ colcon build --packages-select my_py_pkg --symlink-install
+   ```
 
-Recordad que tenemos que añadir, si no lo tenemos ya, la dependencia en el package.xml. Seguimos:
+En este punto ya podemos lanzar nuestro nodo
+```bash
+$ ros2 run my_py_pkg get_number_of_vehicles
+```
 
-self.server _ = self.create_service(AddTwoInts, ‘add_two_ints’, self.callback_add_two_ints).
+Para comprobar el funcionamiento necesitaremos un cliente que acceda al servicio
 
-Requiere tres argumentos, la interfaz de servicio, el nombre y la función de callback.
+---
 
-Un convenio que se sigue tanto para los servicios de ros como para servicios en general es comenzar su nombre por un verbo, ya que normalmente un servicio va a realizar una acción o un proceso.
+# Breve nota sobre la CLI (sí, otra más)
 
-Def callback_add_two_ints(self, request, response):
-
-En este método recibiremos dos objetos, la request, que es el mensaje que nos ha enviado el cliente que quiere usar el servicio, y la response, que será el mensaje que rellenaremos para devolverle cuando terminemos de hacer lo que etngamos que hacer.
-
-Def callback_add_two_ints(self, request, response):
-  Response.sum = request.a + request.b
-  self.get_logger().info(f‘{request.a} + {request.b} = {response.sum}’)
-  Return response
-
-Como podemos observar, el funcionamiento es muy parecido a cómo funcionan los mensajes en los topics.
-
-Añadimos el nodo al setup.py
-
-Add_two_ints_server = my_py_pkg.add_two_ints_server:main
-
-Construimos el paquete
-
-Colcon build --packages-select my_py_pkg --symlink-install
-
-Y Ahora vamos a lanzar nuestro nodo
-
-Ros2 run my_py_pkg add_two_ints_server
-
-Aunque no tenemos un cliente, podemos testear el server directamente desde la terminal. Para ello, escribimos
-
-Ros2 service list
-
-Ahí vemos los servicios existentes.
-
-Ros2 node info add_two_ints_server
-
-Ahí podemos ver que adermás de los servicios existentes, se ha añadido este de aquí, con su nombre y su tipo
-
-Con:
-
-Ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts “{a: 3, b: 4}”
-
-Describimos lo que ha pasado en ambas terminales.
--->
+Siempre es posible testear el server directamente desde la terminal
+- Para conocer los servicios disponibles usamos el siguiente comando
+   ```bash
+   $ ros2 service list
+   ```
+- También podemos saber la información de un servicio en concreto
+   ```bash
+   $ ros2 service info get_number_of_vehicles_server
+   ```
+- Por último, si lo que queremos es hacer una llamada a un servicio:
+   ```bash
+   $ service call /get_number_of_vehicles paquete/srv/NoOfVehicles "{ \
+      lat: 40.3831651, \
+      lon: -3.6222915, \
+      radius: 250 \
+   }"
+   ```
 
 ---
 
@@ -1128,60 +999,56 @@ class AddTwoIntsServerNode(Node):
 
 # Creación de un cliente
 
-<!--
-Creamos fichero y lo hacemos ejecutable
+Para realizar llamadas a un servicio necesitamos crear un cliente
 
-Touch add_two_ints_client.py
-Chmod u+x
+```python
+client = <node>.create_client(<interface>, <nombre>)
+```
 
-Client = self.create_client(AddTwoInts, ‘add_two_ints’)
+Las llamadas se realizan usando el método `call` del cliente
+```python
+response = client.call(request)
+```
 
-En este punto, si hacemos ua request al servidor, y éste no está arrancado, fallará, así que vamos  a hacer una espera para que el nodo espere a que el servidor se arranque.
+Al igual que con el servidor o con un topic, es necesario:
+1. Actualizar el `setup.py`
+   ```python
+   get_number_of_vehicles_client = paquete.get_number_of_vehicles_client:main
+   ```
+2. Construir y desplegar el paquete
 
-While not client.wait_for_service(1.0):
-  node.get_logger().warn(‘Waiting for server…’)
+---
 
-Si no es especifica timeout, espera siempre
+Cuidado, los nodos son independientes entre sí:
+- Puede pasar que se llame a un servicio sin que este esté se haya arrancado
+- Para que el método no dé error, lo típico es realizar una espera
+   ```python
+   while not client.wait_for_service(<timeout>):
+      node.get_logger().warn('Esperando al servicio ...')
+   ```
+- El timeout es opcional; si no se especifica esperará indefinidamente
 
-Vamos a lanzarlo, pero para ello hay que actualizar el setup.py
+---
 
-“Add_two_ints_client = my_py_pkg.add_two_ints_client:main”
+# Llamadas síncronas y asíncronas
 
-Colcon builñd packages-select my_py_pkg --symlink-install
-Ros2 run my_py_package add_two_ints_client
-
-Estará esperando a que se arranque el servidor. Una vez arranquemos el servidor:
-
-Ros2 run my_py_package add_two_ints_server
-
-Nuestro cliente termina porque ha realizado la conexión. Bueno, nos vamos a crear un objeto request de nuestra interfaz:
-
-Request = AddTwoInts.Request()
-Request.a = 1
-Request.b = 2
-
-client.call()
-
-Esta es una llamada bloqueante. Es muy raro usarla, pero bueno, está bien saber qué existe. Lo que hace es hasta que no hay respuesta, el cliente se queda esperando. Nosotros vamos a usar una llamada no bloqueante:
-
-Future = client.call_async(request)
-
-Un future, para el que no so sepa, es un objeto que tiene la respuesta a la llamada entre ahora y más adelante. Y ahora vamos a dejar funcionando el servicio hasta que se complete la llamada.
-
-rclpy.spin_until_future_complete(node, future)
-
-Una vez se ha acabado esto, sabemos que ha habido respuesta
-
-try:
-  Response = future.result()
-  self.get_logger().info(a + b = sum)
-Except Exception as e:
-  node.get_logger().error(f‘Error: {e}’)
-
-Lo lanzamos y probamos.
-
-REESCRIBIR TODO ESTO PARA QUE SE ADAPTE A LO QUE TENEMOPS DE OOP
---->
+`call` realiza una **llamada bloqueante**, y lo más común es usar `call_async`
+   ```python
+   future = client.call_async(request)
+   ```
+   - Un <i>future</i> es un objeto que en algún momento tendrá la respuesta a la llamada
+   - Podemos dejar el proceso esperando a la respuesta de la siguiente manera:
+      ```python
+      rclpy.spin_until_future_complete(node, future)
+      ```
+   - Una vez la instrucción finaliza, en el objeto future tenemos la respuesta
+      ```python
+      try:
+         Response = future.result()
+         self.get_logger().info(a + b = sum)
+      except Exception as e:
+         node.get_logger().error(f‘Error: {e}’)
+      ```
 
 ---
 
@@ -1229,44 +1096,6 @@ class AddTwoIntsClientNode(Node):
         except Exception as e:
             self.get_logger().error(‘{e}')
 ```
-
----
-
-# Tipos de servicio personalizados
-
-<!--
-Como ya sabemos crear tipos de mensaje personalizados, la verdad es que crear tipos de servicio personalizados no tiene mucho más misterio.
-
-Dónde ponemos nuestro servicio? En el directorio srv (convenio)
-
-Vamos a crear uno simple, por ejemplo
-
-Touch ComputeRectangleArea.srv
-
-Es importante que su extensión sea srv y no msg.
-
-Rellenamos el servicio
-
-float64 length
-float64 width
----
-float64 area
-
-Para construir los servidores, no tenemos que hacer nada más que una cosa porque ya lo hicimos previamente para nuestro mensaje personalizado. Añadimos la lína en CMaketxt
-
-(dentro de generate_interfaces)
-“srv/ComputeRectangleArea.srv”
-
-Y ya está; Construimos…
-
-Colcon build --packages-select my_robot_interfaces
-
-Y yas podemos trabajar con dicha definición de la misma forma que los mensajes personalizados
-
-Ros2 interface show my_robot_interfaces/ tab tab
-
-Ros2 interface show my_robot_interfaces/srv/ComputeRectangleArea
--->
 
 ---
 
