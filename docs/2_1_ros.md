@@ -1106,15 +1106,19 @@ class AddTwoIntsClientNode(Node):
 
 # <i>Launchers</i>
 
+---
+
+# <i>Launcher</i>
+
+Define la ejecución de uno o varios nodos de un componente o aplicación
+
+¿Y para qué podemos necesitar eso?
+Una aplicación de ROS se compone de decenas o cientos de nodos
+- ¿Os imagináis arrancar uno por uno desde la terminal?
+- Ese es el objetivo de un **<i>launcher</i>**
+
+Arrancar cada uno por separado ¿Por qué podemos necesitar?
 <!--
-Hemos visto nodos que publican mensajes en topics, otros que se suscriben a ellos, servicios, clientes y servidores. Teniendo en cuenta esto, y que las aplicaciones están compuestas de muchos de estos nodos, el arrancar una aplicación con todos sus componentes puede ser un desparrame. Imaginaos 20 nodos. ¡O 100!
-
-En esta sección vamos a aprender aarrancar todos nuestros nodos y parámetros desde un fichero denominado launcher. Concretamente vamos a aprender:
-Entenderlos y saber cuándo usarlos
-Cómo crearlos, instalarlos y lanzaros
-
-¿POR QUÉ UN LAUNCHER?
-
 Es fácil saber por qué necesitamos un launcher. Pongamos que estamos desarrollando el software de control de un vehículo autónomo. Hemos desarrollado un nodo para la gestión de la cámara (de las cuales tenemos dos porque estamos usando visión estéreo). Tenemos también un nodo para gestionar el lidar (de los cuales tenemos cuatro). Claro, cada uno de ellos lleva su propia configuración. Luego tenemos los nodos encargados de gestionar este flujo de datos. Están también los nodos de los sensores infrarojos, GPS, Bus CAN, comunicaciones (que a su vez tiene un montón de nodos, pero es de un tercero). Por último tenemos el nodo para la fusión de sensores, el nodo de navegación y el nodo de control. Pensad en la cantidad de parámetros que requiere esta aplicación, que además queremos tener para varios vehículos (diferentes, por supuesto, por lo que ahbrá que modificar las configfuarciones de muchos de estos nodos).
 
 Luego está el tema de las comunicaciones y el remapeo de los topics y servicios, porque el mismo nodo en diferentes instancias tienen que tener diferentes nombres.
