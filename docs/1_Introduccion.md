@@ -10,6 +10,7 @@ theme           : hegel
 title           : Introducción a la robótica
 author          : Raúl Lara Cabrera
 description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T.S.I. Sistemas Informáticos (UPM)
+math: katex
 ---
 <style>
 
@@ -19,7 +20,6 @@ description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T
    .cite-author:after {
       color             : orangered;
       font-size         : 125%;
-      /* font-style        : italic; */
       font-weight       : bold;
       font-family       : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       padding-right     : 130px;
@@ -49,6 +49,8 @@ description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T
 
 # Robot
 
+Segú la RAE:
+
 1. Máquina o ingenio electrónico programable que es capaz de manipular objetos y realizar diversas operaciones
 2. Robot que imita la figura y los movimientos de un ser animado
 3. Persona que actúa de manera mecánica o sin emociones
@@ -57,9 +59,8 @@ description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T
 Según el diccionario Collins: <i>"A robot is a machine which is programmed to move and perform certain tasks automatically"</i>
 
 Por cierto, robot viene del checo <i>robota</i> que quiere decir <i>trabajo</i>
-   - Aunque también tiene cierto significado de <i>servidumbre</i>
 
-Vamos a debatir sobre estas definiciones...
+- Aunque también tiene cierto significado de <i>servidumbre</i>
 
 ---
 
@@ -93,23 +94,6 @@ Vamos a debatir sobre estas definiciones...
 
 ---
 
-<!--
-
----
-
-# ¿Cuál es el componente diferenciador de un robot?
-
-- Hay autores que señalan al componente de IA para la toma de decisiones
-- Otros dicen que no es necesario que este componente está basado en IA
-  - Una secuencia de `ifs` sirve para tomar decisiones inteligentes
-  - Aunque claro, si se están tomando decisiones inteligentes, ¿cómo podemos no estar hablando de inteligencia artificial?
-
-- Bueno; entonces el proceso de decisión se puede considerar esencial, el tema de una inteligencia artificial no tanto.
-
----
-
--->
-
 # Componentes esenciales de un robot
 
 Para el propósito de este curso podemos decir que hay tres componentes en un robot esenciales:
@@ -130,10 +114,10 @@ Para el propósito de este curso podemos decir que hay tres componentes en un ro
 - Gusto y olfato: Sensores químicos
 
 Sin embargo, hay otros sensores que no tienen homólogo humano:
+
 - GPS para identificar la posición exacta en el globo
 - Barómetro para determinar la altitud
 - Compás para reconocer la orientación
-
 
 ---
 
@@ -155,6 +139,7 @@ Además, por el camino se pueden usar técnicas sofisticadas, como análisis de 
 **Actuación**: Un robot **actúa** sobre el entorno una vez ha decidido cómo
 
 Pueden tomar diversas formas para muchos propósitos diferentes:
+
 - Ir de un punto a otro
 - Acelerar o frenar
 - Realizar nuevas medidas del entorno con sensores
@@ -171,27 +156,19 @@ Pueden tomar diversas formas para muchos propósitos diferentes:
 
 # Evolución de los robots
 
-<!--
-
-- Las palomas artificiales de Archytas
-- Los pájaros artificiales de Mozi y Lu Ban
-- El caballero mecánico de Da Vinci
-- Karakuri Zui
-Cosas que comentar aquí en la evolución de robots
-- El primer robot como tal que se considera robot es el unimate
-- El primer robot que se ha considerado humanoide es Sophia
-
--->
-
 ---
 
 ![bg left:33%](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mechanical_Pinochio.gif/361px-Mechanical_Pinochio.gif)
 
 # Autómatas
 
-Máquinas relativamente autónomas, o mecanismos de control diseñados para seguir automáticamente una secuencia de operaciones, o responder a instrucciones predeterminadas
+Máquinas que imitan la figura y los movimientos de un ser animado
 
-Se tienen registros desde el antiguo Egipto hasta nuestros días (animatrónics)
+- Son relativamente autónomas
+- Siguen automáticamente una secuencia de operaciones
+- Responden a una o más instrucciones determinadas
+
+Se tienen registros desde el antiguo Egipto (Máscara de Anubis de mandíbula móvil) hasta nuestros días (Animatrónics)
 
 ---
 
@@ -200,6 +177,7 @@ Se tienen registros desde el antiguo Egipto hasta nuestros días (animatrónics)
 ---
 
 ![bg right:50%](https://upload.wikimedia.org/wikipedia/commons/8/83/Ajedrecista_segundo2.JPG)
+
 # Principios del siglo XX
 
 En 1912, **Leonardo Torres y Quevedo** construye la primera máquina autónoma capaz de jugar al ajedrez: *El Ajedrecista*.
@@ -233,6 +211,7 @@ Entran en juego la automatización y el **control numérico**.
 ---
 
 ![bg right:33%](https://www.ntticc.or.jp/uploads/assets/000/c7d5b.179.large.jpg)
+
 # Década de los 70: autonomía y control
 
 La industria armamentística se convierte en la punta de lanza de la robótica, creando munición autónoma 'fire-and-forget'.
@@ -246,6 +225,7 @@ Se crea el primer robot capaz de caminar como un humano: **WABOT-1**. Incluía s
 ---
 
 ![bg left:30%](https://robots.ieee.org/robots/aibo/aibo-thumb@2x.jpg)
+
 # 80s/90s: humanoides, sistemas inteligentes y robótica de consumo
 
 La tendencia de humanizar a los robots se dispara en esta época.
@@ -261,6 +241,7 @@ Sony presenta su mascota robot, **AIBO**, capaz de seguir una pelota gracias a s
 ---
 
 ![bg right:33%](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Roomba3g.jpg/1200px-Roomba3g.jpg)
+
 # Siglo XXI: de la humanidad a la utilidad
 
 Ya no importa tanto el aspecto humano del robot, sino su utilidad.
@@ -412,7 +393,7 @@ Los investigadores de estas áreas se centran en la capacidad de interpretar, ad
 
 ## Mejores tecnologías autónomas
 
-La movilidad representa otro amplio y fundamental espacio de problemas dentro de la robótica: reúne la necesidad de capacidades de interacción humana, adaptación en entornos dinámicos, percepción y toma de decisiones complejas. 
+La movilidad representa otro amplio y fundamental espacio de problemas dentro de la robótica: reúne la necesidad de capacidades de interacción humana, adaptación en entornos dinámicos, percepción y toma de decisiones complejas.
 
 Los vehículos autónomos tienen un enorme potencial dentro del transporte y el futuro de la logística de la cadena de suministro.
 
@@ -435,7 +416,7 @@ Las nuevas investigaciones de Stanford abordan problemas esenciales en estas apl
 
 <center>
 
-www.ros.org
+<https://www.ros.org>Z
 </center>
 
 ---
@@ -444,14 +425,14 @@ www.ros.org
 
 <center>
 
-![](https://gazebosim.org/assets/images/gazebo_horz_pos_topbar.svg)
+![gazebo logo](https://gazebosim.org/assets/images/gazebo_horz_pos_topbar.svg)
 </center>
 
 **Gazebo** aporta un nuevo enfoque a la simulación con una completa caja de herramientas de bibliotecas de desarrollo y servicios en la nube para facilitar la simulación. Itere rápidamente sus nuevos diseños físicos en entornos realistas con flujos de sensores de alta fidelidad. Pruebe las estrategias de control en seguridad y aproveche la simulación en las pruebas de integración continua.
 
 <center>
 
-gazebosim.org
+<https://gazebosim.org>
 </center>
 
 ---
@@ -464,7 +445,7 @@ Es un wrapper Python para **Bullet Physics SDK**, una simulación multifísica y
 
 <center>
 
-bulletphysics.org
+<https://bulletphysics.org>
 </center>
 
 ---
@@ -491,15 +472,16 @@ Tras múltiples relatos, añadió una Ley Cero para preceder a las demás
 # Inteligencia artificial y robótica
 
 Entre otros objetivos, la IA trata de crear máquinas que piensan
+
 - Pensar requiere, entre otras cosas, percibir y adquirir conocimiento
 
 Cómo se adquiere el conocimiento
+
 - Reconocimiento de voz
 - Inferencias
 - Visión artificial
 
 El conocimiento se almacena en memoria de forma simbólica o subsimbólica
-
 
 ---
 
@@ -540,6 +522,5 @@ El conocimiento se almacena en memoria de forma simbólica o subsimbólica
 <!--
    _class: transition
 -->
-
 
 # ¡GRACIAS!

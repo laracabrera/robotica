@@ -129,7 +129,6 @@ Que pasados unos cuantos años desde hoy, los estudiantes:
 - Todas las actividades se realizarán en grupos de 2 alumnos
   - Excepto los cuestionarios, claro
 
-
 - Las asignatura tienen un mínimo, **no un máximo**; se valorará **mucho**:
   - Que el alumno profundice
   - Que proponga prácticas adicionales
