@@ -65,28 +65,19 @@ description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T
 
 ---
 
-<!--
-   _class: transition
--->
-
 # ¿De qué va la asignatura?
 
-<!-- TRASPARENCIAS EXPLICANDO GROSSO MODO QUÉ ES LA ROBÓTICA Y DE LO QUE VAMOS A HABLAR EN LA ASIGNATURA-->
+El mundo está cada vez más <i>robotizado</i>
+- Veremos que la automatización y la robótica domina nuestras vidas
+- En esta asignatura estudiaremos los fundamentos y tecnologías de la robótica
 
----
+La robótica abarca tres disciplinas principales:
+- Mecánica
+- Electrónica
+- **Informática**
 
-# Objetivos
-
-Que pasados unos cuantos años desde hoy, los estudiantes:
-
-- Puedan determinar el qué alcance tienen las aplicaciones robóticas
-- Sean capaces de reflexionar sobre su impacto en la sociedad, como por ejemplo:
-  - ¿Cómo influirá la robótica en nuestro futuro?
-  - ¿Qué componentes/factores/habilidades son necesarios para construir robots con un alto rendimiento?
-- Sepan documentar proyectos de sistemas complejos (por ejemplo, un robot)
-- Puedan identificar herramientas de uso común en aplicaciones robóticas
-- Entiendan el funcionamiento por separado y en conjunto de los diferentes subsistemas de un robot
-- Sepan por qué hemos dedicado tantas horas a álgebra, cálculo, probabilidad...
+Nosotros pondremos especial énfasis en esta última parte
+- Que es la más interesante, todo sea dicho
 
 ---
 
@@ -99,6 +90,30 @@ Que pasados unos cuantos años desde hoy, los estudiantes:
  5. Control y optimización
  6. Toma de decisiones
  7. Aplicaciones
+
+---
+
+# Objetivos
+
+Que pasados unos cuantos años desde hoy, los estudiantes:
+
+- Puedan determinar el qué alcance tienen las aplicaciones robóticas
+- Sean capaces de reflexionar sobre su impacto en la sociedad
+- Sepan documentar proyectos de sistemas complejos (por ejemplo, un robot)
+- Puedan identificar herramientas de uso común en aplicaciones robóticas
+- Entiendan el funcionamiento por separado y en conjunto de los diferentes subsistemas de un robot
+- Sepan por qué hemos dedicado tantas horas a álgebra, cálculo, probabilidad...
+
+---
+
+# ¿Qué se espera que aprenda el estudiante?
+
+- *RA467*: Desarrolla aplicaciones en el ámbito de la Robótica
+- *RA466*: Plantea el diseño de sistemas robóticos específicos
+- *RA141*: Es capaz de trabajar como miembro de un equipo con la finalidad de contribuir a desarrollar proyectos con pragmatismo y sentido de la responsabilidad, asumiendo compromisos y teniendo en cuenta los recursos disponibles. Se desenvuelve de modo que logra generar confianza y credibilidad en un grupo de colaboradores, además del compromiso para el logro de la visión corporativa a través de negociaciones y motivaciones, y no de manera coercitiva e individualista.
+- *RA464*: Resuelve problemas en el ámbito de la Robótica, considerando y valorando alternativas
+- RA135: Analiza las necesidades de automatización de un proceso industrial
+- RA465: Realiza el análisis de robots manipuladores
 
 ---
 
@@ -120,21 +135,30 @@ Que pasados unos cuantos años desde hoy, los estudiantes:
 
 ---
 
-# Actividaddes
+# Evaluación
 
-- Cuestionarios
-- Lectura de artículos
-- Prácticas
+La asistencia a clase **es obligatoria**; pero no se controla la asistencia
+- Estamos cursos superiores, ya somos mayorcitos
+
+Nota de la asignatura:
+- Convocatoria ordinaria: 30% cuestionarios + 70% práctica (**obligatoria**)
+- Convocatoria extraordinaria: 30% teoría + 70% práctica (**obligatoria**)
+- La nota mínima para aprobar será un 5.0
+
+¿Cómo subir nota si estoy aprobado?:
+- Con prácticas opcionales: Se propondrán a lo largo de la asignatura
+- Participación en clase, corrección y generación de material
 
 ---
 
-<!--
-   _class: transition
--->
+# Normas
 
-# ¿De qué va la asignatura?
-
-<!-- PONER AQUÍ LOS RAXXX-->
+- Realizar las **actividades a tiempo**
+- **Respetar a los compañeros** y a su derecho a la educación
+- Citar claramente todas las fuentes (incluidos colaboradores). De esta manera mantendremos una correcta ética de trabajo y, como efecto colateral, el equipo docente puede sugerir dichas fuentes a futuros estudiantes
+- La colaboración con otros humanos se debería limitar a discusión. El código y la documentación deberá realizarla el grupo responsable de la práctica
+- Cada estudiante debe ser capaz de responder a cuantas preguntas se le hagan sobre sus tareas cuando se le solicite
+- Se mantiene una **tolerancia cero ante el plagio**. Cualquier plagio detectado implicará un suspenso en ambas convocatorias de la asignatura
 
 ---
 
@@ -153,37 +177,30 @@ Que pasados unos cuantos años desde hoy, los estudiantes:
    _class: transition
 -->
 
-# Normas para los cuestionarios
-
-<!-- PONER AQUÍ NORMAS DE LOS CUESTIONARIOS COMO TIEMPO, QUÉ PASA SI NOS PASAMOS DE FECHA, ETCÉTERA-->
+# Recursos de aprendizaje
 
 ---
 
+# Recursos
+
+Moodle de la UPM ([https://moodle.upm.es]())
+
+- Materiales de teoría, de evaluación y demás información
+- *Corregir y ampliar contenido tendrá un impacto positivo*
+
+Repositorio de la asignatura ([https://github.com/laracabrera/robotica]())
+- Fuentes de las transparencias y de programas usados durante la asignatura
+- *Corregir y ampliar contenido tendrá un impacto positivo*
+
+Libros
+- Fundamentos de robótica. Antonio Barrientos y otros
+- Robotics, Vision and Control, Springer, Peter Corke
+- Introduction to Autonomous Mobile Robots, Roland Siegwart y otros
+
+
+---
 <!--
    _class: transition
 -->
 
-# Normas para las prácticas
-
-<!-- PONER AQUÍ NORMAS DE LAS PRÁCTICAS COMO VÍDEOS, ENTREGAS TARDÍAS, ETCÉTERA-->
----
-
-<!--
-   _class: transition
--->
-
-# Normas generales
-
-<!-- PONER AQUÍ LAS NORMAS GENERALES COMO PLAGIO, ETCÉTERA-->
-
----
-
-<!--
-   _class: transition
--->
-
-# Referencias
-
-<!-- PONER AQUÍ REFERENCIAS A LIBROS Y CURSOS DE INTERÉS -->
-
----
+# Gracias

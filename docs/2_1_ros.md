@@ -1258,4 +1258,61 @@ parameters=[
    _class: transition
 -->
 
+---
+
+# ¿Qué es un parámetro?
+
+Un parámetro es un valor de configuración de un nodo
+- Son utilizados tanto en el arranque como durante el tiempo de ejecución
+- Su tiempo de vida es el del nodo al que pertenece
+- Caracterizado por el <i>namespace</i> del nodo, <i>namespace</i> del parámetro (opcional) y nombre
+
+Cada parámetro está compuesto de una clave, un valor y un descriptor
+- Clave es una cadena de texto
+- Valor: `bool`, `int64`, `float64`, `string`, `byte[]`, `bool[]`, `int64[]`, `float64[]`, `string[]` 
+- Descriptor: cadena de texto con información adicional (por defecto está vacío)
+
+---
+
+# Declaración de parámetros
+
+Los parámetros se declaran **en el momento de iniciar el nodo**
+- Reduce las posibilidades de una mala configuración posterior
+- Se establecen mediante el método `declare_parameter` de la clase `Node`
+   ```python
+   <node>.declare_parameter('<nombre>', <valor>)
+   ```
+- El tipo de parámetro se infiere del valor por defecto
+
+Es posible usar un nodo con parámetros no declarados
+- Hay que crear el nodo con el argumento `allow_undeclared_parameter=true`
+- Útil si no todos los parámetros son conocidos de antemano
+
+---
+
+# Trabajando con parámetros desde un mismo nodo
+
+Una de las gracias de los parámetros es poder usarlos durante la ejecución del nodo
+
+- Establecer el valor de un parámetro: método `set_parameters` de `Node`
+   ```python
+   param = rclpy.parameter.Parameter('<nombre>', <tipo>, <valor>)
+   <nodo>.set_parameters([param])
+   ```
+   - Los tipos están disponibles bajo el enumerado `rclpy.Parameter.Type`
+- Acceder al valor de un parámetro: método  `get_parameter` de la clase `Node`
+   ```python
+   param = <nodo>.get_parameter('<nombre>')
+   valor = param.get_parameter_value().<tipo>_value
+   ```
+---
+
+# Modificando los parámetros desde la CLI
+
+---
+
+# Modificando los parámetros desde un <i>launcher</i>
+
+---
+
 # ¡GRACIAS!
