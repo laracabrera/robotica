@@ -1382,21 +1382,79 @@ Una de las gracias de los parámetros es poder usarlos durante la ejecución del
 
 ---
 
-# Modificando los parámetros desde la CLI
+# Gestionando los parámetros desde la CLI
+
+Podemos listar todos los parámetros de la aplicación actual con `list`
+
+```bash
+ros2 param list
+```
+
+- Se mostrarán todos los parámetros disponibles clasificados por nodo
+- Todo nodo tiene el parámetro `use_sim_time` para sincronizar simulaciones
+
+Para obtener el tipo y el valor de un parámetro usaremos `get`
+
+```bash
+ros2 param get <nodo> <parámetro>
+```
 
 ---
 
-# Modificando los parámetros desde un <i>launcher</i>
+También podemos establecer valores, esta vez con el comando `set`
+
+```bash
+ros2 param set <nodo> <parámetro> <valor>
+```
+
+Para saber el estado de todos los parámetros de un nodo, podemos usar `dump`
+
+```bash
+ros2 param dump <nodo>
+```
+
+- El formato es `.yaml`, y podemos salvarlo en un fichero para su posterior uso
+
+`dump` se complementa con `load` que carga los parámetros desde un fichero
+
+```bash
+ros2 param load <nodo> <fichero>
+```
+
+Por último, el fichero de parámetros se puede usar como configuración inicial
+
+```bash
+ros2 run <paquete> <nodo> --ros-args --params-file <fichero>
+```
 
 ---
+
+# Gestionando los parámetros desde un <i>launcher</i>
+
+Los valores de un nodo se establecen con el argumento `parameters`
+
+```python
+from launch import LaunchDescription
+from launch_ros.actions import Node
+
+def generate_launch_description():
+    return LaunchDescription([
+        Node(
+            package='<paquete>',
+            executable='<fichero>',
+            name='<nodo>',
+            parameters=[
+                {'<un_parametro>': <un_valor>}
+                {'<otro_parametro>': <otro_valor>}
+            ]
+        )
+    ])
+```
+
+---
+
 <!--
-
-Añadir parámetros (no los hemos visto)
-
-…
-parameters=[
-  {‘publish_frequency’:10}
-]
+   _class: transition
 -->
 
 # ¡GRACIAS!
