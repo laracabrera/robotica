@@ -58,9 +58,58 @@ Segú la RAE:
 
 Según el diccionario Collins: <i>"A robot is a machine which is programmed to move and perform certain tasks automatically"</i>
 
-Por cierto, robot viene del checo <i>robota</i> que quiere decir <i>trabajo</i>
+---
 
-- Aunque también tiene cierto significado de <i>servidumbre</i>
+# Etimología
+
+**Robot** viene del eslavo <i>robota</i> (<i>trabajo</i>, con cierto sentido de <i>servidumbre</i>)
+
+- Apareció por primera vez en la obra R.U.R. (Rossumovi univerzální roboti)<sup>1</sup> 
+- Escrita en 1920 por Karel Čapek y estrenada en 1921
+- La idea detrás del término se le atribuye a su hermano, Josef Čapek
+
+**Robótica** fue utilizada primero por Isaak Asimov, en 1941
+
+- No fue consciente de que estaba bautizando una nueva rama de la ciencia
+- Asumió que "robótica" se refería al trabajo que se realiza con los robots
+- Según él este se propuso término en el relato <i>Círculo vicioso</i><sup>2</sup>  (<i>Runaround</i>) en 1942, aunque en realidad el relato <i>¡Embustero!</i><sup>3</sup>  (<i>Liar!</i>) fue anterior
+
+> <sup>1</sup> <https://es.wikipedia.org/wiki/R.U.R._(Robots_Universales_Rossum)>
+> <sup>2</sup> <https://es.wikipedia.org/wiki/C%C3%ADrculo_vicioso_(cuento)>
+> <sup>3</sup> <https://es.wikipedia.org/wiki/%C2%A1Embustero!>
+
+---
+
+# Las Tres Leyes y la Ley Cero
+
+1. Un robot no hará daño a un ser humano ni, por inacción, permitirá que un ser humano sufra daño
+1. Un robot debe cumplir las órdenes dadas por los seres humanos, a excepción de aquellas que entren en conflicto con la primera ley
+1. Un robot debe proteger su propia existencia en la medida en que esta protección no entre en conflicto con la primera o con la segunda ley
+
+Tras múltiples relatos, añadió una Ley Cero para preceder a las demás
+
+1. Un robot no puede dañar a la humanidad o, por inacción, permitir que la humanidad sufra daños.
+
+<!-- ¿Por qué son interesantes?
+
+- Plantean un código moral para robots autónomos con capacidad consciente
+- Ofrecen un punto de vista en el análisis de la ética -->
+
+---
+
+# Inteligencia artificial y robótica
+
+Entre otros objetivos, la IA trata de crear máquinas que piensan
+
+- Pensar requiere, entre otras cosas, percibir y adquirir conocimiento
+
+Cómo se adquiere el conocimiento
+
+- Reconocimiento de voz
+- Inferencias
+- Visión artificial
+
+El conocimiento se almacena en memoria de forma simbólica o subsimbólica
 
 ---
 
@@ -130,7 +179,7 @@ Sin embargo, hay otros sensores que no tienen homólogo humano:
 
 En la práctica, el proceso de toma de decisiones en robótica es complejo
 
-Además, por el camino se pueden usar técnicas sofisticadas, como análisis de imágen o algoritmos de path planning.
+Además, por el camino se pueden usar técnicas sofisticadas, como análisis de imágen o algoritmos de <i>path planning</i>
 
 ---
 
@@ -362,6 +411,51 @@ Conocido por su voz inglesa **uncanny valley**, es una hipótesis en el campo de
 <!--
    _class: transition
 -->
+# Sobre el presente de la robótica
+
+---
+
+# La robótica hoy en día
+
+De momento nos acompañan en nuestro día a día. Algunos ejemplos:
+
+## En el campo de la medicina:
+
+- Con su precisión se han convertido en una herramienta fantástica en cirugía
+- Tratamiento de trastornos como la depresión
+- Piernas biónicas (biomecatrónica) y exoesqueletos en general
+- Transporte de suministros clínicos, productos de limpieza y eliminación de desechos
+
+## En el sector agrícola:
+
+- Suplir escasez de mano de obra
+- Automatización del cuidado de las plantaciones
+
+---
+
+## En fábricas:
+
+- Soldado de piezas debido a que la luz y el calor no afectan a su alta precisión
+- Robots de almacenaje y estacionamiento (Amazon tiene más de 80K robots en sus centro de distribución)
+- Pintores robóticos
+
+## En el hogar:
+
+- Prácticamente todos llevamos (al menos) un móvil en nuestros bolsillos
+- Limpieza
+- Kits para el ocio
+- Mascotas robóticas
+- Garajes robóticos inteligentes
+
+---
+
+<video controls width=100% src="https://www.youtube.com/watch?v=IPukuYb9xWw&" />
+
+---
+
+<!--
+   _class: transition
+-->
 
 # Investigación
 
@@ -379,18 +473,6 @@ Las nuevas técnicas de aprendizaje de los robots (aprendizaje a partir de la de
 
 ---
 
-# Tendencias en investigación
-
-## Ayudantes robóticos
-
-Otro tema de investigación es la interacción entre humanos y robots, incluida la robótica asistencial, la robótica médica y el aumento de la capacidad humana.
-
-Los investigadores de estas áreas se centran en la capacidad de interpretar, adaptar y mejorar el comportamiento humano. Al crear robots que responden a la información humana, amplían las habilidades humanas, como en el caso de la cirugía teleoperada, y mejoran la calidad de vida, como al ayudar a los pacientes a vestirse y bañarse.
-
----
-
-# Tendencias en investigación
-
 ## Mejores tecnologías autónomas
 
 La movilidad representa otro amplio y fundamental espacio de problemas dentro de la robótica: reúne la necesidad de capacidades de interacción humana, adaptación en entornos dinámicos, percepción y toma de decisiones complejas.
@@ -398,6 +480,14 @@ La movilidad representa otro amplio y fundamental espacio de problemas dentro de
 Los vehículos autónomos tienen un enorme potencial dentro del transporte y el futuro de la logística de la cadena de suministro.
 
 Las nuevas investigaciones de Stanford abordan problemas esenciales en estas aplicaciones, como la detección de múltiples objetos, la planificación de rutas seguras en caso de fallo de los sensores, la navegación alrededor de personas, etc., todo lo cual requiere un uso innovador de la inteligencia artificial.
+
+---
+
+## Ayudantes robóticos
+
+Otro tema de investigación es la interacción entre humanos y robots, incluida la robótica asistencial, la robótica médica y el aumento de la capacidad humana.
+
+Los investigadores de estas áreas se centran en la capacidad de interpretar, adaptar y mejorar el comportamiento humano. Al crear robots que responden a la información humana, amplían las habilidades humanas, como en el caso de la cirugía teleoperada, y mejoran la calidad de vida, como al ayudar a los pacientes a vestirse y bañarse.
 
 ---
 
@@ -437,7 +527,7 @@ Las nuevas investigaciones de Stanford abordan problemas esenciales en estas apl
 
 ---
 
-# PyBullet
+# PyBullet (quizá)
 
 Es un wrapper Python para **Bullet Physics SDK**, una simulación multifísica y de detección de colisiones en tiempo real para VR, juegos, efectos visuales, robótica, aprendizaje automático, etc.
 
@@ -450,41 +540,6 @@ Es un wrapper Python para **Bullet Physics SDK**, una simulación multifísica y
 
 ---
 
-# Las Tres Leyes y la Ley Cero
-
-El escritor de ciencia ficción Isaac Asimov creó las Tres Leyes de la Robótica
-
-1. Un robot no hará daño a un ser humano ni, por inacción, permitirá que un ser humano sufra daño
-1. Un robot debe cumplir las órdenes dadas por los seres humanos, a excepción de aquellas que entren en conflicto con la primera ley
-1. Un robot debe proteger su propia existencia en la medida en que esta protección no entre en conflicto con la primera o con la segunda ley
-
-Tras múltiples relatos, añadió una Ley Cero para preceder a las demás
-
-1. Un robot no puede dañar a la humanidad o, por inacción, permitir que la humanidad sufra daños.
-
-<!-- ¿Por qué son interesantes?
-
-- Plantean un código moral para robots autónomos con capacidad consciente
-- Ofrecen un punto de vista en el análisis de la ética -->
-
----
-
-# Inteligencia artificial y robótica
-
-Entre otros objetivos, la IA trata de crear máquinas que piensan
-
-- Pensar requiere, entre otras cosas, percibir y adquirir conocimiento
-
-Cómo se adquiere el conocimiento
-
-- Reconocimiento de voz
-- Inferencias
-- Visión artificial
-
-El conocimiento se almacena en memoria de forma simbólica o subsimbólica
-
----
-
 <!--
    _class: transition
 -->
@@ -494,28 +549,78 @@ El conocimiento se almacena en memoria de forma simbólica o subsimbólica
 
 # Ventajas
 
-- Mayor productividad y calidad junto con una menor tasa de error
-- No necesitan adquirir experiencia para realizar bien su trabajo
-- Precisión muy superior a la humana, lo que permiten mejorar ciertas técnicas, pcomo por ejemplo la medicina
-- Pueden trabajar en entornos peligrosos o incompatibles con la vida
-  - Superficies de planetas y satélites
-  - Prospecciones mineras o simas submarinas
-  
-- Pueden realizar tareas repetitivas sin aburrirse
-  - Y sin comer, cobrar o pedir un aumento de sueldo
+
+
+Pueden realizar tareas más rápidas que los humanos
+
+- Además ni duermen, ni se ven afectados por otras situaciones
+- Por tanto pueden mantener su alta precisión, calidad y menor tasa de error
+- Y además se pueden crear con el tamaño requerido para la tarea
+
+También pueden realizar tareas que nadie quiere hacer o peligrosas
+
+- Limpieza de fosas sépticas
+- Incendios o zonas catastróficas y/o tóxicas
+- Superficies de planetas y satélites
+- Prospecciones mineras o simas submarinas
+
+En general, cualquier limitación humana la puede superar un robot
 
 ---
 
 # Inconvenientes
 
-- Suelen encargarse de tareas muy críticas por lo que, si algo va mal, suele ir **muy** mal
-- El coste inicial suele se mayor en un robot que en un empleado
-  - Y el mantenimiento también
+Las personas pueden perder sus trabajos y ser desplazados
 
-- Requiere un suministro constante y, generalmente alto, de energía
-- Reemplaza trabajadores, lo que puede implicar desempleo para algunos
-- No poseen emociones (ni empatía)
+- Implicará un aumento de la tasa de desempleo
+- Las personas necesitarán localizar y/o cualificarse para nuevos trabajos
+- No todo el mundo está capacitado o tiene ganas de realizar esta adaptación
+
+Los requisitos de una tarea pueden cambiar
+
+- Serán necesarias actualizaciones costosas
+- Un humano se adapta mejor a los cambios
+
+Los robots almacenan muchos datos
+
+- Es más difícil extraer conocimiento de un robot que de un humano
+
+---
+
+Están desarrollados para ejecutar tareas repetitivas
+
+- No mejorarán con el tiempo como sí lo haría un humano (al menos por ahora)
 - No "piensan" de manera independiente ni creativa
+
+Las personas pueden volverse dependientes de los robots
+
+- Esto puede causar una merma de parte de las capacidades de estas
+
+Un robot no es inteligente ni sensible
+
+- No poseen emociones ni empatía
+- Existe una gran limitación en cómo los robot se pueden comunicar o ayudar a los humanos
+
+---
+
+Seguridad y responsabilidad
+
+- Suelen encargarse de tareas muy críticas así que, si algo va mal, suele ir **muy** mal
+- Quién se hace responsable de un accidente causado por un robot
+- Requiere un suministro constante y, generalmente alto, de energía
+- En las manos equivocadas, cualquier robot se puede usar para dañar a los humanos (como cualquier herramienta)
+
+Existen movimientos en contra del uso irresponsable de la robótica
+
+- Stop Killer Robots<sup>1</sup> es una ONG que se opone a este uso irresponsable
+- Entre sus objetivos está el de luchar contra las desigualdades y la opresión agravadas por el uso de la tecnología
+
+> <sup>1</sup> <https://www.stopkillerrobots.org/>
+---
+
+# Stop Killer Robots
+
+<video controls width=100% src="https://www.youtube.com/watch?v=-PVmPbFJm9E" />
 
 ---
 
