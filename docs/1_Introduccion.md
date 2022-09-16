@@ -72,7 +72,7 @@ Según el diccionario Collins: <i>"A robot is a machine which is programmed to m
 
 - No fue consciente de que estaba bautizando una nueva rama de la ciencia
 - Asumió que "robótica" se refería al trabajo que se realiza con los robots
-- Según él este se propuso término en el relato <i>Círculo vicioso</i><sup>2</sup>  (<i>Runaround</i>) en 1942, aunque en realidad el relato <i>¡Embustero!</i><sup>3</sup>  (<i>Liar!</i>) fue anterior
+- Según él este término se propuso en el relato <i>Círculo vicioso</i><sup>2</sup>  (<i>Runaround</i>) en 1942, aunque en realidad el relato <i>¡Embustero!</i><sup>3</sup>  (<i>Liar!</i>) fue anterior
 
 > <sup>1</sup> <https://es.wikipedia.org/wiki/R.U.R._(Robots_Universales_Rossum)>
 > <sup>2</sup> <https://es.wikipedia.org/wiki/C%C3%ADrculo_vicioso_(cuento)>
