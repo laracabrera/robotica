@@ -68,7 +68,7 @@ Según el diccionario Collins: <i>"A robot is a machine which is programmed to m
 - Escrita en 1920 por Karel Čapek y estrenada en 1921
 - La idea detrás del término se le atribuye a su hermano, Josef Čapek
 
-**Robótica** fue utilizada primero por Isaak Asimov, en 1941
+**Robótica** fue utilizada primero por Isaac Asimov, en 1941
 
 - No fue consciente de que estaba bautizando una nueva rama de la ciencia
 - Asumió que "robótica" se refería al trabajo que se realiza con los robots
