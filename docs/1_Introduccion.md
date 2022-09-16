@@ -62,7 +62,7 @@ Según el diccionario Collins: <i>"A robot is a machine which is programmed to m
 
 # Etimología
 
-**Robot** viene del eslavo <i>robota</i> (<i>trabajo</i>, con cierto sentido de <i>servidumbre</i>)
+**Robot** viene del eslavo <i>robota</i> (<i>trabajo</i>, con cierto sentido de forzada <i>servidumbre</i>)
 
 - Apareció por primera vez en la obra R.U.R. (Rossumovi univerzální roboti)<sup>1</sup>
 - Escrita en 1920 por Karel Čapek y estrenada en 1921
@@ -82,11 +82,11 @@ Según el diccionario Collins: <i>"A robot is a machine which is programmed to m
 
 # Las Tres Leyes y la Ley Cero
 
-1. Un robot no hará daño a un ser humano ni, por inacción, permitirá que un ser humano sufra daño
-1. Un robot debe cumplir las órdenes dadas por los seres humanos, a excepción de aquellas que entren en conflicto con la primera ley
-1. Un robot debe proteger su propia existencia en la medida en que esta protección no entre en conflicto con la primera o con la segunda ley
+1. Un robot no hará daño a un ser humano ni, por inacción, permitirá que un ser humano sufra daño.
+1. Un robot debe cumplir las órdenes dadas por los seres humanos, a excepción de aquellas que entren en conflicto con la primera ley.
+1. Un robot debe proteger su propia existencia en la medida en que esta protección no entre en conflicto con la primera o con la segunda ley.
 
-Tras múltiples relatos, añadió una Ley Cero para preceder a las demás
+Tras múltiples relatos, añadió una Ley Cero para preceder a las demás:
 
 1. Un robot no puede dañar a la humanidad o, por inacción, permitir que la humanidad sufra daños.
 
@@ -99,17 +99,17 @@ Tras múltiples relatos, añadió una Ley Cero para preceder a las demás
 
 # Inteligencia artificial y robótica
 
-Entre otros objetivos, la IA trata de crear máquinas que piensan
+Entre otros objetivos, la IA trata de crear máquinas que piensan.
 
-- Pensar requiere, entre otras cosas, percibir y adquirir conocimiento
+- Pensar requiere, entre otras cosas, percibir y adquirir conocimiento.
 
-Cómo se adquiere el conocimiento
+Cómo se adquiere el conocimiento:
 
-- Reconocimiento de voz
-- Inferencias
-- Visión artificial
+- Reconocimiento de voz.
+- Inferencias.
+- Visión artificial.
 
-El conocimiento se almacena en memoria de forma simbólica o subsimbólica
+El conocimiento se almacena en memoria de forma simbólica o subsimbólica.
 
 ---
 
@@ -147,9 +147,9 @@ El conocimiento se almacena en memoria de forma simbólica o subsimbólica
 
 Para el propósito de este curso podemos decir que hay tres componentes en un robot esenciales:
 
-- **Sensores**: para percibir tanto el entorno que le rodea como su propio estado
-- **Controladores**: para analizar el estado actual y tomar decisiones
-- **Actuadores**: para manipular y realizar acciones sobre el entorno
+- **Sensores**: para percibir tanto el entorno que le rodea como su propio estado.
+- **Controladores**: para analizar el estado actual y tomar decisiones.
+- **Actuadores**: para manipular y realizar acciones sobre el entorno.
 
 ---
 
@@ -158,44 +158,44 @@ Para el propósito de este curso podemos decir que hay tres componentes en un ro
 **Percepción**: Un robot **percibe el mundo** que le rodea a través de sensores, normalmente análogos a los sentidos del ser humano:
 
 - Vista: Cámaras, radares LiDAR, ...
-- Oído: Microfonos
+- Oído: Microfonos.
 - Tacto: Sensor de temperatura, presión, ...
-- Gusto y olfato: Sensores químicos
+- Gusto y olfato: Sensores químicos.
 
 Sin embargo, hay otros sensores que no tienen homólogo humano:
 
-- GPS para identificar la posición exacta en el globo
-- Barómetro para determinar la altitud
-- Compás para reconocer la orientación
+- GPS para identificar la posición exacta en el globo.
+- Barómetro para determinar la altitud.
+- Compás para reconocer la orientación.
 
 ---
 
 # Controladores
 
-**Toma de decisiones**: En función de los datos de los sensores (y a veces su estado interno) un robot decide **cómo acometer una tarea**
+**Toma de decisiones**: En función de los datos de los sensores (y a veces su estado interno) un robot decide **cómo acometer una tarea**.
 
-- Pueden ser tan simples como responder sí o no a una cuestión
-- O tan complejas como determinar la ruta a seguir por un entorno desconocido
+- Pueden ser tan simples como responder sí o no a una cuestión.
+- O tan complejas como determinar la ruta a seguir por un entorno desconocido.
 
-En la práctica, el proceso de toma de decisiones en robótica es complejo
+En la práctica, el proceso de toma de decisiones en robótica es complejo.
 
-Además, por el camino se pueden usar técnicas sofisticadas, como análisis de imágen o algoritmos de <i>path planning</i>
+Además, por el camino se pueden usar técnicas sofisticadas, como análisis de imágen o algoritmos de <i>path planning</i>.
 
 ---
 
 # Actuadores
 
-**Actuación**: Un robot **actúa** sobre el entorno una vez ha decidido cómo
+**Actuación**: Un robot **actúa** sobre el entorno una vez ha decidido cómo.
 
 Pueden tomar diversas formas para muchos propósitos diferentes:
 
-- Ir de un punto a otro
-- Acelerar o frenar
-- Realizar nuevas medidas del entorno con sensores
-- Comunicarse con humanos u otros robots
-- Los motores y actuadores pueden hacer girar las ruedas, activar articulaciones o rotar las hélices de un robot
-- Encender un escáner para tomar una medida
-- Emitir luces o sonidos
+- Ir de un punto a otro.
+- Acelerar o frenar.
+- Realizar nuevas medidas del entorno con sensores.
+- Comunicarse con humanos u otros robots.
+- Los motores y actuadores pueden hacer girar las ruedas, activar articulaciones o rotar las hélices de un robot.
+- Encender un escáner para tomar una medida.
+- Emitir luces o sonidos.
 
 ---
 
@@ -211,13 +211,13 @@ Pueden tomar diversas formas para muchos propósitos diferentes:
 
 # Autómatas
 
-Máquinas que imitan la figura y los movimientos de un ser animado
+Máquinas que imitan la figura y los movimientos de un ser animado.
 
-- Son relativamente autónomas
-- Siguen automáticamente una secuencia de operaciones
-- Responden a una o más instrucciones determinadas
+- Son relativamente autónomas.
+- Siguen automáticamente una secuencia de operaciones.
+- Responden a una o más instrucciones determinadas.
 
-Se tienen registros desde el antiguo Egipto (Máscara de Anubis de mandíbula móvil) hasta nuestros días (Animatrónics)
+Se tienen registros desde el antiguo Egipto (Máscara de Anubis de mandíbula móvil) hasta nuestros días (Animatrónics).
 
 ---
 
@@ -281,7 +281,7 @@ La tendencia de humanizar a los robots se dispara en esta época.
 
 Honda desarrolla dos versiones de su robot humanoide inteligente: P2 y P3.
 
-Sony presenta su mascota robot, **AIBO**, capaz de seguir una pelota gracias a su módulo de visión por computador. Este robot está dotado de inteligencia artificial para reconocer órdenes, establecer una relación empática con el propietario, recordar caras, etc.
+Sony presenta su mascota robot, **AIBO**, capaz de seguir una pelota gracias a su módulo de visión por computador. Este robot está dotado de inteligencia artificial para reconocer órdenes, establecer una relación empática con el propietario, recordar caras, etc..
 
 ---
 
@@ -295,7 +295,7 @@ Sony presenta su mascota robot, **AIBO**, capaz de seguir una pelota gracias a s
 
 Ya no importa tanto el aspecto humano del robot, sino su utilidad.
 
-La robótica entra de lleno en los hogares: aspiradoras, drones, impresoras 3D, robots de acompañamiento, etc.
+La robótica entra de lleno en los hogares: aspiradoras, drones, impresoras 3D, robots de acompañamiento, etc..
 
 El **vehículo autónomo** entra en escena, dando lugar a los primeros modelos comerciales.
 
@@ -329,9 +329,9 @@ Objeto capaz de variar una propiedad ante magnitudes físicas o químicas, llama
 
 Características deseables:
 
-- es sensible a la propiedad medida
-- es insensible a cualquier otra propiedad que se pueda encontrar en el entorno
-- no influye en la propiedad medida
+- Sensible a la propiedad medida.
+- Insensible a cualquier otra propiedad que se pueda encontrar en el entorno.
+- No influye en la propiedad medida.
 
 **Sensibilidad**: ratio entre la señal de salida y la propiedad medida.
 
@@ -345,11 +345,11 @@ Componente de una máquina que se encarga de mover o controlar un mecanismo o si
 
 Un actuador requiere de una señal de control, normalmente de baja energía, y una fuente de energía:
 
-- Hidráulico
-- Neumático
-- Eléctrico
-- Magnético
-- Mecánico
+- Hidráulico.
+- Neumático.
+- Eléctrico.
+- Magnético.
+- Mecánico.
 
 ---
 
@@ -365,7 +365,7 @@ Interpreta las señales percibidas por los sensores y hace funcionar los actuado
 
 </center>
 
-El bucle de control es **esencial** para la automatización industrial
+El bucle de control es **esencial** para la automatización industrial.
 
 ---
 
@@ -421,31 +421,31 @@ De momento nos acompañan en nuestro día a día. Algunos ejemplos:
 
 ## En el campo de la medicina:
 
-- Con su precisión se han convertido en una herramienta fantástica en cirugía
-- Tratamiento de trastornos como la depresión
-- Piernas biónicas (biomecatrónica) y exoesqueletos en general
-- Transporte de suministros clínicos, productos de limpieza y eliminación de desechos
+- Con su precisión se han convertido en una herramienta fantástica en cirugía.
+- Tratamiento de trastornos como la depresión.
+- Piernas biónicas (biomecatrónica) y exoesqueletos en general.
+- Transporte de suministros clínicos, productos de limpieza y eliminación de desechos.
 
 ## En el sector agrícola:
 
-- Suplir escasez de mano de obra
-- Automatización del cuidado de las plantaciones
+- Suplir escasez de mano de obra.
+- Automatización del cuidado de las plantaciones.
 
 ---
 
 ## En fábricas:
 
-- Soldado de piezas debido a que la luz y el calor no afectan a su alta precisión
-- Robots de almacenaje y estacionamiento (Amazon tiene más de 80K robots en sus centro de distribución)
-- Pintores robóticos
+- Soldado de piezas debido a que la luz y el calor no afectan a su alta precisión.
+- Robots de almacenaje y estacionamiento (Amazon tiene más de 80K robots en sus centro de distribución).
+- Pintores robóticos.
 
 ## En el hogar:
 
-- Prácticamente todos llevamos (al menos) un móvil en nuestros bolsillos
-- Limpieza
-- Kits para el ocio
-- Mascotas robóticas
-- Garajes robóticos inteligentes
+- Prácticamente todos llevamos (al menos) un móvil en nuestros bolsillos.
+- Limpieza.
+- Kits para el ocio.
+- Mascotas robóticas.
+- Garajes robóticos inteligentes.
 
 ---
 
@@ -469,7 +469,7 @@ Según el último informe<sup>1</sup> del departamento de Human-centered AI de S
 
 Las nuevas técnicas de aprendizaje de los robots (aprendizaje a partir de la demostración humana, el aprendizaje adaptativo, la optimización y otras) están dando lugar a una robótica más útil. Las capacidades de los robots han crecido para adaptarse mejor a entornos que cambian dinámicamente mientras resuelven problemas muy complejos, lo que hace que la robótica sea más adecuada para una gama más amplia de aplicaciones industriales, incluidas las tareas de inserción y manipulación en la fabricación.
 
-> <sup>1</sup> June 2022 Indistry Brief: Robotics and AI
+> <sup>1</sup> June 2022 Indistry Brief: Robotics and AI.
 
 ---
 
@@ -529,7 +529,7 @@ Los investigadores de estas áreas se centran en la capacidad de interpretar, ad
 
 # PyBullet (quizá)
 
-Es un wrapper Python para **Bullet Physics SDK**, una simulación multifísica y de detección de colisiones en tiempo real para VR, juegos, efectos visuales, robótica, aprendizaje automático, etc.
+Es un wrapper Python para **Bullet Physics SDK**, una simulación multifísica y de detección de colisiones en tiempo real para VR, juegos, efectos visuales, robótica, aprendizaje automático, etc..
 
 **PyBullet** es un módulo de Python rápido y fácil de usar para la simulación robótica y el aprendizaje automático, con un enfoque en la transferencia de la simulación a la realidad. Con PyBullet puedes cargar cuerpos articulados desde URDF, SDF, MJCF y otros formatos de archivo.
 
@@ -549,69 +549,68 @@ Es un wrapper Python para **Bullet Physics SDK**, una simulación multifísica y
 
 # Ventajas
 
-Pueden realizar tareas más rápidas que los humanos
+Pueden realizar tareas más rápido que los humanos.
+- No duermen, ni se ven afectados por otras situaciones.
+- Por tanto pueden mantener su alta precisión, calidad y menor tasa de error.
+- Y además se pueden crear con el tamaño requerido para la tarea.
 
-- Además ni duermen, ni se ven afectados por otras situaciones
-- Por tanto pueden mantener su alta precisión, calidad y menor tasa de error
-- Y además se pueden crear con el tamaño requerido para la tarea
+También pueden realizar tareas que nadie quiere hacer o peligrosas:
 
-También pueden realizar tareas que nadie quiere hacer o peligrosas
+- Limpieza de fosas sépticas.
+- Incendios o zonas catastróficas y/o tóxicas.
+- Superficies de planetas y satélites.
+- Prospecciones mineras o simas submarinas.
 
-- Limpieza de fosas sépticas
-- Incendios o zonas catastróficas y/o tóxicas
-- Superficies de planetas y satélites
-- Prospecciones mineras o simas submarinas
-
-En general, cualquier limitación humana la puede superar un robot
+En general, cualquier limitación humana la puede superar un robot.
 
 ---
 
 # Inconvenientes
 
-Las personas pueden perder sus trabajos y ser desplazados
+Las personas pueden perder sus trabajos y ser desplazados.
 
-- Implicará un aumento de la tasa de desempleo
-- Las personas necesitarán localizar y/o cualificarse para nuevos trabajos
-- No todo el mundo está capacitado o tiene ganas de realizar esta adaptación
+- Implicará un aumento de la tasa de desempleo.
+- Las personas necesitarán localizar y/o cualificarse para nuevos trabajos.
+- No todo el mundo está capacitado o tiene ganas de realizar esta adaptación.
 
-Los requisitos de una tarea pueden cambiar
+Los requisitos de una tarea pueden cambiar:
 
-- Serán necesarias actualizaciones costosas
-- Un humano se adapta mejor a los cambios
+- Serán necesarias actualizaciones costosas.
+- Un humano se adapta mejor a los cambios.
 
-Los robots almacenan muchos datos
+Los robots almacenan muchos datos.
 
-- Es más difícil extraer conocimiento de un robot que de un humano
-
----
-
-Están desarrollados para ejecutar tareas repetitivas
-
-- No mejorarán con el tiempo como sí lo haría un humano (al menos por ahora)
-- No "piensan" de manera independiente ni creativa
-
-Las personas pueden volverse dependientes de los robots
-
-- Esto puede causar una merma de parte de las capacidades de estas
-
-Un robot no es inteligente ni sensible
-
-- No poseen emociones ni empatía
-- Existe una gran limitación en cómo los robot se pueden comunicar o ayudar a los humanos
+- Es más difícil extraer conocimiento de un robot que de un humano.
 
 ---
 
-Seguridad y responsabilidad
+Están desarrollados para ejecutar tareas repetitivas.
 
-- Suelen encargarse de tareas muy críticas así que, si algo va mal, suele ir **muy** mal
-- Quién se hace responsable de un accidente causado por un robot
-- Requiere un suministro constante y, generalmente alto, de energía
-- En las manos equivocadas, cualquier robot se puede usar para dañar a los humanos (como cualquier herramienta)
+- No mejorarán con el tiempo como sí lo haría un humano (al menos por ahora).
+- No "piensan" de manera independiente ni creativa.
 
-Existen movimientos en contra del uso irresponsable de la robótica
+Las personas pueden volverse dependientes de los robots.
 
-- Stop Killer Robots<sup>1</sup> es una ONG que se opone a este uso irresponsable
-- Entre sus objetivos está el de luchar contra las desigualdades y la opresión agravadas por el uso de la tecnología
+- Esto puede causar una merma de parte de las capacidades de estas.
+
+Un robot no es inteligente ni sensible.
+
+- No poseen emociones ni empatía.
+- Existe una gran limitación en cómo los robot se pueden comunicar o ayudar a los humanos.
+
+---
+
+Seguridad y responsabilidad.
+
+- Suelen encargarse de tareas muy críticas así que, si algo va mal, suele ir **muy** mal.
+- Quién se hace responsable de un accidente causado por un robot.
+- Requiere un suministro constante y, generalmente alto, de energía.
+- En las manos equivocadas, cualquier robot se puede usar para dañar a los humanos (como cualquier herramienta).
+
+Existen movimientos en contra del uso irresponsable de la robótica.
+
+- Stop Killer Robots<sup>1</sup> es una ONG que se opone a este uso irresponsable.
+- Entre sus objetivos está el de luchar contra las desigualdades y la opresión agravadas por el uso de la tecnología.
 
 > <sup>1</sup> <https://www.stopkillerrobots.org/>
 ---
