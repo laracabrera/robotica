@@ -62,17 +62,17 @@ Según el diccionario Collins: <i>"A robot is a machine which is programmed to m
 
 # Etimología
 
-**Robot** viene del eslavo <i>robota</i> (<i>trabajo</i>, con cierto sentido de forzada <i>servidumbre</i>)
+**Robot** viene del eslavo <i>robota</i> (<i>trabajo</i>, con cierto sentido de <i>servidumbre</i> forzada).
 
-- Apareció por primera vez en la obra R.U.R. (Rossumovi univerzální roboti)<sup>1</sup>
-- Escrita en 1920 por Karel Čapek y estrenada en 1921
-- La idea detrás del término se le atribuye a su hermano, Josef Čapek
+- Apareció por primera vez en la obra R.U.R. (Rossumovi univerzální roboti)<sup>1</sup>.
+- Escrita en 1920 por Karel Čapek y estrenada en 1921.
+- La idea detrás del término se le atribuye a su hermano, Josef Čapek.
 
-**Robótica** fue utilizada primero por Isaac Asimov, en 1941
+**Robótica** fue utilizada primero por Isaac Asimov, en 1941.
 
-- No fue consciente de que estaba bautizando una nueva rama de la ciencia
-- Asumió que "robótica" se refería al trabajo que se realiza con los robots
-- Según él este término se propuso en el relato <i>Círculo vicioso</i><sup>2</sup>  (<i>Runaround</i>) en 1942, aunque en realidad el relato <i>¡Embustero!</i><sup>3</sup>  (<i>Liar!</i>) fue anterior
+- No fue consciente de que estaba bautizando una nueva rama de la ciencia.
+- Asumió que "robótica" se refería al trabajo que se realiza con los robots.
+- Según él este término se propuso en el relato <i>Círculo vicioso</i><sup>2</sup>  (<i>Runaround</i>) en 1942, aunque en realidad el relato <i>¡Embustero!</i><sup>3</sup>  (<i>Liar!</i>) fue anterior.
 
 > <sup>1</sup> <https://es.wikipedia.org/wiki/R.U.R._(Robots_Universales_Rossum)>
 > <sup>2</sup> <https://es.wikipedia.org/wiki/C%C3%ADrculo_vicioso_(cuento)>
