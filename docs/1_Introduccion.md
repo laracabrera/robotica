@@ -49,7 +49,7 @@ math: katex
 
 # Robot
 
-Segú la RAE:
+Según la RAE:
 
 1. Máquina o ingenio electrónico programable que es capaz de manipular objetos y realizar diversas operaciones
 2. Robot que imita la figura y los movimientos de un ser animado
@@ -64,7 +64,7 @@ Según el diccionario Collins: <i>"A robot is a machine which is programmed to m
 
 **Robot** viene del eslavo <i>robota</i> (<i>trabajo</i>, con cierto sentido de <i>servidumbre</i>)
 
-- Apareció por primera vez en la obra R.U.R. (Rossumovi univerzální roboti)<sup>1</sup> 
+- Apareció por primera vez en la obra R.U.R. (Rossumovi univerzální roboti)<sup>1</sup>
 - Escrita en 1920 por Karel Čapek y estrenada en 1921
 - La idea detrás del término se le atribuye a su hermano, Josef Čapek
 
@@ -449,7 +449,7 @@ De momento nos acompañan en nuestro día a día. Algunos ejemplos:
 
 ---
 
-<video controls width=100% src="https://www.youtube.com/watch?v=IPukuYb9xWw&" />
+<video controls width=100% src="https://drive.upm.es/s/KFtfm4HbSAlcr53/download" />
 
 ---
 
@@ -506,7 +506,7 @@ Los investigadores de estas áreas se centran en la capacidad de interpretar, ad
 
 <center>
 
-<https://www.ros.org>Z
+<https://www.ros.org>
 </center>
 
 ---
@@ -548,8 +548,6 @@ Es un wrapper Python para **Bullet Physics SDK**, una simulación multifísica y
 ---
 
 # Ventajas
-
-
 
 Pueden realizar tareas más rápidas que los humanos
 
@@ -618,9 +616,7 @@ Existen movimientos en contra del uso irresponsable de la robótica
 > <sup>1</sup> <https://www.stopkillerrobots.org/>
 ---
 
-# Stop Killer Robots
-
-<video controls width=100% src="https://www.youtube.com/watch?v=-PVmPbFJm9E" />
+<video controls width=100% src="https://drive.upm.es/s/9AMqKoxigKSllbX/download" />
 
 ---
 
