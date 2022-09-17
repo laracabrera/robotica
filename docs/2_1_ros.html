@@ -472,8 +472,8 @@
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span>(<span class="hljs-params">args=<span class="hljs-literal">None</span></span>):</span>
    <span class="hljs-keyword">pass</span>
 
-   <span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:
-      main()
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:
+   main()
 </span></span></foreignObject></svg></code></pre>
 <ul>
 <li>El <i>shebang</i> (<code>#!</code>) es obligatorio, ya que el fichero <code>.py</code> será el ejecutable</li>
@@ -493,11 +493,11 @@
    <span class="hljs-comment"># Nuestro código</span>
    rclpy.shutdown()
 
-   <span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:
-      main()
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:
+   main()
 </span></span></foreignObject></svg></code></pre>
 <ul>
-<li>Si nos acordamos, <code>rclpy</code> real la dependencia con la que creamos el paquete</li>
+<li>Si nos acordamos, <code>rclpy</code> es la dependencia con la que creamos el paquete</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-theme="hegel" data-marpit-pagination="22" data-marpit-pagination-total="72" style="--paginate:true;--theme:hegel;">
@@ -516,7 +516,7 @@
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-theme="hegel" data-marpit-pagination="23" data-marpit-pagination-total="72" style="--paginate:true;--theme:hegel;">
-<p>Ahora crearemos un nodo en la funciḉon <code>main</code> de nuestro <code>script</code></p>
+<p>Ahora crearemos un nodo en la función <code>main</code> de nuestro <code>script</code></p>
 <pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>...
 <span class="hljs-keyword">from</span> rclpy.node <span class="hljs-keyword">import</span> Node
 ...
@@ -768,7 +768,7 @@ self.publisher.publish(msg)
         <span class="hljs-built_in">super</span>().__init__(<span class="hljs-string">&quot;station&quot;</span>)
 
         self.publisher = self.create_publisher(String, <span class="hljs-string">&quot;radio_station&quot;</span>, <span class="hljs-number">10</span>)
-        self.timer = self.create_timer(<span class="hljs-number">0.5</span>, self.publish)
+        self.timer = self.create_timer(<span class="hljs-number">0.5</span>, self.publish_news)
         self.get_logger().info(<span class="hljs-string">&quot;Radio station launch!&quot;</span>)
 
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">publish_news</span>(<span class="hljs-params">self</span>):</span>
@@ -988,7 +988,7 @@ bool is_dense        <span class="hljs-comment"># True if there are no invalid p
 </li>
 <li>
 <p>Importar la interfaz del paquete en nuestros fuentes</p>
-<pre><code class="language-xml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span>from paquete_con_interfaces.msg import Interfaz<span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+<pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">from</span> paquete_con_interfaces.msg <span class="hljs-keyword">import</span> Interfaz
 </span></span></foreignObject></svg></code></pre>
 </li>
 </ol>
