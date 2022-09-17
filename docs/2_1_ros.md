@@ -361,8 +361,8 @@ Crearemos la estructura para la ejecución de este fuente:
 def main(args=None):
    pass
 
-   if __name__ == '__main__':
-      main()
+if __name__ == '__main__':
+   main()
 ```
 
 - El <i>shebang</i> (`#!`) es obligatorio, ya que el fichero `.py` será el ejecutable
@@ -383,11 +383,11 @@ def main(args=None):
    # Nuestro código
    rclpy.shutdown()
 
-   if __name__ == '__main__':
-      main()
+if __name__ == '__main__':
+   main()
 ```
 
-- Si nos acordamos, `rclpy` real la dependencia con la que creamos el paquete
+- Si nos acordamos, `rclpy` es la dependencia con la que creamos el paquete
 
 ---
 
@@ -406,7 +406,7 @@ Hasta ahora no hemos creado ningún nodo
 
 ---
 
-Ahora crearemos un nodo en la funciḉon `main` de nuestro `script`
+Ahora crearemos un nodo en la función `main` de nuestro `script`
 
 ```python
 ...
@@ -698,7 +698,7 @@ class RadioStationNode(Node):
         super().__init__("station")
 
         self.publisher = self.create_publisher(String, "radio_station", 10)
-        self.timer = self.create_timer(0.5, self.publish)
+        self.timer = self.create_timer(0.5, self.publish_news)
         self.get_logger().info("Radio station launch!")
 
     def publish_news(self):
@@ -946,8 +946,8 @@ Al igual que hemos hecho con las interfaces preinstaladas, basta con:
 
 1. Importar la interfaz del paquete en nuestros fuentes
 
-   ```xml
-   <depend>from paquete_con_interfaces.msg import Interfaz</depend>
+   ```python
+   from paquete_con_interfaces.msg import Interfaz
    ```
 
 ---
