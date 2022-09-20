@@ -32,7 +32,7 @@ Todo el material del curso estará relacionado directamente con los experimentos
 
 ---
 
-# La asignatura
+# Concepto de Robot y estado actual del campo
 
 El término **robot** fue utilizado por primera vez por un dramaturgo checo alrededor de 1920, pero la fascinación de la humanidad por los constructos capaces de percibir el entorno y actuar sobre él ha existido desde siempre.
 
