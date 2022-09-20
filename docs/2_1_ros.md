@@ -83,16 +83,19 @@ Incluye sistema de gestión de paquetes para desarrollar y despliegar Software
 
 # ¿Para qué? Podemos programarlos desde cero
 
-Claro que sí, pero una vez tenemos el hardware:
+Sólo hay que desarrollar **drivers** para cada uno de los sensores y actuadores
 
-- Hay que desarrollar drivers para cada uno de los sensores y actuadores
-- Hay que desarrollar el framework de comunicaciones
-  - Que soporte, además los diferentes protocolos de diferentes hardwares
+Desarrollar también la infraestructura de **comunicaciones**
 
-- Escribir también el código asociado a la percepción
-- Si es móvil, también los algoritmos de navegación y path planning
-- Ojo, no olvidemos tampoco el mecanismo para sacar los <i>logs</i>
-- Ah, y la gestión de errores
+- Que soporte además, los diferentes **protocolos** de diferentes hardwares
+
+También escribir los algoritmos asociados a la **percepción**
+
+Si es móvil, también los algoritmos de **navegación** y **path planning**
+
+Ojo, no olvidemos tampoco el mecanismo para sacar los <i>**logs**</i>
+
+Ah, y la **gestión de errores**
 
 ---
 
@@ -105,8 +108,10 @@ Exacto; tradicionalmente el desarrollo de un robot era una tarea muy tediosa
 Con ROS se intenta minimizar ese efecto de reinventar la rueda; para ello:
 
 - Se incluyen múltiples librerías de componentes de uso típico
-- Se ofrece una infraestructura de comunicación <i>language agnostic</i>
-  - ¡Incluso diferentes lenguajes dentro de una misma aplicación!
+
+Ofrece además una infraestructura de comunicación <i>language agnostic</i>
+
+- ¡Permitiendo diferentes lenguajes dentro de una misma aplicación!
 
 ---
 
@@ -114,42 +119,32 @@ Con ROS se intenta minimizar ese efecto de reinventar la rueda; para ello:
 
 En la actualidad coexisten dos versiones independientes en desarrollo
 
-1. ROS, la versión original
-   - Bastante extendida, aunque en desuso
+1. **ROS**: La versión original, bastante extendida aunque ya en desuso
+1. **ROS2**: Con nuevas funcionalidades, mejoras y soporte desde 0 para Python3
 
-1. ROS2, la sucesora
-   - Soporte desde 0 para Python 3.X
-   - Nuevas funcionalidades y mejoras en la funcionalidades existentes
+**Debemos procurar usar ROS2 en la medida de lo posible**
 
-¿Cuál debemos usar?
-
-- ROS2 siempre que sea posible
-- Cuando no, intentar migrar la aplicación existente a ROS2, y entonces ROS2
-
+- Y si no es posible, valorar **mucho** migrar de ROS a ROS2
 ---
 
 # ¿Y qué vamos a ver?
 
 Veremos tanto el funcionamiento básico como las funcionalidades del core
 
-- Consideramos que es suficiente para desarrollar nuestras primeras aplicaciones
+- Lo consideramos suficiente para desarrollar nuestras primeras aplicaciones
 - Veremos algunas librerías externas (pero no todas, que sería una locura)
 
-Cada vez que os enfrentéis a nuevas aplicaciones afianzaréis estos conocimientos
+Cada nueva aplicación afianzará estos conocimientos
 
-- Y obtendréis nuevos que os harán más eficientes en los siguientes desarrollos
+- Y obtendréis nuevos, que os harán más eficientes en sucesivos desarrollos
 
 Si consideráis que falta, sobra, o que se podría mejorar algo...
 
-- *... igual estaría bien proponer algún que otro <i>pull-request</i>...*
+- <i>... igual estaría bien proponer algún que otro pull-request...</i>
 
 ---
 
-<!--
-   _class: transition
--->
-
-# Instalación de ROS2
+# Instalación de ROS2<!--_class: transition-->
 
 ---
 
@@ -168,9 +163,6 @@ Nosotros instalaremos **Humble Hawksbill** sobre **Ubuntu GNU/Linux 22.04**
 
 - Proceso de instalación: <https://docs.ros.org/en/humble/Installation.html>
 
-<!--
-PONER UN VÍDEO DE LA INSTALACIÓN SI DA TIEMPO
--->
 ---
 
 # Hola mundo
@@ -181,13 +173,13 @@ De esta manera comprobamos que todo funciona
 1. En la primera escribimos lo siguiente:
 
    ```bash
-   ros2 run demo_nodes_cpp talker
+   $ ros2 run demo_nodes_cpp talker
    ```
 
 1. En la segunda escribimos lo siguiente:
 
    ```bash
-   ros2 run demo_nodes_cpp listener
+   $ ros2 run demo_nodes_cpp listener
    ```
 
 Si en ambos se ven los mismos mensajes, nuestra instalación es correcta
@@ -209,15 +201,11 @@ También podemos ejecutar `ros2 run` y pulsar dos veces `<TAB>`
 
 - Así veremos todos los paquetes accesibles desde nuestra posición.
 
-Con `-h` accederemos a la ayuda de cualquier comando de `ros2` (convenio)
+Con `-h` accederemos a la ayuda de cualquier comando de `ros2`
 
 ---
 
-<!--
-   _class: transition
--->
-
-# Nodos
+# Nodos<!--_class: transition--> 
 
 ---
 
@@ -264,13 +252,13 @@ Herramienta para la gestión de los espacios de trabajo
 Instalación (como superusuario)
 
 ```bash
-apt install python3-colcon-common-extensions
+$ apt install python3-colcon-common-extensions
 ```
 
 Para habilitar el autocompletado (recomendable añadir al `~/.bashrc`)
 
 ```bash
-source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+$ source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 ```
 
 ---
@@ -283,7 +271,7 @@ source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 1. Creamos nuestro <i>workspace</i>, usando la herramienta `colcon`
 
    ```bash
-   colcon build
+   $ colcon build
    ```
 
    - Creará directorios `install/` y `logs/` si no existen
@@ -302,7 +290,7 @@ Los pasos a realizar son los siguientes
 1. Ejecutamos el comando para la creación de paquetes
 
    ```bash
-   ros2 pkg create super_pkg --build-type ament_python --dependencies rclpy
+   $ ros2 pkg create super_pkg --build-type ament_python --dependencies rclpy
    ```
 
    - Esto creará un paquete llamado `super_pkg`...
@@ -351,9 +339,8 @@ Los fuentes de los nodos se almacenan dentro del paquete
 
 - En un directorio que se llama igual que este
 - Ahí crearemos el fichero de código de nuestro nodo
-- Ojo, ROS2 funciona solo con Python 3, no con Python 2 (por suerte)
 
-Crearemos la estructura para la ejecución de este fuente:
+Crearemos la estructura para la ejecución de este fuente (e.g. `node.py`):
 
 ```python
 #!/usr/bin/env python3
@@ -425,8 +412,8 @@ from rclpy.node import Node
 Ahora podemos ejecutar nuestro nodo de la siguiente manera:
 
 ```bash
-\$ chmod u+x my_first_node.py
-\$ ./my_first_node.py
+$ chmod u+x node.py
+$ ./node.py
 ```
 
 ---
