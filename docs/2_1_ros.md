@@ -268,7 +268,7 @@ $ source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 1. Creamos un directorio para nuestro <i>workspace</i> (e.g. bajo `$HOME/ros_ws`):
 1. Accedemos al <i>workspace</i> y creamos un nuevo directorio llamado `src`:
    - Aquí se almacenará todo el código fuente de nuestros componentes
-1. Creamos nuestro <i>workspace</i>, usando la herramienta `colcon`
+1. A la misma altura que el directorio `src` (no dentro) creamos nuestro <i>workspace</i>, usando la herramienta `colcon`
 
    ```bash
    $ colcon build
@@ -435,7 +435,8 @@ Ahora, hagamos algo más visible
 
 Sacaremos por pantalla un mensaje de <i>log</i>
 
-- Para ello usaremos el logger asociado al nodo
+- Para ello usaremos una potente abstracción del print llamada <i>logger<i>, que nos permite definir llamadas sin preocuparnos demasiado por los detalles y que nos permite mandar por distintos niveles de severidad (critical - error - warning - info - debug) e incluso por correo.
+- En python se importa con `import logger`, pero cada nodo tiene automáticamente un logger asociado.
 
 ```python
 ...
