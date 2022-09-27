@@ -830,7 +830,7 @@ Un repositorio muy útil para aplicaciones reales es `common_interfaces`
 
 Un topic se caracteriza por un **nombre** y una **interfaz** o tipo
 
-- El tipo de mensaje se describe con una sintáxis propia de ROS
+- El tipo de mensaje se describe con una sintaxis propia de ROS
 - Durante la compilación del <i>workspace</i> (`colcon`) cada mensaje se <i>transpila</i>
 - Con este proceso se generarán los fuentes específicos para cada lenguaje
 
@@ -903,7 +903,7 @@ Dentro del paquete donde queramos definir la interfaz:
 
    ```xml
    <build_depend>rosidl_default_generators</build_depend>
-   <exec_depend>rosidl_default_runtime<exec_depend>
+   <exec_depend>rosidl_default_runtime</exec_depend>
    <member_of_group>rosidl_interface_packages</member_of_group>
    ```
 
