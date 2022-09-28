@@ -4,5 +4,13 @@
         "./style/schema.css",
         "./style/structure.css"
     ],
-    "markdown.marp.enableHtml": true
+    "markdown.marp.enableHtml": true,
+    "python.analysis.extraPaths": [
+        "/opt/ros/humble/lib/python3.10/site-packages/",
+        "${workspaceFolder}/ros2/src"
+    ],
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/humble/lib/python3.10/site-packages/",
+        "${workspaceFolder}/ros2/src"
+    ],
 }
