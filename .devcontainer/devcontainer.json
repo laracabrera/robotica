@@ -1,0 +1,17 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/debian
+{
+	"name": "ROS2 Humble",
+	"image": "docker.io/osrf/ros:humble-desktop-full",
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	"postCreateCommand": "echo 'source /opt/ros/humble/setup.bash' >> /root/.bashrc && echo 'source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash' >> /root/.bashrc",
+
+	"extensions": [
+		"ms-python.python",
+		"ms-iot.vscode-ros",
+		"jaehyunshim.vscode-ros2"
+	]
+}
