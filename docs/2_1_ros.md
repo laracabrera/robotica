@@ -268,7 +268,7 @@ $ source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 1. Creamos un directorio para nuestro <i>workspace</i> (e.g. bajo `$HOME/ros_ws`):
 1. Accedemos al <i>workspace</i> y creamos un nuevo directorio llamado `src`:
    - Aquí se almacenará todo el código fuente de nuestros componentes
-1. Creamos nuestro <i>workspace</i>, usando la herramienta `colcon`
+1. A la misma altura que el directorio `src` (no dentro) creamos nuestro <i>workspace</i>, usando la herramienta `colcon`
 
    ```bash
    $ colcon build
