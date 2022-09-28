@@ -435,8 +435,7 @@ Ahora, hagamos algo más visible
 
 Sacaremos por pantalla un mensaje de <i>log</i>
 
-- Para ello usaremos una potente abstracción del print llamada <i>logger<i>, que nos permite definir llamadas sin preocuparnos demasiado por los detalles y que nos permite mandar por distintos niveles de severidad (critical - error - warning - info - debug) e incluso por correo.
-- En python se importa con `import logger`, pero cada nodo tiene automáticamente un logger asociado.
+- Para ello usaremos el logger asociado al nodo
 
 ```python
 ...
