@@ -862,7 +862,7 @@ self.publisher.publish(msg)
 <h1>Mensajes personalizados</h1>
 <p>Un topic se caracteriza por un <strong>nombre</strong> y una <strong>interfaz</strong> o tipo</p>
 <ul>
-<li>El tipo de mensaje se describe con una sintáxis propia de ROS</li>
+<li>El tipo de mensaje se describe con una sintaxis propia de ROS</li>
 <li>Durante la compilación del <i>workspace</i> (<code>colcon</code>) cada mensaje se <i>transpila</i></li>
 <li>Con este proceso se generarán los fuentes específicos para cada lenguaje</li>
 </ul>
@@ -932,7 +932,7 @@ bool is_dense        <span class="hljs-comment"># True if there are no invalid p
 <li>
 <p>Añadimos (si no existen) las dependencias del transpilador a <code>package.xml:</code></p>
 <pre><code class="language-xml"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-tag">&lt;<span class="hljs-name">build_depend</span>&gt;</span>rosidl_default_generators<span class="hljs-tag">&lt;/<span class="hljs-name">build_depend</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">exec_depend</span>&gt;</span>rosidl_default_runtime<span class="hljs-tag">&lt;<span class="hljs-name">exec_depend</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">exec_depend</span>&gt;</span>rosidl_default_runtime<span class="hljs-tag">&lt;/<span class="hljs-name">exec_depend</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">member_of_group</span>&gt;</span>rosidl_interface_packages<span class="hljs-tag">&lt;/<span class="hljs-name">member_of_group</span>&gt;</span>
 </span></span></foreignObject></svg></code></pre>
 </li>
