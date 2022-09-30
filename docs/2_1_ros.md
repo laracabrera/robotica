@@ -1143,7 +1143,7 @@ Cuidado, los nodos son independientes entre sí:
       response = future.result()
       self.get_logger().info(a + b = sum)
    except Exception as e:
-      node.get_logger().error(f‘Error: {e}’)
+      node.get_logger().error(f'Error: {e}')
    ```
 
 ---
@@ -1181,9 +1181,9 @@ class AddTwoIntsClientNode(Node):
     def callback_call_add_two_ints(self, future, a, b):
         try:
             response = future.result()
-            self.get_logger().info(f'{a} + {b} = {response.sum}'))
+            self.get_logger().info(f'{a} + {b} = {response.sum}')
         except Exception as e:
-            self.get_logger().error(‘{e}')
+            self.get_logger().error('{e}')
 ```
 
 ---
