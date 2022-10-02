@@ -1147,7 +1147,7 @@ int64 n
    response = future.result()
    self.get_logger().info(a + b = <span class="hljs-built_in">sum</span>)
 <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
-   node.get_logger().error(f‘Error: {e}’)
+   node.get_logger().error(<span class="hljs-string">f&#x27;Error: <span class="hljs-subst">{e}</span>&#x27;</span>)
 </span></span></foreignObject></svg></code></pre>
 </li>
 </ul>
@@ -1184,10 +1184,10 @@ int64 n
     <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">callback_call_add_two_ints</span>(<span class="hljs-params">self, future, a, b</span>):</span>
         <span class="hljs-keyword">try</span>:
             response = future.result()
-            self.get_logger().info(<span class="hljs-string">f&#x27;<span class="hljs-subst">{a}</span> + <span class="hljs-subst">{b}</span> = <span class="hljs-subst">{response.<span class="hljs-built_in">sum</span>}</span>&#x27;</span>))
+            self.get_logger().info(<span class="hljs-string">f&#x27;<span class="hljs-subst">{a}</span> + <span class="hljs-subst">{b}</span> = <span class="hljs-subst">{response.<span class="hljs-built_in">sum</span>}</span>&#x27;</span>)
         <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
-            self.get_logger().error(‘{e}<span class="hljs-string">&#x27;)
-</span></span></span></foreignObject></svg></code></pre>
+            self.get_logger().error(<span class="hljs-string">&#x27;{e}&#x27;</span>)
+</span></span></foreignObject></svg></code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-paginate="true" data-class="transition" data-theme="hegel" class="transition" data-marpit-pagination="59" data-marpit-pagination-total="72" style="--paginate:true;--class:transition;--theme:hegel;">
 <h1><i>Launchers</i></h1>
