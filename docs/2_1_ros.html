@@ -1257,7 +1257,7 @@ install(DIRECTORY
 <span class="hljs-keyword">from</span> launch_ros.actions <span class="hljs-keyword">import</span> Node
 
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generate_launch_description</span>():</span>
-   ld = LauncherDescription()
+   ld = LaunchDescription()
    one_node = number_publisher_node = Node(package=<span class="hljs-string">&#x27;one_package&#x27;</span>, executable=<span class="hljs-string">&#x27;node&#x27;</span>)
    other_node = Node(package=<span class="hljs-string">&#x27;other_package&#x27;</span>, executable=<span class="hljs-string">&#x27;node&#x27;</span>)
 
