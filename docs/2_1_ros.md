@@ -1261,7 +1261,7 @@ from launch import LaunchDescription
 from launch_ros.actions import Node
 
 def generate_launch_description():
-   ld = LauncherDescription()
+   ld = LaunchDescription()
    one_node = number_publisher_node = Node(package='one_package', executable='node')
    other_node = Node(package='other_package', executable='node')
 
