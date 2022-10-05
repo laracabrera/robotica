@@ -115,3 +115,175 @@ $$
 1. *Acelerómetros*
 1. *Unidad de medida inercial*
 1. *Ground beacons*
+
+---
+
+# Sensores de motores/ruedas
+
+Los **codificadores incrementales** generan pulsos conforme se produce un movimiento (longitudinal y/o rotativo) en algún eje del robot.
+
+El más usado es el <i>encoder</i> óptico: Fuente de iluminación, disco o tira con un patrón de alto contraste y receptor óptico.
+
+<center>
+
+![bg right:50% h:350](../img/t3/moving_disc_with_slits.png)
+</center>
+
+---
+
+# Sensores de motores/ruedas
+
+![bg right:40% w:400](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Electronic-Component-Potentiometer.jpg/237px-Electronic-Component-Potentiometer.jpg)
+
+Otro sensor muy utilizado es el **potenciómetro**, una resistencia con un contacto móvil rotatorio o deslizante.
+
+Los movimientos de un eje cambiarán el voltaje de salida del potenciómetro.
+
+Se trata de un sensor *propioceptivo pasivo*.
+
+---
+
+# Sensores de dirección
+
+Los **giroscopios** son sensores de dirección que conservan su orientación en relación con un marco de referencia fijo.
+
+Proporcionan una medida absoluta de la dirección de un sistema móvil.
+
+Se trata de un sensor *propioceptivo pasivo*.
+
+![bg right:40% w:600](https://upload.wikimedia.org/wikipedia/commons/d/d5/Gyroscope_operation.gif)
+
+---
+
+# Sensores de dirección
+
+Una **brújula** nos permite determinar la orientación del robot.
+
+Dos tecnologías:
+
+- **Efecto Hall**: el voltaje de salida es proporcional a la magnitud del campo magnético que lo atraviesa.
+- **<i>Flux gate</i>**: dos o más pequeñas bobinas de alambre alrededor de un núcleo de material magnético altamente permeable, para detectar directamente la dirección de la componente horizontal del campo magnético terrestre.
+
+![bg right:30% w:350](https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Floating_core_fluxgate_inclinometer_compass_autonnic.jpg/1280px-Floating_core_fluxgate_inclinometer_compass_autonnic.jpg)
+
+---
+
+# Acelerómetros
+
+Un **acelerómetro** es un dispositivo usado para medir todas las fuerzas externas que actúan sobre él.
+
+Conceptualmente, un **acelerómetro** es una masa unida a un muelle.
+
+Cuando se produce una aceleración, la masa se desplaza hasta el punto en el que el muelle iguala la velocidad de desplazamiento de la carcasa.
+
+Midiendo la extensión del muelle se obtiene la aceleración.
+
+![bg right:30% w:300](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Acelerometro_1.JPG/800px-Acelerometro_1.JPG)
+
+---
+
+# Unidad de medida inercial
+
+Una **<i>inertial measurement unit (IMU)</i>** es un dispositivo que combina giroscopios y acelerómetros para estimar la posición relativa, velocidad y aceleración de un robot móvil.
+
+Un **IMU** estima los seis grados de libertad del vehículo: posición (x, y, z) y orientación (<i>pitch</i>, <i>yaw</i>, <i>roll</i>).
+
+También se le conoce como <i>inertial navigation system (INS)</i>
+
+![bg right:30% w:1000](https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Apollo_IMU_at_Draper_Hack_the_Moon_exhibit.agr.jpg/1280px-Apollo_IMU_at_Draper_Hack_the_Moon_exhibit.agr.jpg)
+
+---
+
+# Ground beacons
+
+Un enfoque elegante para resolver el problema de la localización en la robótica móvil es utilizar **balizas** activas o **balizas** pasivas.
+
+Mediante la interacción de los sensores de a bordo y las **balizas** del entorno el robot puede identificar su posición con precisión.
+
+El sistema de balizas más usado en la actualidad es el **Global Positioning System (GPS)**.
+
+Cuando un receptor GPS lee la transmisión de dos o más satélites, las diferencias de tiempo de llegada informan al receptor sobre su distancia relativa a cada satélite.
+
+Al combinar la información información sobre la hora de llegada y la ubicación instantánea de cuatro satélites, el receptor puede inferir su propia posición.
+
+---
+
+# Sensores activos de alcance
+
+Los **sensores de alcance** ofrecen mediciones directas de la distancia entre el robot y los objetos de su entorno.
+
+<!-- _class: cool-list -->
+
+1. *Sensores ultrasónicos*
+1. *Sensores láser*
+1. *Cámaras <i>time-of-flight</i>*
+1. *Sensores de triangulación óptica*
+1. *Sensores de luz estructurada*
+
+---
+
+# Sensores ultrasónicos
+
+El principio básico de un **sensor ultrasónico** es transmitir un paquete de ondas de presión (ultrasónicas) y medir el tiempo que tarda este paquete de ondas en rebotar y volver al receptor.
+
+La distancia $d$ al objeto que causa el rebote se puede calcular en función de la velocidad $c$ de propagación del sonido y el tiempo $t$ desde que se emite hasta que se recibe el eco
+
+$$
+c=\frac{c\cdot t}{2}
+$$
+
+![bg right:30% width:350](https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/HC_SR04_Ultrasonic_sensor_1480322_3_4_HDR_Enhancer.jpg/800px-HC_SR04_Ultrasonic_sensor_1480322_3_4_HDR_Enhancer.jpg)
+
+---
+
+# Sensores láser
+
+Este tipo de sensor consta de un transmisor que ilumina un objetivo con un haz colimado (por ejemplo, un láser), y un receptor capaz de detectar la componente de la luz, que es esencialmente coaxial con el haz transmitido.
+
+A menudo denominados **radar óptico** o **LIDAR (light detection and ranging)**, estos dispositivos producen una estimación del alcance basada en el tiempo necesario para que la luz alcance el objetivo y regrese.
+
+En realidad, se mide la diferencia de fase entre la luz emitida y la reflejada.
+
+<center>
+
+![Diferencia de fase](../img/t3/lidar.png)</center>
+
+---
+
+# Cámaras <i>time-of-flight</i>
+
+Una **cámara <i>time-of-flight</i>** es un sensor de alcance muy similar al láser con la excepción de que mide la distancia a cada uno de los píxeles de la imagen capturada en lugar de hacer un barrido con el láser.
+
+Este dispositivo utiliza una fuente de iluminación infrarroja modulada para determinar la distancia para cada píxel de un dispositivo mezclador fotónico.
+
+Se realizan dos capturas consecutivas, la segunda sin iluminación infrarroja para determinar la luz de relleno de la escena.
+
+<center>
+
+![height:150](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Xbox-One-Kinect.jpg/1920px-Xbox-One-Kinect.jpg)</center>
+
+---
+
+# Sensores de triangulación óptica
+
+Estos sensores usan propiedades geométricas de su estrategia de medición para establecer la distancia a los objetos.
+
+Se proyecta un haz colimado hacia el objetivo. La luz reflejada se recoge por una lente y se proyecta sobre una cámara lineal.
+
+<center>
+
+![height:320](../img/t3/triangulacion_optica.png)</center>
+
+---
+
+# Sensores de luz estructurada
+
+El funcionamiento de los sensores de luz estructurada se basa en la proyección de un haz de luz con un patrón predeterminado (luz estructurada).
+
+Analizando la deformación que sufre el patrón al reflejarse en el objeto se determina la distancia y morfología del mismo.
+
+<center>
+
+![height:350](https://upload.wikimedia.org/wikipedia/commons/1/1d/Structured_light_sources.agr.jpg)
+
+---
