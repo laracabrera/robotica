@@ -131,6 +131,10 @@ El más usado es el <i>encoder</i> óptico: Fuente de iluminación, disco o tira
 
 ---
 
+<video controls width=100% src="https://drive.upm.es/s/N0cAEdHt2jXRyJF/download"></video>
+
+---
+
 # Sensores de motores/ruedas
 
 ![bg right:40% w:400](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Electronic-Component-Potentiometer.jpg/237px-Electronic-Component-Potentiometer.jpg)
@@ -250,6 +254,10 @@ En realidad, se mide la diferencia de fase entre la luz emitida y la reflejada.
 
 ---
 
+<video controls width=100% src="https://drive.upm.es/s/XXYAnKdVKNMVd1r/download"></video>
+
+---
+
 # Cámaras <i>time-of-flight</i>
 
 Una **cámara <i>time-of-flight</i>** es un sensor de alcance muy similar al láser con la excepción de que mide la distancia a cada uno de los píxeles de la imagen capturada en lugar de hacer un barrido con el láser.
@@ -287,3 +295,5 @@ Analizando la deformación que sufre el patrón al reflejarse en el objeto se de
 ![height:350](https://upload.wikimedia.org/wikipedia/commons/1/1d/Structured_light_sources.agr.jpg)
 
 ---
+
+<video controls width=100% src="https://drive.upm.es/s/2FtZidXVjaU7VY6/download"></video>
