@@ -68,7 +68,7 @@ Según el diccionario Collins: <i>"A robot is a machine which is programmed to m
 - Escrita en 1920 por Karel Čapek y estrenada en 1921
 - La idea detrás del término se le atribuye a su hermano, Josef Čapek
 
-**Robótica** fue utilizada primero por Isaak Asimov, en 1941
+**Robótica** fue utilizada primero por Isaac Asimov, en 1941
 
 - No fue consciente de que estaba bautizando una nueva rama de la ciencia
 - Asumió que "robótica" se refería al trabajo que se realiza con los robots
@@ -86,9 +86,9 @@ Según el diccionario Collins: <i>"A robot is a machine which is programmed to m
 1. Un robot debe cumplir las órdenes dadas por los seres humanos, a excepción de aquellas que entren en conflicto con la primera ley
 1. Un robot debe proteger su propia existencia en la medida en que esta protección no entre en conflicto con la primera o con la segunda ley
 
-Tras múltiples relatos, añadió una Ley Cero para preceder a las demás
+Tras múltiples relatos, añadió una Ley Cero para preceder a las demás:
 
-1. Un robot no puede dañar a la humanidad o, por inacción, permitir que la humanidad sufra daños.
+1. Un robot no puede dañar a la humanidad o, por inacción, permitir que la humanidad sufra daños
 
 <!-- ¿Por qué son interesantes?
 
@@ -103,7 +103,7 @@ Entre otros objetivos, la IA trata de crear máquinas que piensan
 
 - Pensar requiere, entre otras cosas, percibir y adquirir conocimiento
 
-Cómo se adquiere el conocimiento
+¿Cómo se adquiere el conocimiento?
 
 - Reconocimiento de voz
 - Inferencias
@@ -549,13 +549,13 @@ Es un wrapper Python para **Bullet Physics SDK**, una simulación multifísica y
 
 # Ventajas
 
-Pueden realizar tareas más rápidas que los humanos
+Pueden realizar tareas más rápido que los humanos:
 
-- Además ni duermen, ni se ven afectados por otras situaciones
+- Total, ni duermen ni se ven afectados por otras situaciones
 - Por tanto pueden mantener su alta precisión, calidad y menor tasa de error
 - Y además se pueden crear con el tamaño requerido para la tarea
 
-También pueden realizar tareas que nadie quiere hacer o peligrosas
+También pueden realizar tareas que nadie quiere hacer o peligrosas:
 
 - Limpieza de fosas sépticas
 - Incendios o zonas catastróficas y/o tóxicas
@@ -574,7 +574,7 @@ Las personas pueden perder sus trabajos y ser desplazados
 - Las personas necesitarán localizar y/o cualificarse para nuevos trabajos
 - No todo el mundo está capacitado o tiene ganas de realizar esta adaptación
 
-Los requisitos de una tarea pueden cambiar
+Los requisitos de una tarea pueden cambiar:
 
 - Serán necesarias actualizaciones costosas
 - Un humano se adapta mejor a los cambios

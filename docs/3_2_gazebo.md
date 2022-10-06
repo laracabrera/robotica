@@ -7,7 +7,8 @@ auto-scaling:
     - code
 paginate        : true
 theme           : hegel
-title           : Robótica
+size            : 16:9
+title           : El entorno de simulación Gazebo
 author          :
     - Alberto Díaz Álvarez <alberto.diaz@upm.es>
     - Raul Lara Cabrera <raul.lara@upm.es>
@@ -39,7 +40,7 @@ math: katex
 <!-- _class: titlepage -->
 ![bg left:30%](https://classic.gazebosim.org/assets/logos/gazebo_vert_pos-fd53607be2db733ff38e9a9cdae9185722e5810ea7b089405dfd36917bc4c42f.png)
 
-<div class="title">El simulador Gazebo</div>
+<div class="title">El entorno de simulación Gazebo</div>
 <div class="subtitle">Robótica</div>
 <div class="author">Alberto Díaz y Raúl Lara</div>
 <div class="date">Curso 2022/2023</div>
@@ -73,28 +74,90 @@ Gazebo es una aplicación para la simulación 3D de aplicaciones robóticas
 - Está provisto de un motor físico altamente detallado
 - Ofrece un gran conjunto de sensores e interfaces
 
-Se usa típicamente para el diseño de robots
+Se usa típicamente para el diseño de robots:
 
-- No sólo físico, sino también de algoritmos
-- Se integra con ROS, por lo que podremos desarrollar y probar aplicaciones robóticas antes de implementarlas en físico
+- Principalmente diseño físico 
+- Se integra con ROS, por lo que el diseño se extiende a la aplicaciónes enteras
 
-Su instalación es muy sencilla:
+---
 
-```bash
-curl -sSL http://get.gazebosim.org | sh
-```
+# Instalación (en Ubuntu GNU/Linux)
+
+1. Actualizamos los fuentes e instalamos las dependencias:
+   ```bash
+   $ sudo apt update && sudo apt install -y lsb-release wget gnupg
+   ```
+
+1. Añadimos los fuentes del repositorio oficial de gazebo:
+   ```bash
+   $ sudo wget https://packages.osrfoundation.org/gazebo.gpg \
+         -O /usr/share/keyrings/ pkgs-osrf-archive-keyring.gpg
+   $ echo "deb [arch=$(dpkg --print-architecture)\
+           signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg]\ 
+           http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" \
+     | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+   ```
+
+1. Instalamos la última versión, que en octubre de 2022 es Gazebo Garden
+   ```bash
+   $ sudo apt update && sudo apt install -y gz-garden
+   ```
+
+> <sup>1</sup> También existe en los repositorios de Ubuntu para instalar desde `apt`, pero se trata de una versión antigüa y en desuso, así que mejor evitarla.
 
 ---
 
 # Un vistazo a la GUI
 
-![Gazebo GUI](../img/t2/gazebo-gui.png)
+![bg opacity:25% blur:0.25rem](../img/t3/gazebo-gui.png)
+
+---
+
+![bg](../img/t3/gazebo-gui.png)
+
+---
+
+
+# Barra de herramientas
+
+Situada en la parte superior de la ventana de la aplicación
+
+![Barra de herramientas de Gazebo](../img/t3/gazebo-toolbar.png)
+
+Cuenta básicamente con dos botones:
+
+1. Menú de **archivo** (izquierda)
+   - Cargar/salvar escenario
+   - Preferencias
+   - ...
+2. Menú de **complementos** (derecha)
+   - Para cargarlos en el panel derecho
+   - Incluye algunos tan útiles como el comparador de escala con plátanos
+
+---
+
+# Manipulación y creación de objetos
+
+Esta barra de herramientas se encuentra en la parte superior izquierda
+
+<center>
+
+![Herramientas de manipulación y creación de objetos](../img/t3/gazebo-toolbar-2.png)
+</center>
+
+Se encarga de dos tareas básicas:
+
+1. **Creación** de objetos (sección superior), como formas o luces
+   - Al hacer click en el objeto se creará al nivel del suelo
+1. **Manipulación** de objetos y escenario (sección inferior)
+
+Todo objeto creado aparecerá en el <i>árbol de entidades</i> del panel derecho
 
 ---
 
 # Un vistazo a la GUI
 
-![Gazebo GUI](../img/t2/gazebo-gui-explained.png)
+![Gazebo GUI](../img/t3/gazebo-gui-explained.png)
 
 ---
 
