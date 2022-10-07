@@ -96,10 +96,12 @@ La entrega de la **práctica** realizada durante el curso (70% de peso sobre la 
 
 El aprobado de ambas partes es **obligatorio** para obtener el aprobado en la asignatura.
 
+---
+
 # Instalación y uso de la imagen de docker
 
 >**Warning!**
-Usar en caso de no tener/querer instalar la extension *Dev Containers* de VSCode. Esto ha sido probado en una distribución de linux, en concreto una basada en Arch Linux, si quieres ayuda mas personalizada, pregunta a tu profesor de confianza.
+Usar en caso de no tener/querer instalar la extension *Dev Containers* de VSCode. Esto ha sido probado en una distribución de linux, en concreto una basada en Arch, si quieres ayuda mas personalizada, pregunta a tu profesor de confianza.
 
 ### Instalación de Docker
 
@@ -119,13 +121,23 @@ Esto iniciara el servicio **Docker** pero sin embargo, cuando reinicies la máqu
 
 `$ sudo systemctl enable docker`.
 
-### Usando la imagen de humble con ros2
+### Usando la imagen de Humble Hawksbill con ros2
+
+Primero deberias clonar este repositorio en tu ordenador con el comando:
+
+`$ git clone git@github.com:laracabrera/robotica.git`
+
+Lo más problable si hace tiempo que no usas git, es que te salte un error y debas configurar el uso de *SSH Keys* para tu cuenta de GitHub, para ello, sigue esta [guía](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+~~Tambien puedes descargar el repo en formate ZIP, pero se supone que eres ingenier@~~
 
 Para descargar y usar la imagen de **ros2** en **humble hawksbill**, deberás ejecutar el siguiente comandazo:
 
-`$ sudo docker run --rm -it -v /home/mario/dev/robotica:/opt/robotica osrf/ros:humble-desktop-full bash`
+`$ sudo docker run --rm -it -v /<>/:/opt/robotica osrf/ros:humble-desktop-full bash`
 
-Este comando lo que hace es lo siguiente
+Sustituye `/<>/` por el path completo a la carpeta **ros2** de este repositorio. 
+
+Este comando hace lo siguiente:
 
 - `--rm`: es lo que nos permite borrar el contenedor de docker una vez lo *matemos*, es decir, no borra la imagen, si no que borra el contenedor. Si no añadimos esta flag, una vez *matemos* al contenedor, este seguirá ocupando espacio.
 - `-it`: simplemente es una abreviación de *interactive* y lo que hace es, una vez descargada la imagen, te mete en ella.
