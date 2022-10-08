@@ -49,6 +49,7 @@ math: katex
 
 # Percepción
 
+
 Una de las tareas más importantes de un sistema autónomo es obtener conocimiento de su entorno.
 
 Para ello se toman medidas usando varios **sensores** y extrayendo información útil a partir de esas medidas.
@@ -67,42 +68,40 @@ Vamos a clasificar los sensores en función de dos ejes/características:
 
 Magnitud medida:
 
-- **Propioceptivos**: miden valores internos del sistema, por ejemplo, la velocidad del motor o el voltaje de la batería.
-- **Exteroceptivos**: adquieren información del entorno del robot, por ejemplo, mediciones de distancia, intensidad de la luz y amplitud del sonido.
+- **Propioceptivos**: Miden valores internos del sistema, por ejemplo, la velocidad del motor o el voltaje de la batería.
+- **Exteroceptivos**: Obtienen información del entorno (e.g. distancia a objeto, intensidad de la luz y amplitud del sonido.
 
 Mecanismo de medición:
 
-- **Pasivos**: miden la energía ambiental que entra en el sensor.
-- **Activos**: emiten energía al entorno y miden la respuesta del entorno.
+- **Pasivos**: Miden la energía ambiental que entra en el sensor.
+- **Activos**: Emiten energía al entorno y miden la respuesta del entorno.
 
 ---
 
 # Rendimiento de los sensores
 
-**Rango dinámico**: se utiliza para medir la dispersión entre los límites inferior y superior de los valores de entrada al sensor, manteniendo el funcionamiento normal del mismo. Se mide en decibelios:
+**Rango dinámico**: Relación entre los valores máximo y mínimo que puede tomar un determinado valor. Se mide en decibelios ($dB$):
 
 $$
 DR_P=10\cdot\log\left [\frac{P_{MAX}}{P_{MIN}} \right], DR_V=20\cdot\log\left [\frac{P_{MAX}}{P_{MIN}} \right]
 $$
 
-**Resolución**: es la diferencia mínima entre dos valores de medida del sensor.
+**Resolución**: Diferencia mínima entre dos valores de medida del sensor.
 
-**Frecuencia** o **ancho de banda**: velocidad a la cual el sensor es capaz de proporcionar lecturas. Se mide en hertzios.
+**Frecuencia** o **ancho de banda**: Velocidad a la cual el sensor es capaz de proporcionar lecturas. Se mide en hertzios ($Hz$).
 
-**Sensibilidad**: cambio que debe ocurrir en la medida para que el sensor cambie su salida.
+**Sensibilidad**: Cambio que debe ocurrir en la medida para que el sensor cambie su salida.
 
 ---
 
-# Rendimiento de los sensores
-
-**Linealidad**: es una medida importante que determina el comportamiento de la señal de salida del sensor al variar la señal de entrada:
+**Linealidad**: Medida importante que determina el comportamiento de la señal de salida del sensor al variar la señal de entrada:
 
 <center>
 
 ![h:350](../img/t3/linearity.jpg)
 </center>
 
-**Error**: se define como la diferencia entre las mediciones de salida del sensor y los valores reales que se miden.
+**Error**: Diferencia entre las mediciones de salida del sensor y los valores reales que se miden.
 
 ---
 
