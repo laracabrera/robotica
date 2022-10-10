@@ -49,16 +49,21 @@ math: katex
 
 # Percepción
 
+Para realizar sus tareas, lo primero que necesita un robot es:
 
-Una de las tareas más importantes de un sistema autónomo es obtener conocimiento de su entorno.
+1. Tener conocimiento del entorno en el que se encuentra
+1. Conocer también su propio estado interno
 
-Para ello se toman medidas usando varios **sensores** y extrayendo información útil a partir de esas medidas.
+Los **sensores** toman medidas que se procesan para extraer información útil:
+
+- No es raro; los seres vivos usamos sensores para movernos por el entorno
 
 <center>
 
-![h:300](https://upload.wikimedia.org/wikipedia/commons/1/1b/Anemometer.jpg) ![h:300](https://upload.wikimedia.org/wikipedia/commons/2/27/Light_sensor.png) ![h:300](https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Digital_Pressure_Sensor.jpg/1920px-Digital_Pressure_Sensor.jpg)
-
+![h:250](https://upload.wikimedia.org/wikipedia/commons/1/1b/Anemometer.jpg) ![h:250](https://upload.wikimedia.org/wikipedia/commons/2/27/Light_sensor.png) ![h:250](https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Digital_Pressure_Sensor.jpg/1920px-Digital_Pressure_Sensor.jpg)
 </center>
+
+
 
 ---
 
@@ -66,17 +71,75 @@ Para ello se toman medidas usando varios **sensores** y extrayendo información 
 
 Vamos a clasificar los sensores en función de dos ejes/características:
 
-Magnitud medida:
+<center>
 
-- **Propioceptivos**: Miden valores internos del sistema, por ejemplo, la velocidad del motor o el voltaje de la batería.
-- **Exteroceptivos**: Obtienen información del entorno (e.g. distancia a objeto, intensidad de la luz y amplitud del sonido.
+### Según magnitud medida
+</center>
 
-Mecanismo de medición:
+<div class="columns">
+<div>
 
-- **Pasivos**: Miden la energía ambiental que entra en el sensor.
-- **Activos**: Emiten energía al entorno y miden la respuesta del entorno.
+**Propioceptivos** o internos
+
+Velocidad del motor, voltaje de la batería, ...
+</div>
+<div>
+
+**Exteroceptivos** o externos
+
+Distancia a objeto, intensidad de la luz, amplitud del sonido, ...
+</div>
+</div>
+
+<center>
+
+### Mecanismo de medición
+</center>
+
+<div class="columns">
+<div>
+
+**Pasivos**
+
+Miden la energía ambiental que entra en el sensor.
+</div>
+<div>
+
+**Activos**
+
+Emiten energía al entorno y miden la respuesta del entorno.
+</div>
+</div>
 
 ---
+
+# Magnitudes físicas medidas
+
+Típicamente, las magnitudes internas y del entorno son las siguientes:
+
+<div class="columns">
+<div>
+
+- Distancia 
+- Humedad
+- Luz
+- Magnetismo
+- Posición
+</div>
+<div>
+
+- Presión y/o fuerza
+- Sonido
+- Temperatura
+- Velocidad
+</div>
+</div>
+
+
+Las medidas **pueden ser indirectas**, para obtener información adicional
+
+---
+
 
 # Rendimiento de los sensores
 
@@ -117,32 +180,83 @@ $$
 
 ---
 
-# Sensores de motores/ruedas
 
-Los **codificadores incrementales** generan pulsos conforme se produce un movimiento (longitudinal y/o rotativo) en algún eje del robot.
+# Sensores de motores/ruedas: <i>Encoders</i>
 
-El más usado es el <i>encoder</i> óptico: Fuente de iluminación, disco o tira con un patrón de alto contraste y receptor óptico.
+<div class="columns">
+<div>
 
+Son **propioceptivos pasivos** y cuentan con:
+
+1. Disco (o tira) con un patrón
+1. Emisor de luz
+1. Receptor óptico
+</div>
+<div>
 <center>
 
-![bg right:50% h:350](../img/t3/moving_disc_with_slits.png)
+![h:250](../img/t3/moving_disc_with_slits.png)
 </center>
+</div>
+</div>
+
+Si el disco gira se genera un tren de pulsos cuyo conteo determina la posición.
+
+- Una segunda franja de marcas desplazada permite conocer el sentido de giro
+- Una marca única de referencia permite conocer su posición inicial
+
+---
+
+Su resolución depende directamente del número de marcas del disco.
+
+- Cada pulso son dos lecturas: flanco de subida y flanco de bajada
+
+Los más comunes son los de tipo **incrementales**
+
+- El conteo se realiza en cada flanco de subida y bajada
+- Una vez se llega al marcador de posición, se reinicia el conteo
+   
+Existen también los codificadores **absolutos**
+
+- Cada marca se dispone según un código binario cíclico (normalmente Gray)
+- Las resoluciones son potencias de 2
+- No necesita mecanismos adicionales para conocer el sentido o la posición
 
 ---
 
 <video controls width=100% src="https://drive.upm.es/s/N0cAEdHt2jXRyJF/download"></video>
 
+
 ---
 
-# Sensores de motores/ruedas
+# Sensores de motores/ruedas: <i>Resolvers</i>
+
+Son sensores analógicos formados por dos partes:
+
+1. Estator: Parte fija con bobinas que miden velocidad y posición de giro
+1. Rotor: Parte móvil que genera un campo eléctrico que capta el estator
+
+Al ser analógicos, su resolución es teóricamente infinita.
+
+---
+
+<video controls width=100% src="https://drive.upm.es/s/A5kAbxbWpFu0xSE/download"></video>
+
+
+---
+
+# Sensores de motores/ruedas: Potenciómetros
+
+Los **potenciómetros** son muy similares a los <i>resolvers</i>
+
+- En este caso usan una resistencia con un contacto móvil rotatorio o deslizante
+- Los movimientos de un eje cambiarán el voltaje de salida del potenciómetro.
 
 ![bg right:40% w:400](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Electronic-Component-Potentiometer.jpg/237px-Electronic-Component-Potentiometer.jpg)
 
-Otro sensor muy utilizado es el **potenciómetro**, una resistencia con un contacto móvil rotatorio o deslizante.
+Dan muy bajas prestaciones
 
-Los movimientos de un eje cambiarán el voltaje de salida del potenciómetro.
-
-Se trata de un sensor *propioceptivo pasivo*.
+- Se suelen emplear en proyectos educativos
 
 ---
 
