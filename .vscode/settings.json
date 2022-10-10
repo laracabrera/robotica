@@ -13,4 +13,5 @@
         "/opt/ros/humble/lib/python3.10/site-packages/",
         "${workspaceFolder}/ros2/src"
     ],
+    "cmake.configureOnOpen": false,
 }
