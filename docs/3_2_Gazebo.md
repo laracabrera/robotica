@@ -86,6 +86,10 @@ curl -sSL http://get.gazebosim.org | sh
 
 ---
 
+# REESCRIBIR LA INSTALACIÓN
+
+---
+
 # Un vistazo a la GUI
 
 ![Gazebo GUI](../img/t2/gazebo-gui.png)
@@ -116,6 +120,9 @@ curl -sSL http://get.gazebosim.org | sh
 
 ---
 
+# Movimiento por el escenario
+
+
 <!--
    _class: transition
 -->
@@ -139,10 +146,46 @@ Se accede desde el menú superior, en `Edit->Model Editor` (`CTRL+M`)
 
 > <sup>1</sup> <https://www.blender.org/>
 > <sup>2</sup> <https://github.com/osrf/gazebo_models>
+
 ---
 
-<!--
-   _class: transition
--->
+<!-- _class: transition -->
+# DE AQUÍ EN ADELANTE COMPROBADO
 
+---
+
+# Manipulación de modelos
+
+Gazebo permite la manipulación de los objetos de una escena:
+
+- **Selección** (`ESC`)
+- **Traslación** (`T`) y **rotación** (`R`): Mantener `x`, `y` o `z` **restringe el eje**
+- **Ajuste** (`CTRL` + <i>drag</i>)
+
+
+Estas acciones se realizan a través del <i>plug-in</i> <i>Transform Control</i>
+
+- Se carga desde el inicio, aunque se puede invocar de forma separada
+
+---
+
+# Gazebo Fuel
+
+Base de datos que permite compartir y acceder a muchísimo contenido:
+
+- Disponible a través de <https://app.gazebosim.org>
+
+Sus secciones de dividen en:
+
+- [Modelos](https://app.gazebosim.org/fuel/models): Representaciones de elementos del mundo real como modelos 3D
+- [Mundos](https://app.gazebosim.org/fuel/worlds): Escenarios sobre los que trabajan nuestros modelos
+- [Colecciones](https://app.gazebosim.org/fuel/collections): Conjuntos de modelos y/o mundos de temática común
+
+---
+
+# Cargando mundos desde Fuel
+
+---
+
+<!-- _class: transition -->
 # ¡GRACIAS!
