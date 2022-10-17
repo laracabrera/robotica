@@ -119,8 +119,10 @@ Ofrece además una infraestructura de comunicación <i>language agnostic</i>
 
 En la actualidad coexisten dos versiones independientes en desarrollo
 
-1. **ROS**: La versión original, bastante extendida aunque ya en desuso
+1. **ROS1**: La versión original, bastante extendida aunque ya en desuso
 1. **ROS2**: Con nuevas funcionalidades, mejoras y soporte desde 0 para Python3
+
+ROS2 trata de **superar las limitaciones** impuestas por su predecesor, ROS1
 
 **Debemos procurar usar ROS2 en la medida de lo posible**
 
