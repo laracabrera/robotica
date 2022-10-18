@@ -1210,68 +1210,114 @@ Define la ejecución de uno o varios nodos de un componente o aplicación
 
 - ¿`sh`? ¿`bash`? ¿`csh`? ¿`zsh`? ... Más cómodo un <i>launcher</i>, que es estándar
 
-Permite la configuración de nodos, sus parámetros, renombrado de <i>topics</i>, ...
+El sistema de <i>launchers</i> **describe** y **ejecuta** la configuración del **sistema**:
+
+- Qué programas ejecutar, dónde, qué argumentos, renombrados, de <i>topics</i>, ...
+- También monitoriza y el estado de los nodos y reacciona a sus cambios
 
 ---
 
 # Creación de un <i>launcher</i>
 
-Como con los mensajes, suele ser común crear un paquete exclusivo para los <i>launchers</i>
+Los ficheros se escriben en Python, XML o YAML; dicho esto, ¿cuál usar?:
 
-- Al ser exclusivo para esto, podemos prescindir de los directorios `include/` y `src/`
+- XML es el usado en ROS1, por lo que suele ser el más familiar.
+- YAML ofrece una sintaxis más comoda respecto a XML.
+- Python es un lenguaje de programación: más verboso, pero también más potente.
+
+En definitiva, la elección se reduce a las preferencias del desarrollador.
+
+- Eso sí, si necesitamos comportamiento en lugar de sólo definición, Python
+
+---
+
+Suele ser común crear un paquete exclusivo para los <i>launchers</i>:
+
+- Al ser exclusivo, podemos prescindir de los directorios `include/` y `src/`
 - Crearemos el directorio `launch/`, que es el convenio para los <i>launchers</i>
-- Configuraremos el fichero `CMakeLists.txt` indicando dónde se encontrarán los <i>launchers</i>
+- Añadiremos `ros2launch` como dependencia de ejecución a `package.xml`:
+  ```xml
+  <exec_depend>ros2launch</exec_depend>
+  ```
 
-   ```bash
-   # Debajo find_packages
-   install(DIRECTORY
-      launch
-      DESTINATION share/${PROJECT_NAME}
-   )
-   ```
+Tras esto ya podemos desarrollar nuestros launcher en el directorio `launch/`
 
----
-
-Un <i>launcher</i> es un fuente de Python marcado como ejecutable
-
-- La convención para el nombrado del fichero es `<nombre>.launch.py`
-
-Lo único que necesitamos es la función `generate_launch_description`
-
-```python
-from launch import LaunchDescription
-
-def generate_launch_description():
-   ld = LaunchDescription()
-   # ...
-   return ld
-```
-
-- Este es el <i>launcher</i> más básico; podemos usarlo como plantilla
-- Tras construir el paquete, se puede ejecutar mediante el comando `launch`
-
-   ```bash
-   ros2 launch <paquete> <nombre>.launch.py
-   ```
+- La convención de nombrado es `<nombre>_launch.[py|xml|yaml]`
 
 ---
 
-# Ejemplo de <i>launcher</i>
+# Ejemplo de <i>launcher</i> en Python
 
 ```python
 from launch import LaunchDescription
 from launch_ros.actions import Node
 
 def generate_launch_description():
-   ld = LaunchDescription()
-   one_node = number_publisher_node = Node(package='one_package', executable='node')
-   other_node = Node(package='other_package', executable='node')
-
-   ld.add_action(one_node)
-   ld.add_action(other_node)
+    return LaunchDescription([
+        Node(
+            package='one_package',
+            namespace='namespace_a',
+            executable='node',
+            name='one',
+        ),
+        Node(
+            package='other_package',
+            namespace='namespace_b',
+            executable='node',
+            name='other',
+        ),
+    ])
 ```
 
-Ojo, debemos añadir las dependencias en nuestro paquete
+---
+
+# Ejemplo de <i>launcher</i> en XML
+
+```python
+<launch>
+  <node pkg="one_package"
+        namespace="namespace_a"
+        exec="node"
+        name="one"/>
+  
+  <node pkg="other_package"
+        namespace="namespace_b"
+        exec="node"
+        name="other"/>
+</launch>
+```
+
+---
+
+# Ejemplo de <i>launcher</i> en YAML
+
+```python
+launch:
+
+- node:
+    pkg: "one_package"
+    namespace: "namespace_a"
+    exec: "node"
+    name: "one"
+
+- node:
+    pkg: "other_package"
+    namespace: "namespace_b"
+    exec: "node"
+    name: "other"
+```
+
+---
+
+# Una vez escritos los <i>launchers</i>
+
+Basta con construir el paquete y lanzar el launcher con el comando `launch`:
+
+```bash
+$ ros2 launch <PAQUETE> <NUESTRO_LAUNCHER>
+```
+
+**Ojo**, debemos añadir las dependencias en nuestro paquete
 
 ```xml
 <exec_depend>one_package</exec_depend>
@@ -1280,7 +1326,7 @@ Ojo, debemos añadir las dependencias en nuestro paquete
 
 - No las necesitamos para construir el paquete, sólo para ejecutar
 
----
+   
 
 # Argumentos de un <i>launcher</i>
 
@@ -1306,11 +1352,7 @@ Podemos especificar desde el <i>launcher</i> los argumentos igual que en la CLI
 
 ---
 
-<!--
-   _class: transition
--->
-
-# Parámetros
+# Parámetros<!-- _class: transition -->
 
 ---
 

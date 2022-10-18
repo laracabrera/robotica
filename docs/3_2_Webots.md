@@ -128,7 +128,7 @@ Cuando Webots intenta inicializar un controlador sigue el siguiente proceso:
 
 # Controladores
 
-Son programas que definen el comportamieto de un robot.
+Son programas que definen el comportamiento de un robot.
 
 Se pueden escribir en los siguientes lenguajes de programación:
 
