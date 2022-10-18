@@ -215,7 +215,7 @@ Los más comunes son los de tipo **incrementales**
 
 - El conteo se realiza en cada flanco de subida y bajada
 - Una vez se llega al marcador de posición, se reinicia el conteo
-   
+
 Existen también los codificadores **absolutos**
 
 - Cada marca se dispone según un código binario cíclico (normalmente Gray)
