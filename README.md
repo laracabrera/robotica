@@ -95,3 +95,39 @@ Un **examen teórico** (30% de peso sobre la nota final) de tipo test consistent
 La entrega de la **práctica** realizada durante el curso (70% de peso sobre la nota final), donde existe la posibilidad de que el estudiante sea convocado para la exposición de la misma.
 
 El aprobado de ambas partes es **obligatorio** para obtener el aprobado en la asignatura.
+
+# Instalación y uso de la imagen de docker
+
+>**Warning!**
+Usar en caso de no tener/querer instalar la extension *Dev Containers* de VSCode. Esto ha sido probado en una distribución de linux, en concreto una basada en Arch Linux, si quieres ayuda mas personalizada, pregunta a tu profesor de confianza.
+
+### Instalación de Docker
+
+Usando tu gestor de paquetes, ejecuta el siguiente comando:
+
+`$ pacman -S docker`
+
+En este caso el gestor de paquetes es `pacman` pero si estas usando una distro derivada de Ubuntu, posiblemente tu gestor sea `apt` (Linux es un mundo, buscate la vida, e instala docker)
+
+### Iniciando el servicio de Docker
+
+Una vez instalado **Docker** debes iniciar el servicio, para ello deberás ejecutar el siguiente comando:
+
+`$ sudo systemctl start docker.service`
+
+Esto iniciara el servicio **Docker** pero sin embargo, cuando reinicies la máquina, deberás volver a iniciarlo. Si no quieres tener que iniciar **Docker** cada vez que enciendes tu máquina, puedes ejecutar:
+
+`$ sudo systemctl enable docker`.
+
+### Usando la imagen de humble con ros2
+
+Para descargar y usar la imagen de **ros2** en **humble hawksbill**, deberás ejecutar el siguiente comandazo:
+
+`$ sudo docker run --rm -it -v /home/mario/dev/robotica:/opt/robotica osrf/ros:humble-desktop-full bash`
+
+Este comando lo que hace es lo siguiente
+
+- `--rm`: es lo que nos permite borrar el contenedor de docker una vez lo *matemos*, es decir, no borra la imagen, si no que borra el contenedor. Si no añadimos esta flag, una vez *matemos* al contenedor, este seguirá ocupando espacio.
+- `-it`: simplemente es una abreviación de *interactive* y lo que hace es, una vez descargada la imagen, te mete en ella.
+- `-v`: especificamos primero una ruta local en nuestra máquina la cual *uniremos* a una ruta del contenedor, de manera que el código que tengamos en nuestra ruta local, estará sincronizado con el contenedor.
+- `bash`: poniendo bash al final, estamos diciendo que nos meta en una bash dentro del contenedor, de esta manera, ya podriamos empezar a ejecutar comandos desde el contenedor.
