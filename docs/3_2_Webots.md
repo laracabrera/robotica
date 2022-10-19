@@ -14,7 +14,7 @@ math: katex
 ---
 
 <!-- _class: titlepage -->
-![bg left:33%](https://images.unsplash.com/photo-1597424216843-6c9696c01dbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=778&q=80)
+![bg left:33%](https://cyberbotics.com/assets/images/webots.png)
 
 <div class="title">El entorno de simulación Webots</div>
 <div class="subtitle">Robótica</div>
