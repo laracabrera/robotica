@@ -12,27 +12,6 @@ author          : Raúl Lara Cabrera
 description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T.S.I. Sistemas Informáticos (UPM)
 math: katex
 ---
-<style>
-
-   .cite-author {
-      text-align        : right;
-   }
-   .cite-author:after {
-      color             : orangered;
-      font-size         : 125%;
-      font-weight       : bold;
-      font-family       : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      padding-right     : 130px;
-   }
-   .cite-author[data-text]:after {
-      content           : " - "attr(data-text) " - ";
-   }
-
-   .cite-author p {
-      padding-bottom : 40px
-   }
-
-</style>
 
 <!-- _class: titlepage -->
 ![bg left:33%](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Racknitz_-_The_Turk_3.jpg/1920px-Racknitz_-_The_Turk_3.jpg)
@@ -491,59 +470,7 @@ Los investigadores de estas áreas se centran en la capacidad de interpretar, ad
 
 ---
 
-<!--
-   _class: transition
--->
-# Tecnologías
-
----
-
-# ROS - Robot Operating System
-
-![bg right:40%](https://www.ros.org/imgs/noetic-background.png)
-
-**Robot Operating System (ROS)** es un conjunto de bibliotecas y herramientas de software que le ayudan a crear aplicaciones para robots. Desde controladores hasta algoritmos de última generación, y con potentes herramientas para desarrolladores, ROS tiene lo que necesitas para tu próximo proyecto de robótica. Y todo es de código abierto.
-
-<center>
-
-<https://www.ros.org>
-</center>
-
----
-
-# Gazebo
-
-<center>
-
-![gazebo logo](https://gazebosim.org/assets/images/gazebo_horz_pos_topbar.svg)
-</center>
-
-**Gazebo** aporta un nuevo enfoque a la simulación con una completa caja de herramientas de bibliotecas de desarrollo y servicios en la nube para facilitar la simulación. Itere rápidamente sus nuevos diseños físicos en entornos realistas con flujos de sensores de alta fidelidad. Pruebe las estrategias de control en seguridad y aproveche la simulación en las pruebas de integración continua.
-
-<center>
-
-<https://gazebosim.org>
-</center>
-
----
-
-# PyBullet (quizá)
-
-Es un wrapper Python para **Bullet Physics SDK**, una simulación multifísica y de detección de colisiones en tiempo real para VR, juegos, efectos visuales, robótica, aprendizaje automático, etc.
-
-**PyBullet** es un módulo de Python rápido y fácil de usar para la simulación robótica y el aprendizaje automático, con un enfoque en la transferencia de la simulación a la realidad. Con PyBullet puedes cargar cuerpos articulados desde URDF, SDF, MJCF y otros formatos de archivo.
-
-<center>
-
-<https://bulletphysics.org>
-</center>
-
----
-
-<!--
-   _class: transition
--->
-# Ventajas e inconvenientes
+# Ventajas e inconvenientes<!--_class: transition-->
 
 ---
 
