@@ -45,6 +45,32 @@ math: katex
 
 ---
 
+# Introducción
+
+Webots es una plataforma para la simulación de aplicaciones robóticas:
+
+- Robots que trabajan en entornos reales físicos.
+- Desde la versión [R2019a](https://www.cyberbotics.com/doc/blog/Webots-2019-a-release), es de código abierto publicado bajo los términos de la [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+- Ofrece un entorno de desarrollo completo de modelado, programación y simulación
+- Ampliamente utilizado por la industria, la educación, la investigación y otros campos
+
+
+Desde diciembre de 2018, webots ha sido publicado como software de código abierto bajo la licencia Apache 2.0, y ampliamente utilizado en la industria, la educación, la investigación y otros campos
+
+Proporciona un entorno de prototipado rápido:
+
+- Los usuarios pueden crear un mundo virtual 3D con características físicas (como masa, articulaciones, coeficiente de fricción, etc.)
+- Pueden añadir objetos pasivos simples u objetos activos llamados robots móviles
+- Estos robots pueden tener diferentes esquemas de movilidad (robots con ruedas, robots con patas o robots voladores)
+- También pueden estar equipados con numerosos sensores y actuadores, como sensores de distancia, ruedas motrices, cámaras, motores, sensores táctiles, transmisores, receptores, etc
+- Por último, los usuarios pueden programar y controlar cada robot para conseguir las funciones correspondientes.
+
+https://cyberbotics.com/doc/guide/robots
+https://cyberbotics.com/doc/guide/sensors
+https://cyberbotics.com/doc/guide/actuators
+https://cyberbotics.com/doc/guide/objects
+https://cyberbotics.com/doc/guide/appearances
+
 # Instalación (GNU/Linux)
 
 Añadiendo el repositorio para <i>Advanced Packaging Tool</i> (APT)
