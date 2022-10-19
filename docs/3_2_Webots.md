@@ -70,6 +70,7 @@ https://cyberbotics.com/doc/guide/sensors
 https://cyberbotics.com/doc/guide/actuators
 https://cyberbotics.com/doc/guide/objects
 https://cyberbotics.com/doc/guide/appearances
+https://cyberbotics.com/doc/guide/the-standard-file-hierarchy-of-a-project
 
 # Instalación (GNU/Linux)
 
