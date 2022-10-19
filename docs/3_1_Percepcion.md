@@ -12,27 +12,6 @@ author          : Raúl Lara Cabrera
 description     : Percepción del entorno. Curso 2022-2023. E.T.S.I. Sistemas Informáticos (UPM)
 math: katex
 ---
-<style>
-
-   .cite-author {
-      text-align        : right;
-   }
-   .cite-author:after {
-      color             : orangered;
-      font-size         : 125%;
-      font-weight       : bold;
-      font-family       : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      padding-right     : 130px;
-   }
-   .cite-author[data-text]:after {
-      content           : " - "attr(data-text) " - ";
-   }
-
-   .cite-author p {
-      padding-bottom : 40px
-   }
-
-</style>
 
 <!-- _class: titlepage -->
 ![bg left:33%](https://images.unsplash.com/photo-1597424216843-6c9696c01dbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=778&q=80)

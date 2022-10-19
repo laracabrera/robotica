@@ -12,27 +12,6 @@ author          : Raúl Lara Cabrera
 description     : Introducción de la asignatura Robótica. Curso 2022-2023. E.T.S.I. Sistemas Informáticos (UPM)
 math: katex
 ---
-<style>
-
-   .cite-author {
-      text-align        : right;
-   }
-   .cite-author:after {
-      color             : orangered;
-      font-size         : 125%;
-      font-weight       : bold;
-      font-family       : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      padding-right     : 130px;
-   }
-   .cite-author[data-text]:after {
-      content           : " - "attr(data-text) " - ";
-   }
-
-   .cite-author p {
-      padding-bottom : 40px
-   }
-
-</style>
 
 <!-- _class: titlepage -->
 ![bg left:33%](https://camo.githubusercontent.com/aa347732b8e27513a8ee971b2a95671241861795fa047cefb9dc34b9816e4c55/68747470733a2f2f696d616765732e756e73706c6173682e636f6d2f70686f746f2d313536323735383737382d6535363338623562363630373f69786c69623d72622d312e322e3126697869643d4d6e77784d6a4133664442384d48787761473930627931775957646c66487838664756756644423866487838266175746f3d666f726d6174266669743d63726f7026773d36323726713d3830)
@@ -205,8 +184,5 @@ Libros
 - Introduction to Autonomous Mobile Robots, Roland Siegwart y otros
 
 ---
-<!--
-   _class: transition
--->
 
-# Gracias
+# Gracias<!--_class: transition-->

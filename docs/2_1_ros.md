@@ -14,27 +14,6 @@ author          :
 description     : Robot Operating System (ROS)
 math: katex
 ---
-<style>
-
-   .cite-author {
-      text-align        : right;
-   }
-   .cite-author:after {
-      color             : orangered;
-      font-size         : 125%;
-      font-weight       : bold;
-      font-family       : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      padding-right     : 130px;
-   }
-   .cite-author[data-text]:after {
-      content           : " - "attr(data-text) " - ";
-   }
-
-   .cite-author p {
-      padding-bottom : 40px
-   }
-
-</style>
 
 <!-- _class: titlepage -->
 ![bg left:33%](https://www.ros.org/imgs/humble.png)

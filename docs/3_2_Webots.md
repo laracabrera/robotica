@@ -12,25 +12,6 @@ author          : Raúl Lara Cabrera
 description     : Webots. Curso 2022-2023. E.T.S.I. Sistemas Informáticos (UPM)
 math: katex
 ---
-<style>
-   .cite-author {
-      text-align        : right;
-   }
-   .cite-author:after {
-      color             : orangered;
-      font-size         : 125%;
-      font-weight       : bold;
-      font-family       : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      padding-right     : 130px;
-   }
-   .cite-author[data-text]:after {
-      content           : " - "attr(data-text) " - ";
-   }
-
-   .cite-author p {
-      padding-bottom : 40px
-   }
-</style>
 
 <!-- _class: titlepage -->
 ![bg left:33%](https://images.unsplash.com/photo-1597424216843-6c9696c01dbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=778&q=80)
@@ -45,55 +26,83 @@ math: katex
 
 ---
 
-# Introducción
+# ¿Qué es Webots<sup>1</sup>?
 
-Webots es una plataforma para la simulación de aplicaciones robóticas:
+Plataforma para la simulación de robots en entornos físicos:
 
-- Robots que trabajan en entornos reales físicos.
-- Desde la versión [R2019a](https://www.cyberbotics.com/doc/blog/Webots-2019-a-release), es de código abierto publicado bajo los términos de la [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
-- Ofrece un entorno de desarrollo completo de modelado, programación y simulación
-- Ampliamente utilizado por la industria, la educación, la investigación y otros campos
+- <i>Open Software</i>, publicado bajo los términos de la licencia [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+- Muy utilizado por la industria, la educación, la investigación y otros campos.
 
+Entorno completo de modelado, programación y simulación para prototipado:
 
-Desde diciembre de 2018, webots ha sido publicado como software de código abierto bajo la licencia Apache 2.0, y ampliamente utilizado en la industria, la educación, la investigación y otros campos
+- Creación de mundos [realistas](https://cyberbotics.com/doc/guide/appearances) con características físicas como masa o fricción.
+- [Objetos pasivos simples](https://cyberbotics.com/doc/guide/objects) u objetos activos llamados [robots](https://cyberbotics.com/doc/guide/robots).
+- Ofrece diferentes esquemas de movilidad (e.g. ruedas, patas o voladores)
+- Múltiples [sensores](https://cyberbotics.com/doc/guide/sensors) (e.g. cámaras) y [actuadores](https://cyberbotics.com/doc/guide/actuators) (e.g. motores).
 
-Proporciona un entorno de prototipado rápido:
-
-- Los usuarios pueden crear un mundo virtual 3D con características físicas (como masa, articulaciones, coeficiente de fricción, etc.)
-- Pueden añadir objetos pasivos simples u objetos activos llamados robots móviles
-- Estos robots pueden tener diferentes esquemas de movilidad (robots con ruedas, robots con patas o robots voladores)
-- También pueden estar equipados con numerosos sensores y actuadores, como sensores de distancia, ruedas motrices, cámaras, motores, sensores táctiles, transmisores, receptores, etc
-- Por último, los usuarios pueden programar y controlar cada robot para conseguir las funciones correspondientes.
-
-https://cyberbotics.com/doc/guide/robots
-https://cyberbotics.com/doc/guide/sensors
-https://cyberbotics.com/doc/guide/actuators
-https://cyberbotics.com/doc/guide/objects
-https://cyberbotics.com/doc/guide/appearances
-https://cyberbotics.com/doc/guide/the-standard-file-hierarchy-of-a-project
-
-# Instalación (GNU/Linux)
-
-Añadiendo el repositorio para <i>Advanced Packaging Tool</i> (APT)
-
-Instalando el paquete `.deb` directamente
-
-Desde el tarball (archivo `.tar.bz2`)
-
-Desde snap
-
-Imagen de docker
-
-Modo servidor
-  - En caso de que se quiera tener cliente y servidor por separado
+> <sup>1</sup> Sitio web oficial: <https://www.cyberbotics.com/>.  
+> <sup>2</sup> Concretamente desde diciembre de 2018, desde la publicación de la versión [R2019a](https://www.cyberbotics.com/doc/blog/Webots-2019-a-release).
 
 ---
 
-https://cyberbotics.com/doc/guide/the-3d-window#axis-aligned-handles
+# Algunos términos comunes
+
+**Mundo**: Fichero que contiene las descripciones de los robots y su entorno.
+
+**Controlador**: Programa con el código que controla cualquier robot del mundo.
+
+**Controlador supervisor**: Aquel que permite funciones de administración.
+
+**Nodo**: Cada objeto existente en el escenario o mundo.
+
+**Campo**, propiedad o característica: campo variable en el nodo.
 
 ---
 
-https://cyberbotics.com/doc/guide/the-scene-tree
+# Instalación del simulador
+
+En Windows, basta con descargar el instalador de la última versión y lanzarlo.
+
+En macOS, dos opciones:
+
+- Descargar el fichero de instalación `.dmg` de la aplicación e instalar.
+- Instalar a través de <i>homebrew</i>.
+
+En GNU/Linux, varias opciones:
+
+- **Añadiendo el repositorio como fuente adicional del APT (recomendado).**
+- Desde un <i>tarball</i> (`.tar.bz2`) o un paquete `.deb` en el caso de Debian.
+- Instalando el paquete disponible en `snap`.
+
+> Existen también contenedores de docker y servidor para, por ejemplo, el lanzamiento de simulaciones <i>headless</i>.
+
+---
+
+# Un vistazo a la interfaz<!--_class: transition-->
+
+---
+
+![bg](../img/t3/webots-ui.png)
+
+---
+
+# Interfaz de Webots
+
+**Barra de menú**: Accesos a todos los aspectos de la aplicación.
+
+**Barra de herramientas principal**: Trabajo sobre la simulación
+
+**Árbol de escena**: Información jerárquica acerca del mundo, objetos y robots.
+
+- `Worldinfo`: Parámetros como el paso de simulación y la gravedad.
+- `Viewpoint`: Parámetros relacionados con la perspectiva de visualización.
+- **Editor de dominio**: Modificación de caracteristicas del nodo seleccionado.
+
+**Pantalla de simulación**: Ventana para la visualización de la simulación.
+
+**Editor de texto**: Sirve para editar los controladores de los robots.
+
+**Consola**: Salida estándar para los controladores que estén funcionando
 
 ---
 
@@ -102,6 +111,9 @@ https://cyberbotics.com/doc/guide/the-scene-tree
 ---
 
 # Estructura base de directorios
+
+https://cyberbotics.com/doc/guide/the-standard-file-hierarchy-of-a-project
+
 
 Un proyecto es un directorio con, al menos, un directorio denominado `world/`
 
@@ -149,17 +161,4 @@ Cuando Webots intenta inicializar un controlador sigue el siguiente proceso:
 
 ---
 
-# A CLASIFICAR<!--_class: transition-->
-
----
-
-# Controladores
-
-Son programas que definen el comportamiento de un robot.
-
-Se pueden escribir en los siguientes lenguajes de programación:
-
-- C, C++ o Java: Necesitan ser compilados antes de usarse como controladores
-- Python y MATLAB: Se ejecutan sin ser compilados (son interpretados)
-
-https://cyberbotics.com/doc/guide/language-setup
+# Gracias<!--_class: transition-->
