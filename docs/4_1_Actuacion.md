@@ -199,7 +199,43 @@ Debido a su precisión, se usan en aplicaciones como impresoras 3D, máquinas de
 
 # Motores lineales
 
-Son motores eléctricos similares a los motores con escobillas, pero con un eje de salida recto en lugar de un eje giratorio.
+Un motor lineal es un motor eléctrico al que se le ha "desenrollado" el estator y el rotor, por lo que, en lugar de producir un par (rotación), produce una fuerza lineal a lo largo de su longitud.
+
+Sin embargo, los motores lineales no son necesariamente rectos. La sección activa de un motor lineal suele tener extremos, mientras que los motores más convencionales están dispuestos en forma de bucle continuo.
+
+Suelen emplearse en aplicaciones de alta precisión.
+
+![bg w:300 right:25%](https://upload.wikimedia.org/wikipedia/commons/f/f6/Linearmotorprinzip.png)
+
+---
+
+# LED
+
+Un LED (del inglés light-emitting diode, diodo emisor de luz) es un dispositivo semiconductor que emite luz cuando se le aplica una tensión.
+
+Se puede utiliar para indicar el estado de un robot, iluminar el entorno, etc.
+
+Algunos pueden emitir una luz de color diferente, dependiendo de la tensión aplicada. Lo normal es que emitan luz del mismo color.
+
+Dado que pueden alternar su estado millones de veces por segundo pueden usarse como un mecanismo de comunicación con un elevado ancho de banda.
+
+![bg w:300 right:25%](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/RBG-LED.jpg/250px-RBG-LED.jpg)
+
+---
+
+# Pantalla LCD
+
+Una pantalla LCD es un dispositivo que muestra información en una pantalla de cristal líquido.
+
+Son muy populares en los robots, ya que son baratas, fáciles de usar y tienen un alto contraste.
+
+Las pantallas LCD se pueden usar para mostrar información, como el estado de un robot, el tiempo restante, etc.
+
+Las últimas pantallas LCD son táctiles, lo que permite al usuario interactuar con el robot. Además tienen resoluciones muy altas y son capaces de mostrar imágenes y vídeos en color.
+
+![bg w:300 right:33%](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Casio_LCD_screen_for_digital_camera.jpg/220px-Casio_LCD_screen_for_digital_camera.jpg)
+
+---
 
 
 
