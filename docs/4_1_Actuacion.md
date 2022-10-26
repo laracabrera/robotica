@@ -237,7 +237,33 @@ Las últimas pantallas LCD son táctiles, lo que permite al usuario interactuar 
 
 ---
 
+# Listado de actuadores
 
+## Actuadores genéricos que tenemos disponibles en Webots
+
+Esencialmente dos tipos de actuadores, lineales y rotativos, que representan las rotaciones y traslaciones en el espacio que representan todo movimiento en el espacio.
+
+- Motor lineal
+  - Actuadores lineales
+  - Actuadores solenoides
+- Motor rotativo
+  - Motor continuo
+  - Actuador servomotor
+  - Motor paso a paso
+
+Actuadores más concretos
+
+- Freno: Simulación de frenado mecánico (como zapatas de una bicicleta o discos de freno)
+  - <https://www.techbriefs.com/component/content/article/tb/supplements/md/features/articles/28812>
+- Conector: Simulación de sistema de acoplamiento mecánico y rompible (como un lego)
+- Pantalla: Simula una pantalla
+- Emisor: Simula la comunicación de datos a través de radio, serie o infra-rojos entre robots
+- LED
+- Muśculo: Simula un músculo artificial
+- Pen: Simula un dispositivo de pintado
+- Hélice
+- Altavoz: Simula emisión de sonido
+- Track: Simula una pista que se puede usar tanto como cintas transportadoras como ruedas-origa
 
 ---
 
