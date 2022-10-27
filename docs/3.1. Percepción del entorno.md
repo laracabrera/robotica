@@ -205,7 +205,6 @@ Existen también los codificadores **absolutos**
 
 <video controls width=100% src="https://drive.upm.es/s/N0cAEdHt2jXRyJF/download"></video>
 
-
 ---
 
 # Sensores de motores/ruedas: <i>Resolvers</i>
@@ -325,7 +324,7 @@ El principio básico de un **sensor ultrasónico** es transmitir un paquete de o
 La distancia $d$ al objeto que causa el rebote se puede calcular en función de la velocidad $c$ de propagación del sonido y el tiempo $t$ desde que se emite hasta que se recibe el eco
 
 $$
-c=\frac{c\cdot t}{2}
+d=\frac{c\cdot t}{2}
 $$
 
 ![bg right:30% width:350](https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/HC_SR04_Ultrasonic_sensor_1480322_3_4_HDR_Enhancer.jpg/800px-HC_SR04_Ultrasonic_sensor_1480322_3_4_HDR_Enhancer.jpg)
