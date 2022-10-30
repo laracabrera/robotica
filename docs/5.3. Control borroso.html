@@ -312,7 +312,9 @@ propina = ctrl.Consequent(np.arange(<span class="hljs-number">0</span>, <span cl
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="hegel" data-marpit-pagination="12" data-marpit-pagination-total="16" style="--paginate:true;--theme:hegel;">
 <h1>Definición de los conjuntos borrosos</h1>
 <p>Para cada variable, se definen los conjuntos borrosos que la componen.</p>
-<pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-comment"># Conjuntos borrosos de servicio</span>
+<pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> skfuzzy <span class="hljs-keyword">as</span> fuzz
+
+<span class="hljs-comment"># Conjuntos borrosos de servicio</span>
 servicio[<span class="hljs-string">&#x27;malo&#x27;</span>] = fuzz.trimf(servicio.universe, [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>])
 servicio[<span class="hljs-string">&#x27;normal&#x27;</span>] = fuzz.trimf(servicio.universe, [<span class="hljs-number">0</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>])
 servicio[<span class="hljs-string">&#x27;bueno&#x27;</span>] = fuzz.trimf(servicio.universe, [<span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>])
@@ -325,6 +327,7 @@ propina[<span class="hljs-string">&#x27;baja&#x27;</span>] = fuzz.trimf(propina.
 propina[<span class="hljs-string">&#x27;media&#x27;</span>] = fuzz.trimf(propina.universe, [<span class="hljs-number">0</span>, <span class="hljs-number">13</span>, <span class="hljs-number">25</span>])
 propina[<span class="hljs-string">&#x27;alta&#x27;</span>] = fuzz.trimf(propina.universe, [<span class="hljs-number">13</span>, <span class="hljs-number">25</span>, <span class="hljs-number">25</span>])
 </span></span></foreignObject></svg></code></pre>
+<p>Se puede usar el método <code>.automf(n)</code> para definirlos de forma automática.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="hegel" data-marpit-pagination="13" data-marpit-pagination-total="16" style="--paginate:true;--theme:hegel;">
 <h1>Visualización de los conjuntos borrosos</h1>
@@ -333,15 +336,22 @@ propina[<span class="hljs-string">&#x27;alta&#x27;</span>] = fuzz.trimf(propina.
 calidad.view()
 propina.view()
 </span></span></foreignObject></svg></code></pre>
-<p>[PONER AQUÍ IMAGENES]</p>
+<p>Concretamente mostrará la variable lingüística junto con:</p>
+<ul>
+<li>Las <strong>funciones de pertenencia</strong> que caracterizarán a cada conjunto borroso.</li>
+<li>El <strong>dominio</strong> de la variable lingüística.</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="hegel" data-marpit-pagination="14" data-marpit-pagination-total="16" style="--paginate:true;--theme:hegel;">
 <h1>Definición de las reglas</h1>
 <p>Para definir las reglas, se debe usar la función <code>ctrl.Rule()</code>.</p>
-<pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-meta">&gt;&gt;&gt; </span>r1 = ctrl.Rule(servicio[<span class="hljs-string">&#x27;bueno&#x27;</span>] | calidad[<span class="hljs-string">&#x27;buena&#x27;</span>], propina[<span class="hljs-string">&#x27;alta&#x27;</span>])
-<span class="hljs-meta">&gt;&gt;&gt; </span>r2 = ctrl.Rule(servicio[<span class="hljs-string">&#x27;normal&#x27;</span>], propina[<span class="hljs-string">&#x27;media&#x27;</span>])
-<span class="hljs-meta">&gt;&gt;&gt; </span>r3 = ctrl.Rule(servicio[<span class="hljs-string">&#x27;malo&#x27;</span>] &amp; calidad[<span class="hljs-string">&#x27;mala&#x27;</span>], propina[<span class="hljs-string">&#x27;baja&#x27;</span>])
+<pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>rulebase = [
+    ctrl.Rule(servicio[<span class="hljs-string">&#x27;bueno&#x27;</span>] | calidad[<span class="hljs-string">&#x27;buena&#x27;</span>], propina[<span class="hljs-string">&#x27;alta&#x27;</span>])
+    ctrl.Rule(servicio[<span class="hljs-string">&#x27;normal&#x27;</span>], propina[<span class="hljs-string">&#x27;media&#x27;</span>])
+    ctrl.Rule(servicio[<span class="hljs-string">&#x27;malo&#x27;</span>] &amp; calidad[<span class="hljs-string">&#x27;mala&#x27;</span>], propina[<span class="hljs-string">&#x27;baja&#x27;</span>])
+]
 </span></span></foreignObject></svg></code></pre>
+<p>Suele ser buena costumbre definir las reglas en una lista.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="hegel" data-marpit-pagination="15" data-marpit-pagination-total="16" style="--paginate:true;--theme:hegel;">
 <h1>Definición del controlador</h1>
