@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "notebooks"
+version = "0.0.1"
+description = "Proyecto que agrupa el código desarrollado de ejemplos para clase."
+authors = ["blazaid <alberto.da@gmail.com>", "Raul Lara <lara.cabrera@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+jupyter = "^1.0.0"
+numpy = "^1.23.4"
+sklearn = "^0.0"
+scikit-fuzzy = "^0.4.2"
+matplotlib = "^3.6.1"
+
+
+[tool.poetry.group.dev.dependencies]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
