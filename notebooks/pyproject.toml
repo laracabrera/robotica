@@ -12,6 +12,7 @@ numpy = "^1.23.4"
 sklearn = "^0.0"
 scikit-fuzzy = "^0.4.2"
 matplotlib = "^3.6.1"
+gym = "^0.26.2"
 
 
 [tool.poetry.group.dev.dependencies]
