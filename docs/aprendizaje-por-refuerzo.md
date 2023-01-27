@@ -15,11 +15,11 @@ math: katex
 ---
 
 <!-- _class: titlepage -->
-![bg left:33% width:100%](https://upload.wikimedia.org/wikipedia/commons/1/1b/Reinforcement_learning_diagram.svg)
+![bg left:40% width:100%](https://i0.wp.com/syncedreview.com/wp-content/uploads/2020/06/dn-6.24.gif?resize=786%2C438&ssl=1)
 
-<div class="title">Optimización mediante aprendizaje por refuerzo</div>
-<div class="subtitle">Robótica</div>
-<div class="author">Alberto Díaz</div>
+<div class="title">Aprendizaje por refuerzo</div>
+<div class="subtitle">IA - Tema 4. Aprendizaje por refuerzo</div>
+<div class="author">Alberto Díaz Álvarez <alberto.diaz@upm.es></div>
 <div class="organization">Departamento de Sistemas Informáticos<br/>E.T.S.I. Ingeniería de Sistemas Informáticos</div>
 
 [![height:30](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-informational.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
@@ -34,7 +34,7 @@ math: katex
 
 **Supervisado**: Se aprende de ejemplos con sus correspondientes respuestas.
 
-- Problemas de regresión y clasificación.
+- Problemas de regresión y clasificación
 
 **No supervisado**: Búsqueda de patrones en datos no etiquetados.
 
@@ -44,9 +44,9 @@ math: katex
 
 **Por refuerzo**: Se aprende a través de la experiencia a base de recompensas.
 
-- Problemas de aprendizaje de políticas de decisión.
+- Problemas de aprendizaje de políticas de decisión
 - No se le presentan ejemplos-respuestas
-- La evaluación del sistema es concurrente con el aprendizaje.
+- La evaluación del sistema es concurrente con el aprendizaje
 
 ---
 
@@ -66,7 +66,7 @@ math: katex
 
 Desarrollado por Burrhus Frederic Skinner en 1938
 
-- También **cámara del condicionamiento operante**.
+- También **cámara del condicionamiento operante**
 - ¿Animal realiza acción deseada? Recompensa
 - ¿No? Penalización
 
@@ -106,7 +106,7 @@ Se utiliza principalmente en dos áreas hoy en día:
 
 **Conjunto de recompensas** $R$: Todas las recompensas que puede recibir un agente.
 
-- $r_t \in R$: La recompensa recibida por el agente en un instante $t$.
+- $r_t \in R$: La recompensa recibida por el agente en un instante $t$
 
 ---
 
@@ -668,15 +668,15 @@ Actions.RIGHT: [7961, 2797, 1065, 371, 185, 71, 4252, 6080]
 Técnica en la que se aprende una función (tabla) acción-valor o función $Q$:
 
 - Entrada: Estado y acción a realizar.
-- Salida: **Recompensa esperada** de esa acción (y de todas las posteriores).
+- Salida: **Recompensa esperada** de esa acción (y de todas las posteriores)
 
 La función $Q$ se actualiza de forma iterativa:
 
-1. Antes de explorar el entorno, $Q$ da el mismo valor fijo (arbitrario).
-2. Según se explora, aproxima mejor el valor de la acción $a$ en un estado $s$.
-3. Según se avanza, la función $Q$ se actualiza.
+1. Antes de explorar el entorno, $Q$ da el mismo valor fijo (arbitrario)
+2. Según se explora, aproxima mejor el valor de la acción $a$ en un estado $s$
+3. Según se avanza, la función $Q$ se actualiza
 
-Representa la suma de las recompensas de elegir la acción $Q$ y todas las acciones óptimas posteriores.
+Representa la suma de las recompensas de elegir la acción $Q$ y todas las acciones óptimas posteriores
 
 ---
 
@@ -686,13 +686,13 @@ $$Q(s_t, a_t) = Q(s_t, a_t) + \alpha \cdot (r_t + \gamma \max_a Q(s_{t+1}, a) - 
 
 Realizar $a_t$ en el estado $s_t$ actualiza su valor con un término que contiene:
 
-- $\alpha$: Lo "agresivo" que sstamos haciendo el entrenamiento.
-- $r_t$: Estimación que obtuvimos al actuar en el estado $e_t$ anteriormente.
-- $\max_a Q(s_{t+1}, a)$: Recompensa futura estimada (la que vamos aprendiendo).
-- $\gamma \in [0, 1]$: El factor de ajuste que sube o baja la recompensa futura.
-- Se resta además el valor antiguo para incrementar o disminuir la diferencia en la estimación.
+- $\alpha$: Lo "agresivo" que sstamos haciendo el entrenamiento
+- $r_t$: Estimación que obtuvimos al actuar en el estado $e_t$ anteriormente
+- $\max_a Q(s_{t+1}, a)$: Recompensa futura estimada (la que vamos aprendiendo)
+- $\gamma \in [0, 1]$: El factor de ajuste que sube o baja la recompensa futura
+- Se resta además el valor antiguo para incrementar o disminuir la diferencia en la estimación
 
-Ahora tenemos una estimación de valor para cada par estado-acción.
+Ahora tenemos una estimación de valor para cada par estado-acción
 
 - Con ella, podemos elegir la acción que nos interesa (e.g. usando $\epsilon$-greedy)
 
@@ -764,7 +764,7 @@ Es una combinación de las dos técnicas anteriores<sup>5</sup>, combinando:
 
 ---
 
-<video controls width=100% src="https://drive.upm.es/s/0VIKqV7AiEQSzPu/download"></video>
+![bg](https://assets-global.website-files.com/621e749a546b7592125f38ed/630f6e29ba1f6d269aff7c2d_football%20blog%205.gif)
 
 ---
 
