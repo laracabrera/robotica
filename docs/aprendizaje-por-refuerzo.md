@@ -32,17 +32,17 @@ math: katex
 
 # Paradigmas de aprendizaje en <i>Machine Learning</i>
 
-**Supervisado**: Se aprende de ejemplos con sus correspondientes respuestas.
+**Supervisado**: Se aprende de ejemplos con sus correspondientes respuestas
 
 - Problemas de regresión y clasificación
 
-**No supervisado**: Búsqueda de patrones en datos no etiquetados.
+**No supervisado**: Búsqueda de patrones en datos no etiquetados
 
 - Problemas de <i>clustering</i>, reducción de la dimensionalidad, recodificación, ...
 
 <hr>
 
-**Por refuerzo**: Se aprende a través de la experiencia a base de recompensas.
+**Por refuerzo**: Se aprende a través de la experiencia a base de recompensas
 
 - Problemas de aprendizaje de políticas de decisión
 - No se le presentan ejemplos-respuestas
@@ -67,8 +67,12 @@ math: katex
 Desarrollado por Burrhus Frederic Skinner en 1938
 
 - También conocida como la **Caja de Skinner**
-- ¿Animal realiza acción deseada? Recompensa
-- ¿No? Penalización
+
+Se basa en el **principio de refuerzo**:
+
+1. Se presenta un estímulo a un animal
+2. ¿Realiza la acción deseada? **Recompensa**
+3. ¿No la realiza? **Penalización** (o nada)
 
 **Algunos comportamientos** de aprendizaje son **bucles observación-acción-recompensa**
 
@@ -98,7 +102,7 @@ Se utiliza principalmente en dos áreas hoy en día:
 
 **Espacio de observaciones** $O$: Conjunto de estados similar al espacio de estados $S$
 
-- Pero a diferencia de $S$, este **no tiene por qué ser necesariamente completo**
+- Pero a diferencia de $S$, **no tiene por qué ser necesariamente completo**
 - Hay casos en que ambos espacios son equivalentes (e.g. juegos de tablero)
 - $s_t \in S$ y $o_t \in O$ simbolizarán respectivamente estado y observación en un instante $t$
 
@@ -346,7 +350,7 @@ class Actions(enum.Enum):
                                      else Actions.RIGHT
 ```
 
-## Agente
+## Aventurero
 
 ```python
 class Hero:
@@ -463,7 +467,7 @@ Para aprenderlas se suelen usar redes neuronales, pero se nos escapa del temario
 
 # Métodos indirectos (basados en valores)
 
-Aprendemos una función $v_\pi$ (o $q_\pi$) que **relaciona un estado con su valor estimado**.
+Aprendemos una función $v_\pi$ (o $q_\pi$) que **relaciona un estado con su valor estimado**
 
 - **Valor**: Recompensa acumulada si empieza en ese estado y se mueve al mejor estado
 - El agente selecciona la acción en función de esos valores
@@ -491,7 +495,7 @@ Independientemente de la función elegida, el resultado será la recompensa espe
 
 Por cierto, ¿cómo sabemos **qué acciones futuras son óptimas**?
 
-- Spoiler: **No lo sabemos**, actuamos con lo que sabemos en cada momento.
+- <i>Spoiler</i>: **No lo sabemos**, actuamos con lo que sabemos en cada momento
 
 ---
 
@@ -523,7 +527,7 @@ Se busca una **función de valor óptima** sobre la que trabajará nuestra polí
 Por lo tanto Independientemente del método, tendremos una política.
 
 - Pero en el caso de los métodos indirectos no la entrenamos
-- Será una "simple" función que usará los valores dados por la función $v_\pi$ o $q_\pi$
+- Será una «simple» función que usará los valores dados por la función $v_\pi$ o $q_\pi$
 
 ---
 
@@ -540,7 +544,7 @@ Tras ejecutar un entrenamiento, podemos ver el siguiente resultado:
 
 ```python
 dungeon = Dungeon(rooms=[1, 0, 0, 0, 0, 0, 0, 10], p_confussion=0.1)
-hero = Hero(dungeon=dungeon)
+hero = Hero()
 
 total = 0
 for i in range(10**6):
@@ -693,7 +697,7 @@ Realizar $a_t$ en el estado $s_t$ actualiza su valor con un término que contien
 - $r_t$: Estimación que obtuvimos al actuar en el estado $s_t$ anteriormente
 - $\max_a Q(s_{t+1}, a)$: Recompensa futura estimada (la que vamos aprendiendo)
 - $\gamma \in [0, 1]$: El factor de ajuste que sube o baja la recompensa futura
-- Se resta además el valor antiguo para incrementar o disminuir la diferencia en la estimación
+- Se resta el valor antiguo para incrementar o disminuir la diferencia en la estimación
 
 Ahora tenemos una estimación de valor para cada par estado-acción
 
@@ -781,7 +785,7 @@ Vídeo: <i>From Motor Control to Team Play in Simulated Humanoid Football</i>
  
 <div class="cite-author">
 
-   «El juego Go ha sido estudiado por la humanidad durante más de 2500 años. [AlphaZero](https://en.wikipedia.org/wiki/AlphaZero), en 24 horas, pasó de no saber jugar a vencer a los mejores jugadores del mundo, superando así todo nuestro conocimiento acumulado. Desde luego, parece que el aprendizaje por refuerzo es la mejor vía de avance de la inteligencia artificial para este tipo de problemas.»
+   «El juego Go ha sido estudiado por la humanidad durante más de 2500 años. [AlphaZero](https://en.wikipedia.org/wiki/AlphaZero), en 24 horas, pasó de no saber jugar a vencer a los mejores jugadores del mundo, superando así todo nuestro conocimiento acumulado. Desde luego, parece que el aprendizaje por refuerzo es la mejor vía de avance de la inteligencia artificial para este tipo de problemas»
 
 </div>
 
@@ -857,7 +861,7 @@ Existen dos técnicas principales para introducir conocimiento previo:
 
 # Algunas reflexiones
 
-Es probable que una IA más avanzada requieran recompensas más complejas.
+Es probable que una IA más avanzada requieran recompensas más complejas
 
 - Por ejemplo, un vehículo autónomo al principio puede estar ligada a algo tan simple como "llegar del punto $a$ al punto $b$ a salvo", pero...
   - ¿Y si se ve obligado a elegir entre mantener el rumbo y atropellar a cinco peatones o desviarse y atropellar a uno?
@@ -877,12 +881,12 @@ Nosotros los humanos, ¿tenemos funciones de valor? ¿qué nos motiva?
 - Porque ojo, hay conceptos más complicados que el placer y el dolor como el bien y el mal, el amor, la espiritualidad, ...
 - ¿Se podría al menos esbozar la recompensa que maximizamos en nuestra vida real?
 
-Y como humanos, ¿cómo sabemos lo que es correcto o no? ¿Por intuición?
+Y como humanos, ¿cómo sabemos lo que es correcto o no?
 
 - Generalmente podemos responder que estos valores nos vienen "por intuición"
 - Seguramente, pero poner la en palabras o reglas es sencillamente imposible
 - Y **probablemente una máquina pueda aprender estos valores de alguna manera**
-- Probablemente esto es uno de los problemas más importantes que os tocará resolver
+- Y también probablemente será uno de los problemas más importantes al que os enfrentaréis en el futuro (buena suerte)
 
 ---
 
