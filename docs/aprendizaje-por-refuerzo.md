@@ -7,7 +7,7 @@ auto-scaling:
     - code
 paginate : true
 theme : hegel
-title : Aprendizaje por refuerzos
+title : Aprendizaje por refuerzo
 author :
    - Alberto Díaz Álvarez <alberto.diaz@upm.es>
 description : Aprendizaje automático - Aprendizaje por refuerzo. Curso 2023-2024. Departamento de Sistemas Informáticos. E.T.S.I. Sistemas Informáticos (UPM)
@@ -15,7 +15,7 @@ math: katex
 ---
 
 <!-- _class: titlepage -->
-![bg left:40% width:100%](https://i0.wp.com/syncedreview.com/wp-content/uploads/2020/06/dn-6.24.gif?resize=786%2C438&ssl=1)
+![bg left:40%](https://d2r55xnwy6nx47.cloudfront.net/uploads/2016/03/go_1000x560.jpg)
 
 <div class="title">Aprendizaje por refuerzo</div>
 <div class="subtitle">IA - Tema 4. Aprendizaje por refuerzo</div>
@@ -54,23 +54,25 @@ math: katex
 
 <div class="cite-author" data-text="Edward Thorndike - Law of Effect (1898)">
 
-   "Las respuestas que producen un efecto positivo en una situación concreta aumentan la probabilidad de repetirse en dicha situación, mientras que las que producen un efecto negativo la reducen."
+   «Las respuestas que producen un efecto positivo en una situación concreta aumentan la probabilidad de repetirse en dicha situación, mientras que las que producen un efecto negativo la reducen»
 
 </div>
 
 ---
 
-# El experimento de la **Caja de Skinner**
+# La cámara del condinicionamiento operante
 
-![bg right:30% width:95%](https://upload.wikimedia.org/wikipedia/commons/a/ac/Caja_de_Skinner.jpg)
+![bg right:36%](https://amadag.com/wp-content/uploads/2019/11/1d7193b3fc267c12b640529821002b2b.jpg)
 
 Desarrollado por Burrhus Frederic Skinner en 1938
 
-- También **cámara del condicionamiento operante**
+- También conocida como la **Caja de Skinner**
 - ¿Animal realiza acción deseada? Recompensa
 - ¿No? Penalización
 
-Se observó que **algunos comportamientos** de aprendizaje son bucles observación-acción-recompensa
+**Algunos comportamientos** de aprendizaje son **bucles observación-acción-recompensa**
+
+- Hubo más experimentos, cada uno más curioso que el anterior
 
 ---
 
@@ -94,8 +96,9 @@ Se utiliza principalmente en dos áreas hoy en día:
 
 # Terminología
 
-**Espacio de observaciones** $O$: Espacio de estados **no necesariamente completo**
+**Espacio de observaciones** $O$: Conjunto de estados similar al espacio de estados $S$
 
+- Pero a diferencia de $S$, este **no tiene por qué ser necesariamente completo**
 - Hay casos en que ambos espacios son equivalentes (e.g. juegos de tablero)
 - $s_t \in S$ y $o_t \in O$ simbolizarán respectivamente estado y observación en un instante $t$
 
@@ -294,7 +297,7 @@ Somos un aventurero en una mazmorra muy simple, de 8 habitaciones, donde:
 - Existe un conjuro de confusión que invierte la acción que hacemos
 - Hay algunas habitaciones con tesoro
 
-<img style="margin:0 auto" src="../notebooks/notebooks/images/1dungeon-1.png" />
+<img style="margin:0 auto" src="../img/t4/1dungeon-1.png" />
 
 > <sup>3</sup> Versión simplificada del escenario planteado por Sutton y Barto para aprendizaje de políticas de decisión. Un ejemplo de resolución de este juego con aprendizaje por refuerzo se puede encontrar en la siguiente dirección: <https://towardsdatascience.com/reinforcement-learning-implement-grid-world-from-scratch-c5963765ebff>.
 
@@ -311,14 +314,14 @@ Sin embargo, hay cosas que no sabemos de la mazmorra:
 - La **última habitación** tiene una recompensa de **10 monedas** de oro
 - **Las monedas** de oro **se regeneran** cada vez que pasamos de una habitación a otra
 
-Podemos representar el MDP como se ve en la figura
+Su MDP lo podemos ver en la imagen
 
 - En realidad es una pequeña porción
 
 </div>
 <div class="column">
 
-<img style="margin:0 auto" src="../notebooks/notebooks/images/1dungeon-2.png" />
+<img style="margin:0 auto" src="../img/t4/1dungeon-2.png" />
 </div>
 </div>
 
@@ -396,7 +399,7 @@ Sin embargo, las recompensas no tienen por qué tener todo su valor siempre
 
 - De ahí el **factor de ajuste** $\gamma \in [0, 1]$ que se le aplica a la recompensa
 - Las recompensas a corto plazo tienen más probabilidades de suceder
-- $\gamma$ indica si interesan más recompensas a **corto** ($\gamma \approx 0$)) o a **largo** ($\gamma \approx 1$) **plazo**
+- $\gamma$ indica si interesan más recompensas a **corto** ($\gamma \approx 0$) o a **largo** ($\gamma \approx 1$) **plazo**
 
 ---
 
@@ -404,15 +407,15 @@ Sin embargo, las recompensas no tienen por qué tener todo su valor siempre
 
 La función de <i>policy</i> ($\pi$) es la que **asigna** una **acción** $a \in A$ a cada **estado** $s \in S$.
 
-- Realiza el mapeo entre el espacio de estados y el de acciones.
-- Define completamente el comportamiento de un agente.
+- Realiza el mapeo entre el espacio de estados y el de acciones
+- Define completamente el comportamiento de un agente
 
 Buscamos $\pi$ que **maximice el rendimiento esperado**; existen dos métodos:
 
 - **Directo**: ¿Qué acción debe realizar en el estado actual?
 - **Indirecto**: ¿Qué estados son mejores para tomar la acción que lleva a esos estados?
 
-Por eso en nuestro ejemplo la clase `Hero` tiene un método denominado `policy` 
+Por eso en nuestro ejemplo la clase `Hero` tiene un método denominado `policy`
 
 - Devuelve la acción a realizar en un estado determinado
 
@@ -454,7 +457,7 @@ $$\pi(s_i) = \{(◄, 0.3), (►, 0.5), (▼, 0.1), (▲, 0.1)\}$$
 </div>
 </div>
 
-Para aprenderlas se suelen usar redes neuronales (no se verá en esta asignatura).
+Para aprenderlas se suelen usar redes neuronales, pero se nos escapa del temario
 
 ---
 
@@ -462,7 +465,7 @@ Para aprenderlas se suelen usar redes neuronales (no se verá en esta asignatura
 
 Aprendemos una función $v_\pi$ (o $q_\pi$) que **relaciona un estado con su valor estimado**.
 
-- Valor: Recompensa acumulada si empieza en ese estado y se mueve al mejor estado
+- **Valor**: Recompensa acumulada si empieza en ese estado y se mueve al mejor estado
 - El agente selecciona la acción en función de esos valores
 
 <div class="columns">
@@ -501,7 +504,7 @@ Por cierto, ¿cómo sabemos **qué acciones futuras son óptimas**?
 
 <img src="../img/t4/policy-based-method.png" style="width: 95%;">
 
-La **política óptima** se encuentra **entrenando** la política **directamente**.
+Se busca la **política óptima** entrenándola directamente
 
 </div>
 <div class="column">
@@ -510,7 +513,7 @@ La **política óptima** se encuentra **entrenando** la política **directamente
 
 <img src="../img/t4/value-based-method.png" style="width: 95%;">
 
-Encontrar una **función de valor óptima** lleva a tener una **política óptima**.
+Se busca una **función de valor óptima** sobre la que trabajará nuestra política
 
 </div>
 </div>
@@ -519,14 +522,14 @@ Encontrar una **función de valor óptima** lleva a tener una **política óptim
 
 Por lo tanto Independientemente del método, tendremos una política.
 
-- Pero en el caso de los métodos basados en valores no la entrenamos.
-- Será una "simple" función que usará los valores dados por la función $v_\pi$ o $q_\pi$.
+- Pero en el caso de los métodos indirectos no la entrenamos
+- Será una "simple" función que usará los valores dados por la función $v_\pi$ o $q_\pi$
 
 ---
 
-# Estrategia aleatoria: Aventurero confuso
+# Política aleatoria: El aventurero empanado
 
-Es una **política** que **escoge una acción aleatoria** de entre todas las posibles
+Estrategia que **escoge una acción aleatoria** de entre todas las posibles
 
 ```python
 def policy(self, state):
@@ -549,9 +552,9 @@ print(f'Recompensa total: {total}')  # Recompensa total: 579670
 
 ---
 
-# Estrategia voraz: Aventurero enzarpado (I)
+# Política voraz: El aventurero enzarpado (I)
 
-Es una **política** que siempre **escoge la mejor acción** de entre todas las posibles
+Estrategia que siempre **escoge la mejor acción** de entre todas las posibles
 
 ```python
 def policy(self, state):
@@ -592,7 +595,7 @@ class Hero:
 
 ---
 
-# Estrategia voraz: Aventurero enzarpado (y II)
+# Política voraz: El aventurero enzarpado (y II)
 
 Modificando un poco el proceso de entrenamiento, podemos ver el siguiente resultado:
 
@@ -618,9 +621,9 @@ Actions.RIGHT: [0, 0, 0, 0, 0, 0, 40, 0]
 
 ---
 
-# Estrategia $\epsilon$-<i>greedy</i>: Aventurero equilibrado (I)
+# Política $\epsilon$-<i>greedy</i>: El aventurero equilibrado (I)
 
-Política sencilla para elegir acción que mantiene el equilibrio exploración/explotación
+Estrategia sencilla para elegir acción que mantiene el equilibrio exploración/explotación
 
 - La aleatoriedad no da buenos resultados pero la exploración es necesaria
 
@@ -640,7 +643,7 @@ Existe una variante, $\epsilon$-<i>greedy</i> con declive, que reduce $\epsilon$
 
 ---
 
-# Estrategia $\epsilon$-<i>greedy</i>: Aventurero equilibrado (y II)
+# Política $\epsilon$-<i>greedy</i>: El aventurero equilibrado (y II)
 
 Sólo necesitamos modificar al aventurero para que tenga en cuenta $\epsilon$:
 
@@ -687,7 +690,7 @@ $$Q(s_t, a_t) = Q(s_t, a_t) + \alpha \cdot (r_t + \gamma \max_a Q(s_{t+1}, a) - 
 Realizar $a_t$ en el estado $s_t$ actualiza su valor con un término que contiene:
 
 - $\alpha$: Lo "agresivo" que sstamos haciendo el entrenamiento
-- $r_t$: Estimación que obtuvimos al actuar en el estado $e_t$ anteriormente
+- $r_t$: Estimación que obtuvimos al actuar en el estado $s_t$ anteriormente
 - $\max_a Q(s_{t+1}, a)$: Recompensa futura estimada (la que vamos aprendiendo)
 - $\gamma \in [0, 1]$: El factor de ajuste que sube o baja la recompensa futura
 - Se resta además el valor antiguo para incrementar o disminuir la diferencia en la estimación
@@ -764,6 +767,8 @@ Es una combinación de las dos técnicas anteriores<sup>5</sup>, combinando:
 
 ---
 
+<!--_class: transition-->
+Vídeo: <i>From Motor Control to Team Play in Simulated Humanoid Football</i>
 ![bg](https://assets-global.website-files.com/621e749a546b7592125f38ed/630f6e29ba1f6d269aff7c2d_football%20blog%205.gif)
 
 ---
@@ -774,9 +779,9 @@ Es una combinación de las dos técnicas anteriores<sup>5</sup>, combinando:
 
 <!-- _class: cite -->
  
-<div class="cite-author" data-text="Yo mismo (2013)">
+<div class="cite-author">
 
-   "El juego Go ha sido estudiado por la humanidad durante más de 2500 años. [AlphaZero](https://en.wikipedia.org/wiki/AlphaZero), en 24 horas, pasó de no saber jugar a vencer a los mejores jugadores del mundo, superando así todo nuestro conocimiento acumulado. Desde luego, parece que el aprendizaje por refuerzo es la mejor vía de avance de la inteligencia artificial para este tipo de problemas."
+   «El juego Go ha sido estudiado por la humanidad durante más de 2500 años. [AlphaZero](https://en.wikipedia.org/wiki/AlphaZero), en 24 horas, pasó de no saber jugar a vencer a los mejores jugadores del mundo, superando así todo nuestro conocimiento acumulado. Desde luego, parece que el aprendizaje por refuerzo es la mejor vía de avance de la inteligencia artificial para este tipo de problemas.»
 
 </div>
 
@@ -784,19 +789,19 @@ Es una combinación de las dos técnicas anteriores<sup>5</sup>, combinando:
 
 # Relevancia del aprendizaje por refuerzo hoy en día
 
-Podemos decir que es prácticamente el único paradigma de aprendizaje:
+Podemos decir que es prácticamente el **único paradigma** de aprendizaje **que**:
 
-- Capaz de aprender comportamientos complejos en entornos complejos
-- Que ha podido hacerlo prácticamente sin supervisión humana
+- Puede aprender **comportamientos complejos** en **entornos complejos**
+- Es capaz de hacerlo prácticamente **sin supervisión humana**
 
-Ofrece a la robótica forma abordar cómo diseñar comportamientos difíciles
+Ofrece a la robótica forma **abordar** cómo diseñar **comportamientos difíciles**
 
-- Que por otro lado, son prácticamente todos
+- Que por otro lado, son **prácticamente todos**
 - Las cosas fáciles para un humano suelen ser las más complejas de diseñar
 
-Permite a robots descubrir de forma autónoma comportamientos óptimos:
+Permite a robots **descubrir** de forma **autónoma** comportamientos óptimos:
 
-- No se detalla la solución al problema, sino que se interacciona con el entorno
+- **No se detalla la solución al problema**, sino que se interacciona con el entorno
 - La retroalimentación de el efecto sobre el entorno permite aprender
 
 ---
