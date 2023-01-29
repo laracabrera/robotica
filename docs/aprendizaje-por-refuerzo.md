@@ -66,7 +66,7 @@ math: katex
 
 Desarrollado por Burrhus Frederic Skinner en 1938
 
-- También conocida como la **Caja de Skinner**
+- También conocida como «Caja de Skinner»
 
 Se basa en el **principio de refuerzo**:
 
@@ -86,7 +86,7 @@ Se basa en el **principio de refuerzo**:
 
 - **Imita** de manera fundamental el **aprendizaje** de muchos **seres vivos**
 - Esa interacción produce tanto resultados deseados como no deseados
-- Se entrena con la **recompensa o castigo** determinados para dicho resultado
+- Se entrena con **la recompensa o el castigo** determinados para dicho resultado
 - El agente tratará de maximizar la recompensa a largo plazo
 
 Se utiliza principalmente en dos áreas hoy en día:
@@ -187,9 +187,8 @@ El proceso de aprendizaje por refuerzo es el siguiente:
 
 1. El agente lee un estado $s_0$ del entorno
 2. Dado $s_0$, realizará la acción $a_0$ ($\pi$)
-3. El entorno pasa a un nuevo estado $s_1$
-4. El agente recibe una recompensa $r_1$
-5. Iterar hasta encontrar estrategia óptima
+3. El entorno pasa a un nuevo estado $s_1$ y el agente recibe una recompensa $r_1$
+4. Iterar hasta encontrar estrategia óptima
 
 </div>
 </div>
@@ -205,25 +204,9 @@ $$s_0, a_0, r_1, s_1, a_1, r_2, s_2, a_2, \ldots$$
 
 ---
 
-# Proceso de decisión de Márkov (MDP)
+# Espera, ¿no eran «cadenas de Márkov»?
 
-Proceso **estocástico** de **tiempo discreto** que satisface la **propiedad de Márkov**<sup>2</sup>
-
-<img style="margin:0 auto;width:60%" src="https://miro.medium.com/max/720/1*6q1Lyrm7VRkBJitaUIc0DA.webp" />
-
-Matemáticamente se define como una 5-tupla $(S, A, P_{a},R_{a}, \pi)$ donde:
-
-- $P_{a}(s,s')$: Probabilidad de que la acción $a$ nos lleve de $s$ a $s'$
-- $R_{a}(s,s')$: Recompensa inmediata por pasar del estado $s$ al estado $s'$ con la acción $a$
-- $\pi: S \rightarrow A$:  Función que define las políticas de decisión (denominada <i>**policy**</i>)
-
-> <sup>2</sup> Si no os acordáis, lo hemos visto en el Tema 3: Razonamiento Aproximado
-
----
-
-# ¿Y no son Cadenas de Márkov?
-
-Los MDP extienden a las cadenas de Márkov en dos aspectos:
+Los «procesos de decisión de Márkov» (MDP) generalizan a las cadenas de Márkov:
 
 - Permiten elegir **acciones** para realizar transiciones entre estados
 - Incluyen **recompensas** a una o más de esas transiciones
@@ -252,6 +235,22 @@ Los MDP extienden a las cadenas de Márkov en dos aspectos:
 
 </div>
 </div>
+
+---
+
+# Proceso de decisión de Márkov (MDP)
+
+Proceso **estocástico** de **tiempo discreto** que satisface la **propiedad de Márkov**<sup>2</sup>
+
+<img style="margin:0 auto;width:60%" src="https://miro.medium.com/max/720/1*6q1Lyrm7VRkBJitaUIc0DA.webp" />
+
+Matemáticamente se define como una 5-tupla $(S, A, P_{a},R_{a}, \pi)$ donde:
+
+- $P_{a}(s,s')$: Probabilidad de que la acción $a$ nos lleve de $s$ a $s'$
+- $R_{a}(s,s')$: Recompensa inmediata por pasar del estado $s$ al estado $s'$ con la acción $a$
+- $\pi: S \rightarrow A$:  Función que define las políticas de decisión (denominada <i>**policy**</i>)
+
+> <sup>2</sup> Si no os acordáis, lo hemos visto en el Tema 3: Razonamiento Aproximado
 
 ---
 
@@ -693,7 +692,7 @@ $$Q(s_t, a_t) = Q(s_t, a_t) + \alpha \cdot (r_t + \gamma \max_a Q(s_{t+1}, a) - 
 
 Realizar $a_t$ en el estado $s_t$ actualiza su valor con un término que contiene:
 
-- $\alpha$: Lo "agresivo" que sstamos haciendo el entrenamiento
+- $\alpha$: Lo «agresivo» que estamos haciendo el entrenamiento
 - $r_t$: Estimación que obtuvimos al actuar en el estado $s_t$ anteriormente
 - $\max_a Q(s_{t+1}, a)$: Recompensa futura estimada (la que vamos aprendiendo)
 - $\gamma \in [0, 1]$: El factor de ajuste que sube o baja la recompensa futura
@@ -798,7 +797,7 @@ Podemos decir que es prácticamente el **único paradigma** de aprendizaje **que
 - Puede aprender **comportamientos complejos** en **entornos complejos**
 - Es capaz de hacerlo prácticamente **sin supervisión humana**
 
-Ofrece a la robótica forma **abordar** cómo diseñar **comportamientos difíciles**
+Ofrece una forma de modelar **comportamientos difíciles**:
 
 - Que por otro lado, son **prácticamente todos**
 - Las cosas fáciles para un humano suelen ser las más complejas de diseñar
@@ -806,7 +805,7 @@ Ofrece a la robótica forma **abordar** cómo diseñar **comportamientos difíci
 Permite a robots **descubrir** de forma **autónoma** comportamientos óptimos:
 
 - **No se detalla la solución al problema**, sino que se interacciona con el entorno
-- La retroalimentación de el efecto sobre el entorno permite aprender
+- La retroalimentación del efecto sobre el entorno permite aprender
 
 ---
 
@@ -861,10 +860,10 @@ Existen dos técnicas principales para introducir conocimiento previo:
 
 # Algunas reflexiones
 
-Es probable que una IA más avanzada requieran recompensas más complejas
+Es probable que una IA más avanzada requiera recompensas más complejas
 
-- Por ejemplo, un vehículo autónomo al principio puede estar ligada a algo tan simple como "llegar del punto $a$ al punto $b$ a salvo", pero...
-  - ¿Y si se ve obligado a elegir entre mantener el rumbo y atropellar a cinco peatones o desviarse y atropellar a uno?
+- Por ejemplo, en un vehículo autónomo al principio pueden estar ligadad a algo tan simple como «llegar del punto $a$ al punto $b$ a salvo», pero...
+  - ¿Y si tiene que elegir entre mantener el rumbo y atropellar a cinco peatones o desviarse y atropellar a uno?
   - ¿Debe desviarse o incluso dañar al conductor con una maniobra peligrosa?
   - ¿Y si el único peatón es un niño, o un anciano? ¿una mujer? ¿un hombre? ¿un transexual? ¿la próxima Marie Curie? ¿el próximo Hitler? ¿un cuadro valiosísimo e irremplazable? ¿cambia eso la decisión? ¿por qué?
 
@@ -884,7 +883,7 @@ Nosotros los humanos, ¿tenemos funciones de valor? ¿qué nos motiva?
 Y como humanos, ¿cómo sabemos lo que es correcto o no?
 
 - Generalmente podemos responder que estos valores nos vienen "por intuición"
-- Seguramente, pero poner la en palabras o reglas es sencillamente imposible
+- Seguramente, pero representarla como palabras o reglas es sencillamente imposible
 - Y **probablemente una máquina pueda aprender estos valores de alguna manera**
 - Y también probablemente será uno de los problemas más importantes al que os enfrentaréis en el futuro (buena suerte)
 
